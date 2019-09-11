@@ -1,0 +1,156 @@
+{extend name="zht"}
+
+{block name="header"}
+<title>众创空间</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/zh-fuhuaindex.css">
+<base href="zh-newsinfo.html">
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/zh-zongchuang.css">
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/zht_nav.html" /}
+        </div>
+        <div id="zh-main">
+            <div class="section1">
+                <section >
+                    <h1 class="title flex"><span class="abs-line"></span>新闻资讯 </h1>
+                    <div class="flex">
+                        <div>
+                            {volist name="t1" id="vo"}
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dian" length="20">{$vo.title}</a>
+                            {/volist}
+                        </div>
+                        <a href="">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/74.jpg" alt="">
+                        </a>
+                    </div>
+                    <a href="" class="flex"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/75.jpg" alt=""></a>
+                </section>
+                <section>
+                    <h2 style="font-weight: bold;font-size: 22px">空间类型</h2>
+                    <div class="zh-kongjian">
+                        <p><span class="active">启迪之星</span><span>启迪之星</span><span>启迪之星</span></p>
+                        <div class="wrap active">
+                            <div class="content">
+                                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/76.jpg" width="250" height="171"  alt="">
+                                <blockquote>
+                                    <p>1务代服务代服务务代服...</p>
+                                    <article>务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服</article>
+                                    <a href="/">查看详情</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <div class="content">
+                                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/76.jpg" width="250" height="171"  alt="">
+                                <blockquote>
+                                    <p>务2代服务代服务务代服...</p>
+                                    <article>务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服</article>
+                                    <a href="/">查看详情</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <div class="content">
+                                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/76.jpg" width="250" height="171"  alt="">
+                                <blockquote>
+                                    <p>33务代服务代服务务代服...</p>
+                                    <article>务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服务代服务代服务务代服</article>
+                                    <a href="/">查看详情</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section2">
+                <section>
+                    <h1 class="title flex"><span class="abs-line"></span>图文资讯 </h1>
+                    <div id="section2" style="">
+                    {volist name="t1" id="vo" key="k"}
+                    {eq name="k" value="1"}
+                        <div>
+                            <img src="{$vo.pic}" width="210" height="140" alt="">
+                        </div>
+                        <section >
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                            <blockquote style="" length="100">{$vo.content|remove_html|mb_substr=###,0,60,'utf-8'}</blockquote>
+                        </section>
+                    {/eq}
+                    {/volist}
+                    </div>
+                    <div style="">
+                        {volist name="t1" id="vo" key="k"}
+                        {neq name="k" value="1"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dian">{$vo.title}<span>{$vo.time|date='Y-m-d',###}</span></a>
+                        {/neq}
+                        {/volist}
+                    </div>
+                </section>
+                <section >
+                    <div id="zh-list" >
+                        <a href="/" style=" ">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/97.png" alt="">
+                            <span>免费选址</span>
+                        </a>
+                        <a href="/" style=" ">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/98.png" alt="">
+                            <span>公司注册</span>
+                        </a>
+                        <a href="/" style=" ">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/99.png" alt="">
+                            <span>税务筹划</span>
+                        </a>
+                        <a href="/" style=" ">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/100.png" alt="">
+                            <span>法律顾问</span>
+                        </a>
+                        <a href="/" style=" ">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/101.png" alt="">
+                            <span>知识产权</span>
+                        </a>
+                        <a href="/" style=" ">
+                            <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/102.png" alt="">
+                            <span>入园申请</span>
+                        </a>
+                    </div>
+                    <a href="" class="flex" style="padding-left: 10px"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/78.jpg" width="531" height="97" alt=""></a>
+                </section>
+            </div>
+            <div class="section3">
+                <section>
+                    <h1 class="title flex"><span class="abs-line"></span>法规政策 </h1>
+                    {volist name="t3" id="vo"}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dian">{$vo.title}<span>{$vo.time|date='Y-m-d',###}</span></a>
+                    {/volist}
+                </section>
+                <section>
+                    <h1 class="title flex"><span class="abs-line"></span>行业动态 </h1>
+                    {volist name="t4" id="vo"}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dian">{$vo.title}<span>{$vo.time|date='Y-m-d',###}</span></a>
+                    {/volist}
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $(".zh-kongjian>p>span").click(function () {
+        var $index = $(this).index()
+        $(this).addClass("active").siblings("span").removeClass("active")
+        $(".wrap").eq($index).fadeIn().siblings(".wrap").hide()
+    })
+</script>
+<script language="javascript">
+    $("#zhlink2").addClass("active");
+    $("#zhtzht").addClass("active");
+</script>
+{/block}

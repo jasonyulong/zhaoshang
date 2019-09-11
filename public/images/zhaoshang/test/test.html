@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{padding:0;margin:0;list-style:none;}
+        .wrap{
+            width:1100px;
+            height:500px;
+            margin:0 auto;
+            background-color:#ccc;
+            position:relative;
+        }
+        .wrap ul{
+            position:relative;
+        }
+        .wrap ul li{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .wrap ul li img{
+            width:100%;
+        }
+        .ctrl{
+            display:block;
+            width:100%;
+            position:absolute;
+            z-index:99;
+            top:300px;
+        }
+        .ctrl button{
+            width:30px;
+            height:50px;
+        }
+        .prev{
+            float:left;
+            margin-left:30px;
+        }
+        .next{
+            float:right;
+            margin-right:30px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul>
+        <li><a href=""><img src="../img/shitizhaoshang/73.jpg" alt=""><span style="width: 100%;text-align: center;display: inline-block">我们</span></a></li>
+        <li><a href=""><img src="../img/shitizhaoshang/73.jpg" alt=""><span style="width: 100%;text-align: center;display: inline-block">我们</span></a></li>
+        <li><a href=""><img src="../img/shitizhaoshang/73.jpg" alt=""><span style="width: 100%;text-align: center;display: inline-block">我们</span></a></li>
+        <li><a href=""><img src="../img/shitizhaoshang/73.jpg" alt=""><span style="width: 100%;text-align: center;display: inline-block">我们</span></a></li>
+        <li><a href=""><img src="../img/shitizhaoshang/73.jpg" alt=""><span style="width: 100%;text-align: center;display: inline-block">我们</span></a></li>
+    </ul>
+    <span class="ctrl">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </span>
+</div>
+<script>
+    $(function(){
+        var json=[
+            {//图1
+                top:'0px',
+                left:'200px',
+                width:'300px',
+                height:'187px',
+                zIndex:6,
+                opacity:0.2
+            },
+            {//图2
+                top:'88px',
+                left:'75px',
+                width:'400px',
+                height:'250px',
+                zIndex:8,
+                opacity:0.8
+            },
+            {//图3
+                top:'188px',
+                left:'300px',
+                width:'500px',
+                height:'312px',
+                zIndex:10,
+                opacity:1
+            },
+            {//图4
+                top:'88px',
+                left:'625px',
+                width:'400px',
+                height:'250px',
+                zIndex:8,
+                opacity:0.8
+            },
+            {//图5
+                top:'0px',
+                left:'600px',
+                width:'300px',
+                height:'187px',
+                zIndex:6,
+                opacity:0.2
+            }
+        ];
+        var jieliu=true;
+//          封装一个函数，将json每个数据通过遍历加在每个'li'容器上
+        function addCss(){
+            for(var i in json){
+                $('#wrap ul li').eq(i).css({zIndex:json[i].zIndex});
+                $('#wrap ul li').eq(i).animate({
+                    top:json[i].top,
+                    left:json[i].left,
+                    width:json[i].width,
+                    height:json[i].height,
+                    opacity:json[i].opacity
+                },'slow',function(){
+                    jieliu=true;
+                    console.log($(this).index())
+                    var $index = $(this).index()
+                    console.log($('#wrap ul li').eq($index).css("opacity"))
+                    if($('#wrap ul li').eq($index).css("opacity")==1){
+                        $('#wrap ul li').eq($index).find("span").fadeIn().end().siblings("li").find("span").fadeOut()
+                    }
+                });
+
+            }
+        }
+
+  /*      if($('#wrap ul li').eq(i).css("opacity")==1){
+            console.log($('#wrap ul li').eq(i).css("opacity"))
+            $('#wrap ul li').eq(i).find("span").show().siblings("li").hide()
+        }*/
+        //页面打开先调用一次，页面不会乱
+        addCss();
+        $('.prev').click(function(){
+            if(jieliu==true){
+                jieliu=false;
+                //json.shift(),删除数组的第一个值，并返回第一个值
+                //json.push(json.shift())将返回的第一个值追加到数组末尾
+                json.push(json.shift());
+                //重新遍历
+                addCss();
+            }
+
+
+        });
+        $('.next').click(function(){
+            if(jieliu==true){
+                jieliu=false;
+                //json.pop(),删除数组的最后个值，并返回最后一个值
+                //json.unshift(json.pop())将返回的最后一个值添加到数组最前面
+                json.unshift(json.pop());
+                //重新遍历
+                addCss();
+            }
+        });
+
+    });
+</script>
+
+
+</body>
+</html>

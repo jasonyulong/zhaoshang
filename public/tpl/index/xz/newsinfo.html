@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>{$info.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/reset.css">
+    <script src="__IMAGES__/zhaoshang/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zhaoshang/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+    <base href="sw-newsinfo.html">
+    <style>
+        #xm-info{padding: 20px 85px}
+        #xm-info>h1{padding: 0 25px;font-size: 18px;color: #333333;font-weight: bold;text-align: center;line-height: 30px}
+        #xm-info>p{padding: 10px 0}
+        #xm-info>blockquote{line-height: 30px;padding: 30px 25px}
+    </style>
+</head>
+<body>
+<input type="hidden" value="navxm" data-active="">
+<input type="hidden" value="xmlink1" data-active="">
+{include file="../public/tpl/index/include_nav.html" /}
+<div class="biaoti">
+    <article>专业&nbsp;&nbsp;&nbsp;&nbsp;精准&nbsp;&nbsp;&nbsp;&nbsp;高效<br/></article>
+    <section>
+        <article>PROFESSIONAL</article>
+        <div>
+            <p>Professional, accurate, efficient and continuous</p>
+            <p>Professional people do professional things</p>
+        </div>
+    </section>
+</div>
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('index/xz/index',array('sort'=>'gs'))}" id="xzlink_gs">工商</a>
+            <a href="{:url('index/xz/index',array('sort'=>'sw'))}" id="xzlink_sw">税务</a>
+            <a href="{:url('index/xz/index',array('sort'=>'zs'))}" id="xzlink_zs">知识产权</a>
+            <a href="{:url('index/xz/index',array('sort'=>'fl'))}" id="xzlink_fl">产权法律</a>
+        </div>
+        <div id="xm-info">
+            <h1>{$info.title}</h1>
+            <p class="text-center" >发布时间 : {$info.time} 浏览次数 : {$info.look}</p>
+            <div class="line"></div>
+            <blockquote>{$info.content}</blockquote>
+        </div>
+    </div>
+</div>
+{include file="../public/tpl/index/footer.html" /}
+<script language="javascript">
+    $("#xzxz").addClass("active");
+    {eq name="info.sortinfo.name" value="工商"}$("#xzlink_gs").addClass("active");{/eq}
+    {eq name="info.sortinfo.name" value="税务"}$("#xzlink_sw").addClass("active");{/eq}
+    {eq name="info.sortinfo.name" value="知识产权"}$("#xzlink_zs").addClass("active");{/eq}
+    {eq name="info.sortinfo.name" value="产权法律"}$("#xzlink_fl").addClass("active");{/eq}
+</script>
+</body>
+</html>

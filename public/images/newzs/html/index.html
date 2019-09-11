@@ -1,0 +1,1149 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <mata name="renderer" content="webkit"></mata>
+    <link rel="shortcut icon" href="../img/favicon.ico"/>
+    <link rel="bookmark"href="../img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="newsinfo.html">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_931982_pcfzmr5u92i.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
+
+</head>
+<body class="bg-fafafa position-relative">
+    <!--侧边栏-->
+    <aside id="mainaside" class="position-fixed" style="width: 65px;right: 0px">
+        <a href="login.html" class="text-white d-block d-flex flex-column justify-content-around" style="width: 65px;height: 65px;margin-bottom: 1px">
+            <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe670;</p>
+            <p class="px-1 font-size-12 text-center mb-1">登陆注册</p>
+        </a>
+        <a href="login.html" class="text-white d-block " style="width: 65px;height: 65px;margin-bottom: 1px">
+            <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe63d;</p>
+            <p class="px-1 font-size-12 text-center mb-1">免费发布</p>
+        </a>
+        <a href="tencent://message/?uin=52203910&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px">
+            <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe662;</p>
+            <p class="px-1 font-size-12 text-center mb-1">免费咨询</p>
+
+        </a>
+        <a href="tencent://message/?uin=52203910&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px">
+            <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe62c;</p>
+            <p class="px-1 font-size-12 text-center mb-1">二维码</p>
+            <article class=" justify-content-center align-items-center flex-column bg-white pt-3" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;width: 110px;height: 129px;z-index: 1000" >
+                <div class="d-flex justify-content-center">
+                    <img data-src="../img/1.png" src=""  width="84" height="84" class="d-block  tp-4 " alt="图片">
+                </div>
+
+                <p class="text-center text-333">微信公众号</p>
+            </article>
+        </a>
+        <a  class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px;cursor: pointer">
+            <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe62f;</p>
+            <p class="px-1 font-size-12 text-center mb-1">联系我们</p>
+            <article class=" align-items-center flex-column  px-2 font-size-24 font-weight-bold" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;height: 65px;z-index: 1000;background-color:#dd0000 " >
+                    <div class="d-flex align-items-center h-100">13307133879</div>
+            </article>
+        </a>
+        <a href="javascript:backtop()"  class="text-white d-block " style="width: 65px;height: 65px;margin-bottom: 1px">
+            <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe665;</p>
+            <p class="px-1 font-size-12 text-center mb-1">返回顶部</p>
+        </a>
+    </aside>
+   <!-- <aside id="maingao" class="alert alert-dismissible position-fixed" style="width: 202px;left: 93px;top: 30%">
+        <p  class="text-right text-333 font-size-14 mb-0 close"  data-dismiss="alert" style="cursor: pointer;right: -42px;top: -19px" onclick="close()">关闭</p>
+        <a href="newsinfo.html" class="d-block "  >
+            <img src="../img/9.jpg" width="202" height="337"  alt="图片">
+        </a>
+    </aside>-->
+    <!--搜索框-->
+    <div class="container" style="max-width: 1230px;padding-top: 135px">
+        <div class="row" >
+            <div class="col-6">
+                <div class="pl-3">
+                    <img src="../img/3.png" width="471" height="98" alt="图片">
+                </div>
+                <div class="mt-3 pl-3">
+                    <img src="../img/4.png" width="362" height="33" alt="图片">
+                </div>
+            </div>
+            <div class="col-6 px-5">
+                <p class="text-jin font-size-18">热门搜索：写字楼   湖北招商政策   习近平</p>
+                <form >
+                    <div class="input-group " style="height: 50px">
+                        <div class="input-group-prepend  ">
+                            <div class="input-group-text bg-white rounded-0"><span class="iconfont icon-fangdajing font-weight-bold font-size-28 text-red "></span></div>
+                        </div>
+                        <input type="search" id="search" autofocus autocomplete="off" class="form-control rounded-0 h-100 border-left-0" >
+                        <div class="input-group-append  ">
+                            <button class="btn bg-red text-white font-size-18 rounded-0" style="padding: 0 30px;" >搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--导航栏-->
+    <nav id="nav" class="container bg-linered d-flex justify-content-around  position-relative align-items-center " style="max-width: 1200px;margin-top: 145px;margin-bottom: 20px;height: 75px">
+        <div class="navhover h-100" >
+            <a href="{:url('index/index/index')}" class="text-white font-size-22  bold  h-100 d-block px-3" style="line-height: 75px;">首页</a>
+        </div>
+        <div class="navhover h-100">
+            <a href="#" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">实体招商</a>
+            <div class="secondnav position-absolute   col-12" >
+                <div class="col-12 " style="padding-left: 200px">
+                    <a href="{:url('index/zhaoshang/tudi_index')}" class="text-333 mr-5">厂房出租</a>
+                    <a href="{:url('index/zhaoshang/fang_index')}" class="text-333 mr-5">土地租售</a>
+                    <a href="{:url('index/zhaoshang/lou_index')}" class="text-333 mr-5">写字楼出租</a>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="http://www.i35wang.com/hcy/index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">税务筹划</a>
+        </div>
+        <div class="navhover h-100">
+            <a href="" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">政策动态</a>
+            <div class="secondnav position-absolute   col-12" >
+                <div class="col-12 " style="padding-left: 200px">
+                    <a href="#" class="text-333 mr-5">政策速递</a>
+                    <a href="#" class="text-333 mr-5">行业动态</a>
+                    <a href="#" class="text-333 mr-5">服务咨询</a>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">综合体</a>
+            <div class="secondnav position-absolute   col-12" >
+                <div class="col-12 " style="padding-left: 200px">
+                    <a href="#" class="text-333 mr-5">孵化器</a>
+                    <a href="#" class="text-333 mr-5">众创空间</a>
+                    <a href="#" class="text-333 mr-5">商业综合体</a>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">项目对接</a>
+            <div class="secondnav position-absolute   col-12" >
+                <div class="col-12 " style="padding-left: 200px">
+                    <a href="#" class="text-333 mr-5">政府采购</a>
+                    <a href="#" class="text-333 mr-5">工程项目</a>
+                    <a href="#" class="text-333 mr-5">城市建设</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navhover h-100">
+            <a href="" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">行政办公</a>
+            <div class="secondnav position-absolute   col-12" >
+                <div class="col-12 " style="padding-left: 200px">
+                    <a href="#" class="text-333 mr-5">工商</a>
+                    <a href="#" class="text-333 mr-5">税务</a>
+                    <a href="#" class="text-333 mr-5">知识产权</a>
+                    <a href="#" class="text-333 mr-5">法律</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navhover h-100">
+            <a href="" class="text-white font-size-18 font-weight-light h-100 d-block px-3" style="line-height: 75px">特色项目</a>
+            <div class="secondnav position-absolute   col-12" >
+                <div class="col-12 " style="padding-left: 200px">
+                    <a href="#" class="text-333 mr-5 ">工业</a>
+                    <a href="#" class="text-333 mr-5">农业</a>
+                    <a href="#" class="text-333 mr-5">AI</a>
+                    <a href="#" class="text-333 mr-5">特色小镇</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--轮播-->
+    <main class="container mb-50" style="max-width: 1220px;height: 425px;">
+        <div class="row h-100">
+            <div class="col-auto h-100" style="padding: 0 10px;">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel"  data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1"></li>
+                        <li data-target="#carousel" data-slide-to="2"></li>
+                        <li data-target="#carousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="newsinfo.html">
+                                <img class="d-block " src="../img/2.jpg" width="669"  height="424" alt="轮播图片">
+                            </a>
+                            <div class="carousel-caption d-none d-md-block w-100">
+                                <p class="m-0 text-left pl-3 font-size-18 w-75 text-over">京津冀协同发展 武安工业园区抓住机遇促发展 京津冀协同发展 武安工业园区抓住机遇促发展京津冀协同发展 武安工业园区抓住机遇促发展</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <a href="newsinfo.html">
+                                <img class="d-block " src="../img/1.jpg" width="669" height="424" alt="轮播图片">
+                            </a>
+                            <div class="carousel-caption d-none d-md-block w-100">
+                                <p class="m-0 text-left pl-3 font-size-18 w-75 text-over">京津冀协同发展 武安工业园区抓住机遇促发展 </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <a href="newsinfo.html">
+                                <img class="d-block " src="../img/3.jpg" width="669" height="424" alt="轮播图片">
+                            </a>
+                            <div class="carousel-caption d-none d-md-block w-100">
+                                <p class="m-0 text-left pl-3 font-size-18 w-75 text-over">京津冀协同发展 武安工业园区抓住机遇促发展 </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <a href="newsinfo.html">
+                                <img class="d-block " src="../img/4.jpg" width="669" height="424" alt="轮播图片">
+                            </a>
+                            <div class="carousel-caption d-none d-md-block w-100">
+                                <p class="m-0 text-left pl-3 font-size-18 w-75 text-over">京津冀协同发展 武安工业园区抓住机遇促发展 </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col h-100 align-content-between d-flex flex-column justify-content-between" style="padding: 0 10px; ">
+                <div class="row align-items-center">
+                    <div class="col-6 font-size-18 text-red font-weight-bold">今日要闻 <img src="../img/18.jpg" width="19" height="19" alt="徽章"></div>
+                    <div class="col-6 text-right"><a href="hotlist.html" class="text-red font-size-14">更多&gt;</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 ">
+                        <a href="newsinfo.html"  class=" text-black font-size-18 font-weight-bold line-height-30">庆祝改革开放40周年大会12月18日上午在京举行 习近平将出席大会并发表重要讲话</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）招商壹线：掌握一手招商资讯（12月18日）掌握一手招商资讯（12月18</a>
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-12 border-bottom" ></div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-12 border-bottom" ></div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                        <a href="" class="text-666 font-size-14 d-block w-100 p-1" length="30">招商壹线：掌握一手招商资讯（12月18日）</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--政策解读-->
+    <div class="container mb-50" style="max-width: 1230px;height: 307px;">
+        <div class="row">
+            <div class="col-8">
+                <div class="border-red w-100"></div>
+                <div class="row">
+                    <div class="col-8">
+                        <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                            <li class="nav-item">
+                                <a href="#block1" class="nav-link active text-333  rounded-0 text-left px-0 mr-4 border-top" data-toggle="tab" >政策解读</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block2" class="nav-link text-333 rounded-0 text-left px-0  mr-4" data-toggle="tab" >总部经济</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block3" class="nav-link text-333  rounded-0 text-left px-0  mr-4" data-toggle="tab" >税务筹划</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block4" class="nav-link text-333 rounded-0 text-left px-0 mr-4" data-toggle="tab" >特色项目</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 text-right justify-content-center d-flex flex-column">
+                        <a href="hotlist.html" class="text-red font-size-14 line-height-35">更多&gt;</a>
+                    </div>
+                </div>
+                <div class="tab-content row" style="height: 257px;">
+                    <div class="col-12 h-100">
+                        <div class="tab-content h-100">
+                            <div class="tab-pane  h-100 fade active show" id="block1"  >
+                                <div class="row h-100 " >
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/3.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工延安市人民政府办公室关于印发延安市重大项目策划工 </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/1.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane  h-100 fade " id="block2"  >
+                                <div class="row h-100 " >
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/3.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工延安市人民政府办公室关于印发延安市重大项目策划工 </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/4.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane  h-100 fade"  id="block3"  >
+                                <div class="row h-100 " >
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/3.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工延安市人民政府办公室关于印发延安市重大项目策划工 </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/4.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane  h-100 fade " id="block4"  >
+                                <div class="row h-100 " >
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/3.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工延安市人民政府办公室关于印发延安市重大项目策划工 </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                        <a href="newsinfo.html " length="22" class="text-333 w-100 ">根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...</a>
+                                        <div class="row align-content-stretch" >
+                                            <div class="col-6">
+                                                <a href="newsinfo.html"  class="link-overflow d-block"><img src="../img/4.jpg"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                            </div>
+                                            <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                                根据《关于进一步促进企业发展的意见》这一政策指导思想，加大对企业的金融支持力度与财税支持力度是有效促进产业优化...
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="col-12 line-height-30">
+                                                <a href="newsinfo.html" class="text-333 d-block font-size-14 w-100" length="25">延安市人民政府办公室关于印发延安市重大项目策划工... </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="border-red w-100 mb-1"></div>
+                <div class="bg-red w-100" style="height: 3px"></div>
+                <div class="row" >
+                    <div class="col-12 d-flex flex-column  justify-content-between " id="nav-xz">
+                        <h3 class="text-red text-center font-size-18 font-weight-bold mt-2 pt-4 mb-0" style="letter-spacing: 3px" ><span class="iconfont ">&#xe630;</span >&nbsp;行政办公&nbsp;<span class="iconfont ">&#xe630;</span></h3>
+                        <div class="row  "style="padding: 0 30px;margin: 0 -10px;" >
+                            <div class="col-4  text-center mb-2 " style="padding: 0 5px;">
+                                <a href="" class="w-100 d-block bg-red text-white py-2 font-size-14">免费选址</a>
+                            </div>
+                            <div class="col-4  text-center mb-2 " style="padding: 0 5px;">
+                                <a href="" class="w-100 d-block bg-red text-white py-2 font-size-14">公司注册</a>
+                            </div>
+                            <div class="col-4  text-center mb-2  " style="padding: 0 5px;">
+                                <a href="" class="w-100 d-block bg-red text-white py-2 font-size-14">税务筹划</a>
+                            </div>
+                            <div class="col-4  text-center " style="padding: 0 5px;">
+                                <a href="" class="w-100 d-block bg-red text-white py-2 font-size-14">法律顾问</a>
+                            </div>
+                            <div class="col-4  text-center " style="padding: 0 5px;">
+                                <a href="" class="w-100 d-block bg-red text-white py-2 font-size-14">知识产权</a>
+                            </div>
+                            <div class="col-4  text-center " style="padding: 0 5px;">
+                                <a href="" class="w-100 d-block bg-red text-white py-2 font-size-14">入园申请</a>
+                            </div>
+                        </div>
+                        <div class="row  flex-column " style="padding: 0 30px;margin: 0 -10px;height: 103px">
+                            <div class="col-12 d-flex flex-column justify-content-between" style="padding: 0 5px;">
+                                <a href="" class="text-333 d-block font-size-14" length="20">探秘临港特斯拉：500亿速成式超级工厂探秘临港特斯拉：500亿速成式超级工厂 </a>
+                                <a href="" class="text-333 d-block font-size-14" length="20">探秘临港特斯拉：500亿速成式超级工厂 </a>
+                                <a href="" class="text-333 d-block font-size-14" length="20">探秘临港特斯拉：500亿速成式超级工厂 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-50" style="max-width: 1230px;height: 469px">
+        <div class="row">
+            <div class="col-12">
+                <div class="border-red w-100"></div>
+                <div class="row">
+                    <div class="col-8">
+                        <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                            <li class="nav-item">
+                                <a href="#block5" class="nav-link active text-333 border-top rounded-0 px-0 mr-4 text-left" data-toggle="tab">实体招商</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block6" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-4 text-left" data-toggle="tab" >厂房租售</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block7" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-4 text-left" data-toggle="tab" >土地租售</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block8" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-4 text-left" data-toggle="tab" >写字楼租售</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 text-right"><a href="newslist.html" class="text-red font-size-14 ">更多&gt;</a></div>
+                </div>
+                <div class="row" style="height: 390px">
+                    <div class="col-12 h-100">
+                        <div class="tab-content h-100" role="tablist">
+                            <div class="tab-pane  h-100 fade show active" id="block5" >
+                                <div class="row h-100"  style="margin: 0 -25px">
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/5.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/6.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/7.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/8.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane  h-100 fade " id="block6" >
+                                <div class="row h-100"  style="margin: 0 -25px">
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/5.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/6.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/7.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/8.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane  h-100 fade " id="block7" >
+                                <div class="row h-100"  style="margin: 0 -25px">
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/5.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/6.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/7.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/8.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane  h-100 fade " id="block8" >
+                                <div class="row h-100"  style="margin: 0 -25px">
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/5.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/6.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/7.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 h-100 " style="padding: 0 25px">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-between" >
+                                            <a href="newsinfo.html" class="link-overflow">
+                                                <img src="../img/8.jpg" width="265" height="222" alt="265">
+                                            </a>
+                                            <p class="font-size-18 mb-2"> 襄阳市商业街商铺写字楼 </p>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/6.png" width="11" height="16" class="d-block mr-1" alt="图片">项目地址：襄阳市商业街1101号</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/8.png" width="13" height="13" class="d-block mr-1"alt="图片">发布日期：2018年12月6日</article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/9.png" width="13" height="13" class="d-block mr-1" alt="图片">项目面积：<span class="text-red">3000m²</span></article>
+                                            <article class="text-666 d-flex align-items-center font-size-14"><img src="../img/7.png" width="13" height="13"  class="d-block mr-1"alt="图片">项目租金：<span class="text-red">3000m²/m²/月</span></article>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-50" style="max-width: 1230px;height: 380px">
+        <div class="row">
+            <div class="col-12">
+                <div class="border-red w-100"></div>
+                <div class="row">
+                    <div class="col-8">
+                        <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                            <li class="nav-item">
+                                <a href="#block9" class="nav-link active text-333 font-size-18 rounded-0 px-0 mr-3 text-left border-top" data-toggle="tab">综合体</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block10" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-3 text-left" data-toggle="tab" >孵化器</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block11" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-3 text-left" data-toggle="tab" >众创空间</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#block12" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-3 text-left" data-toggle="tab" >商业综合体</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 text-right"><a href="newslist" class="text-red font-size-14">更多&gt;</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height: 310px">
+            <div class="col-12 h-100">
+                <div class="tab-content h-100" >
+                    <div class="tab-pane  h-100 fade show active" id="block9" >
+                        <div class="row h-100"  >
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/10.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/11.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14"  length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/12.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane  h-100 fade " id="block10" >
+                        <div class="row h-100"  >
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/10.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/11.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14"  length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/12.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane  h-100 fade " id="block11" >
+                        <div class="row h-100"  >
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/10.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/11.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14"  length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/12.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane  h-100 fade " id="block12" >
+                        <div class="row h-100"  >
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/10.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/11.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14"  length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                            <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                                <a href="newsinfo.html" class="link-overflow d-block"> <img src="../img/12.jpg" width="380" height="197" alt="图片"></a>
+                                <article class="text-333 line-height-30 font-size-14" length="75">
+                                    陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...  陕西省人民政府关于取消、下放或者委托一批行政审批...
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-50" style="max-width: 1230px;height: 260px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="border-red w-100"></div>
+                <div class="row">
+                    <div class="col-8">
+                        <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                            <li class="nav-item">
+                                <a href="#block13" class="nav-link active text-333 rounded-0 px-0 mr-3 text-left border-top" data-toggle="tab">招商中心</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-4 text-right"><a href="newslist" class="text-red font-size-14 ">更多&gt;</a></div>
+                </div>
+                <div class="row" style="">
+                    <div class="col-12">
+                        <div class="row" style="height: 290px">
+                            <div class="col-12 h-100">
+                                <div class="tab-content h-100" >
+                                    <div class="tab-pane  h-100 fade show active" id="block13" >
+                                        <div class="row h-100"  style="max-width: 1246px;margin: 0 -23px">
+                                            <div class="col-3 h-100 flex-column justify-content-between d-flex"  style="padding: 0 23px">
+                                                <a href="newsinfo.html" class="d-block position-relative">
+                                                    <img src="../img/13.jpg" width="100%" height="193" alt="图片"/>
+                                                    <article class="position-absolute w-100 h-100 px-5 py-5 text-white line-height-28" style="left: 0;top: 0;background: rgba(221, 81, 81,0.7)">
+                                                        <h3 class="font-size-18">襄阳唐城文化小镇</h3>
+                                                        <p class="m-0 font-size-14" style=""><img src="../img/18.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">项目面积:30000m²</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/19.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">入驻企业:176家</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/20.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">产业集群:电商 科技 汽车</span></p>
+                                                    </article>
+                                                </a>
+                                            </div>
+                                            <div class="col-3 h-100 flex-column justify-content-between d-flex"  style="padding: 0 23px">
+                                                <a href="newsinfo.html" class="d-block position-relative">
+                                                    <img src="../img/14.jpg" width="100%" height="193" alt="图片"/>
+                                                    <article class="position-absolute w-100 h-100 px-5 py-5 text-white line-height-28" style="left: 0;top: 0;background: rgba(221, 81, 81,0.7)">
+                                                        <h3 class="font-size-18">襄阳唐城文化小镇</h3>
+                                                        <p class="m-0 font-size-14" style=""><img src="../img/18.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">项目面积:30000m²</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/19.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">入驻企业:176家</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/20.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">产业集群:电商 科技 汽车</span></p>
+                                                    </article>
+                                                </a>
+                                            </div>
+                                            <div class="col-3 h-100 flex-column justify-content-between d-flex"  style="padding: 0 23px">
+                                                <a href="newsinfo.html" class="d-block position-relative">
+                                                    <img src="../img/15.jpg" width="100%" height="193" alt="图片"/>
+                                                    <article class="position-absolute w-100 h-100 px-5 py-5 text-white line-height-28" style="left: 0;top: 0;background: rgba(221, 81, 81,0.7)">
+                                                        <h3 class="font-size-18">襄阳唐城文化小镇</h3>
+                                                        <p class="m-0 font-size-14" style=""><img src="../img/18.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">项目面积:30000m²</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/19.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">入驻企业:176家</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/20.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">产业集群:电商 科技 汽车</span></p>
+                                                    </article>
+                                                </a>
+                                            </div>
+                                            <div class="col-3 h-100 flex-column justify-content-between d-flex"  style="padding: 0 23px">
+                                                <a href="newsinfo.html" class="d-block position-relative">
+                                                    <img src="../img/13.jpg" width="100%" height="193" alt="图片"/>
+                                                    <article class="position-absolute w-100 h-100 px-5 py-5 text-white line-height-28" style="left: 0;top: 0;background: rgba(221, 81, 81,0.7)">
+                                                        <h3 class="font-size-18">襄阳唐城文化小镇</h3>
+                                                        <p class="m-0 font-size-14" style=""><img src="../img/18.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">项目面积:30000m²</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/19.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">入驻企业:176家</span></p>
+                                                        <p class="m-0 font-size-14"><img src="../img/20.png" width="20" class="mr-1" height="20" alt="图片"><span length="10">产业集群:电商 科技 汽车</span></p>
+                                                    </article>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="button"></div>
+    <footer class="container-fluid p-0" id="footer" style="background-image: url(../img/17.jpg);background-repeat: no-repeat;background-position: center;background-size: 100% 100%">
+        <div class="container-fluid p-0 " style="background-color: white">
+            <div class="container align-items-center d-flex" style="max-width: 1230px;height: 77px;">
+                <div class="row w-100">
+                    <div class="col-10 d-flex justify-content-between font-size-14 text-333">
+                        <span class="text-666 ">友情链接：</span>
+                        <a href="" class="text-333">惠创优产业园</a>
+                        <a href="" class="text-333">瑟维斯商务服务</a>
+                        <a href="" class="text-333 ">中兴瑞华</a>
+                        <a href="" class="text-333 ">北京招商网</a>
+                        <a href="" class="text-333 ">瑞立诺财税</a>
+                        <a href="" class="text-333 ">湖北财税</a>
+                        <a href="" class="text-333 ">武汉招商网</a>
+                        <a href="" class=" text-333">大楚实业招商</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="" class="text-333 font-size-14 text-right d-block ">展开&gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 1230px;height: 140px">
+            <div class="row align-items-center justify-content-between h-100">
+                <div class="col-2 d-flex" style="height: 50px" >
+                    <img src="../img/11.png" width="50" height="50" class="d-block" alt="图片">
+                    <div class="col-auto d-flex flex-column justify-content-between">
+                        <p class="mb-0 text-white font-size-18">400-8888888</p>
+                        <p class="mb-0 text-white font-size-14">平台服务热线</p>
+                    </div>
+                </div>
+                <div class="col-2 d-flex" style="height: 50px" >
+                    <img src="../img/12.png" width="50" height="50" class="d-block" alt="图片">
+                    <div class="col-auto d-flex flex-column justify-content-between">
+                        <p class="mb-0 text-white font-size-18">i35wang@163.com</p>
+                        <p class="mb-0 text-white font-size-14">邮箱</p>
+                    </div>
+                </div>
+                <div class="col-2 d-flex" style="height: 50px" >
+                    <img src="../img/13.png" width="50" height="50" class="d-block" alt="图片">
+                    <div class="col-auto d-flex flex-column justify-content-between">
+                        <p class="mb-0 text-white font-size-18">08:30-18:00 </p>
+                        <p class="mb-0 text-white font-size-14">服务时间</p>
+                    </div>
+                </div>
+                <div class="col-auto  d-flex  " style="height: 50px" >
+                    <img src="../img/14.png" width="50" height="50" class="d-block" alt="图片">
+                    <div class="col-auto d-flex flex-column justify-content-between">
+                        <p class="mb-0 text-white font-size-18">027-13537710</p>
+                        <p class="mb-0 text-white font-size-14">意见反馈</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 1230px">
+            <div class="row">
+                <div class="col">
+                    <div class="border-red"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container " style=";padding: 58px 0;height: 304px;max-width: 1200px">
+            <div class="row h-100" style="">
+                <div class="col-2 h-100 d-flex flex-column justify-content-between">
+                    <img src="../img/5.png" width="143" height="44" class="d-block mb-4" alt="图片">
+                    <img src="../img/16.jpg" width="78" height="78" class="d-block" alt="图片">
+                    <span class="text-white font-size-14">扫描二维码，加关注</span>
+                </div>
+                <div class="col-10">
+                    <div class="row" style="padding-left: 50px">
+                        <div class="col-3 text-white" style="padding-left: 70px">
+                            <p   class="d-block font-size-16">新手指导</p>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">帮助中心</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">免费发布信息</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">常见问题</a>
+                        </div>
+                        <div class="col-3 text-white" style="padding-left: 70px">
+                            <p   class="d-block font-size-16">平台服务</p>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">厂房租售</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">土地租售</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">写字楼出租</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">特色小镇</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">商业综合体</a>
+                        </div>
+                        <div class="col-3 text-white" style="padding-left: 70px">
+                            <p   class="d-block font-size-16">招商服务</p>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">免费选址</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">公司注册</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">税务筹划</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">法律顾问</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">知识产权</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">入园申请</a>
+                        </div>
+                        <div class="col-3 text-white" style="padding-left: 70px">
+                            <p   class="d-block font-size-16">关于平台</p>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">招商政策网介绍</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">联系我们</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">网站公告</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">隐私条款</a>
+                            <a href="" class="d-block text-white font-size-12 line-height-24">网站地图</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 1230px">
+            <div class="row">
+                <div class="col">
+                    <div class="border-red"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="max-width: 1230px;height: 146px" >
+            <div class="row h-100  flex-column justify-content-around">
+                <div class="col-12 text-center font-size-14 text-white align-items-center d-flex justify-content-between flex-column">
+                    <p class="pt-5">Copyright2018湖北招商政策网有限公司(www35wang.com)版权所有|CP经营许可证鄂B2-20130239|鄂公网安备3010602000758号</p>
+                    <p class="pb-5"> 地址:湖北省武汉市硚口区汉西南国大家裂H座20楼</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <p></p>
+</body>
+
+
+<script>
+    $(function () {
+        $(":submit").click(function (event) {
+            event.preventDefault();
+            var seo =$("#search").val();
+            if(seo){
+                $("form")[0].submit();
+            }
+        })
+
+        $(".navhover").hover(function (ev) {
+            $(this).find(".secondnav ").show()
+        },function () {
+            $(this).find(".secondnav ").hide();
+        })
+    })
+
+</script>
+<script src="../js/pub.js"></script>
+
+</html>

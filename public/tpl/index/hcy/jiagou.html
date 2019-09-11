@@ -1,0 +1,48 @@
+{extend name="hcy"}
+
+{block name="header"}
+<title>组织架构</title>
+{/block}
+
+{block name="content"}
+<div id="banner" class="container-fluid p-0 mt-3 position-relative d-flex align-items-center" style="background-image: url(__IMAGES__/hcy/img/3.jpg)" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-end ">
+                <span class="font-size-55 mr-2 text-uppercase line-height-55 font-weight-light" >A</span><span class="font-size-24 mr-2 text-uppercase font-weight-light">bout</span><span ><img src="__IMAGES__/hcy/img/9.png" alt=""></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-start ">
+                <span class="mr-2"><img src="__IMAGES__/hcy/img/9.png" alt=""></span><span class="font-size-36 mr-2 line-height-36 font-weight-light" >关于联盟</span><span class="font-size-24 mr-2 text-uppercase align-self-end line-height-24 font-weight-light "  >Union</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-4" style="max-width: 1230px">
+    <div class="row">
+        <div class="col">
+            <p class="my-3 text-666"><a href="{:url('index/hcy/index')}"><span class="iconfont icon-shouye mr-1 "></span>首页</a> &nbsp;&gt;&nbsp;组织架构</p>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <div class="row justify-content-center">
+        <div class="col-md-3 d-flex mb-3 px-0" style="overflow: hidden;border-radius: 16px">
+            <a href="{:url('index/hcy/about')}" class=" bg-light   text-666  w-50 px-3 text-center py-1">联盟简介</a>
+            <a href="{:url('index/hcy/jiagou')}" class=" bg-red text-white w-50 px-3 text-center py-1">组织架构</a>
+        </div>
+    </div>
+    <div class="row justify-content-center my-5 py-3">
+        <img src="__IMAGES__/hcy/img/8.png" alt="">
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#about").addClass("active")
+    })
+</script>
+{/block}

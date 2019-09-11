@@ -1,0 +1,73 @@
+{extend name="about"}
+
+{block name="header"}
+<title>员工风采</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/about.css">
+
+<style>
+
+    #newslist>.pro>article {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        padding-left: 25px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px 25px;
+        flex-grow: 1;
+    }
+    #newslist>.pro {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0;
+        padding-left: 5px;
+        position: relative;
+        transition: top 1s ease-in-out;
+        -webkit-transition: top 1s ease-in-out;
+        margin-top: 20px;
+    }
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/about_nav.html" /}
+        </div>
+
+        <div id="newslist">
+            {volist name="list" id="vo"}
+            <div class="pro mainbox-shadow">
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"><img src="{$vo.pic}" alt="" width="318" height="247"></a>
+                <article>
+                    <h3><a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a></h3>
+                    <blockquote>{$vo.des}</blockquote>
+                </article>
+            </div>
+            {/volist}
+
+            <div class="pageoption">
+                {$list->render()}
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script language="javascript">
+    $("#about").addClass("active");
+    $("#abtoufengcai").addClass("active");
+</script>
+{/block}
+
+
+
+
+

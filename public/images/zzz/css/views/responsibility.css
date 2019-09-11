@@ -1,0 +1,10 @@
+body{background-color: #F4F4F4}
+#news_head {
+    background-image: url(../../imgs/responsibliity/37.jpg);
+}
+#news_head .title{width: 1020px;height: 378px;border: 1px solid white;position: relative;margin: 0 auto;top: 340px}
+#news_head .title h1{font-size: 97px;color: white;text-align: center;line-height: 248px;}
+#news_head .title h2{font-size: 42px;color: white;text-align: center}
+.res_f{width: 1200px;height: 790px;margin: 70px auto 97px auto;padding: 66px 50px 142px 50px;background-color: white;display: flex;justify-content: space-between;align-items: flex-end}
+.res-f-l{width: 550px;}
+.res-f-l blockquote{font-size: 14px;color: #515151;padding-top: 50px;line-height: 35px;}

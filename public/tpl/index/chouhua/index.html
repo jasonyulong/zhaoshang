@@ -1,0 +1,167 @@
+{extend name="chouhua"}
+
+{block name="header"}
+<title>总部经济</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+<base href="sw-newsinfo.html">
+<style>
+    .title section{width: 100%}
+    .title article{width: 100%;display: flex;justify-content: space-between}
+    .title article>span{font-family: "Heiti SC";color: #015293;font-weight: bold;font-size: 15px}
+
+</style>
+{/block}
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/chouhua_nav.html" /}
+        </div>
+        <div id="ts-main">
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>新闻中心</h2>
+                </section>
+
+                <article><span>Information center</span>
+                    <a href="{:url('index/chouhua/news')}">more</a></article>
+            </div>
+            <div class="ts-project">
+                <div id="myCarousels">
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            {volist name="top" id="vo" key="k"}
+                            <div class="item {eq name="$k" value="1"}active{/eq}">
+                                <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}"><img src="{$vo.pic}" width="390" height="272" alt="First slide"></a>
+                                <div class="carousel-caption">{$vo.title}</div>
+                            </div>
+                            {/volist}
+                        </div>
+                    </div>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span>最新新闻</span><a href="{:url('index/chouhua/news')}">更多</a></h3>
+                        {volist name="new" id="vo"}
+                        <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span>推荐新闻</span><a href="{:url('index/chouhua/news')}">更多</a></h3>
+                        {volist name="tuijian" id="vo"}
+                        <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                    <section>
+                        <h3><span>热点新闻</span><a href="{:url('index/chouhua/news')}">更多</a></h3>
+                        {volist name="tuijianhot" id="vo"}
+                        <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>招商中心</h2>
+                </section>
+                <article><span>promotion center</span><a href="{:url('index/chouhua/news')}">more</a></article>
+            </div>
+            <div class="anli">
+                <div class="flex">
+                    {volist name="zhaoshangcenter" id="vo"}
+                    <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}" width="260" height="180" alt="">
+                        <h4>{$vo.title}</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>园区服务</h2>
+                </section>
+                <article><span>The park service</span><a href="{:url('index/chouhua/news')}">more</a></article>
+            </div>
+            <div class="anli">
+                <div class="flex">
+                    {volist name="fuwu" id="vo"}
+                    <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}" width="165" height="165" alt="">
+                        <h4 class="text-center" style="width: 150px;">{$vo.title}</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>成功案例</h2>
+                </section>
+                <article><span>Successful cases</span><a href="{:url('index/chouhua/news')}">more</a></article>
+            </div>
+            <div class="anli">
+                <div class="flex">
+                    {volist name="anli" id="vo"}
+                    <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}" width="260" height="168" alt="">
+                        <h4>{$vo.title}</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>合作伙伴</h2>
+                </section>
+                <article><span>partners</span><a href="{:url('index/chouhua/news')}">more</a></article>
+            </div>
+            <table class="table">
+                <tr>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/2.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/4.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/5.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/6.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/7.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/8.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/9.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/9.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/11.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/12.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/13.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/14.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/15.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/16.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/17.jpg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#chouhua").addClass("active");
+    $("#swlink1").addClass("active");
+</script>
+{/block}

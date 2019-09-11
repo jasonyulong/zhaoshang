@@ -1,0 +1,63 @@
+{extend name="ts"}
+
+{block name="header"}
+<title>特色小镇介绍</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+{/block}
+
+{block name="content"}
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+
+        <div class="link">
+            {include file="../public/tpl/index/ts_nav2.html" /}
+        </div>
+
+        <div class="prolist">
+            <div class="listright">
+                <div id="jiansheproject">
+                    <a href="{:url('index/teshe/newstwo',['sort'=>27])}" id="dd27"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/49.png" alt=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/49X.png" alt="">小镇简介</a>
+                    <a href="{:url('index/teshe/newstwo',['sort'=>28])}" id="dd28"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/50.png" alt=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/50X.png" alt="">政策解读</a>
+                    <a href="{:url('index/teshe/newstwo',['sort'=>29])}" id="dd29"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/51.png" alt=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/51X.png" alt="">小镇打造</a>
+                    <a href="{:url('index/teshe/newstwo',['sort'=>30])}" id="dd30"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/52.png" alt=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/52X.png" alt="">小镇运营</a>
+                    <a href="{:url('index/teshe/newstwo',['sort'=>31])}" id="dd31"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/53.png" alt=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/53X.png" alt="">招商引资</a>
+                </div>
+            </div>
+            <div class="listleft">
+                <div id="newsinfo">
+                    <div class="newscontent">
+                        <strong ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/48.png" alt="">最新政策</strong>
+                        <hr>
+
+                        {volist name="list" id="vo"}
+                        <div class="ts-list">
+                            <div class="data">
+                                <h2>{$vo.time2}</h2>
+                                {$vo.time1}
+                            </div>
+                            <div class="content">
+                                <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                                <article length="60">{$vo.des}</article>
+                            </div>
+                        </div>
+                        <hr>
+                        {/volist}
+
+                        <div class="pageoption">{$list->render()}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#tese").addClass("active");
+    $("#tslink13").addClass("active");
+    $("#dd{$sort}").addClass("active");
+</script>
+{/block}

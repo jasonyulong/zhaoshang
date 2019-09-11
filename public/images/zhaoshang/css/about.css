@@ -1,0 +1,12 @@
+#about-self{padding: 94px 0;display: flex;}
+#about-self>div{width: 520px;display: flex;align-items: center}
+#about-self>div>img{display:block}
+#about-self>article{padding: 0 30px;line-height: 30px;}
+#about-self>article>strong{font-size: 20px;font-weight: bold;color: #015293;margin-right: 5px}
+#about-guimo{display: flex;flex-direction: column;align-items: center;padding-top: 65px}
+#about-guimo>img{display: block}
+#about-guimo>p{font-size: 16px;color: #666666;padding:90px 140px;line-height: 30px}
+#address{padding: 60px 0;display: flex;justify-content: space-between}
+#address>.pro>img{display: block}
+#address>.pro>p{line-height: 30px;text-align: center}
+#baidumap{width: 100%;height: 500px}

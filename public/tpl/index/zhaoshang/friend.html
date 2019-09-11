@@ -1,0 +1,88 @@
+{extend name="zs"}
+
+{block name="header"}
+<title>实体招商首页</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+<script src="__IMAGES__/zhaoshang/js/jquery.validate.min.js"></script>
+<script src="__IMAGES__/zhaoshang/js/validateAddMethods.js"></script>
+<script src="__IMAGES__/zhaoshang/js/jquery.messages_cn.js"></script>
+<style>
+    #friend>h1{text-align: center;font-size: 20px;font-weight: bold;margin: 20px auto 50px auto }
+    table
+    {
+        border-collapse:collapse;
+        border-radius: 10px;
+    }
+
+    table, td, th
+    {
+        border:1px solid #dcdcdc;
+    }
+    #table td{width: 219px;height: 224px;position: relative}
+    #table td div{position: absolute;left: 0%;top: 0%;background-color:#005196;opacity: 0;
+        color: white;width: 0%;height: 0% ;padding: 0 20px;pointer-events: none;transition: 0.25s ease-in-out;}
+    #table td div>h1{margin: 45px auto 22px auto;font-size: 18px;font-weight: bold;text-align: center}
+    #table td div>blockquote{text-align: center;line-height: 25px;}
+    #table td:hover div{top: 0%;opacity: 1;transform: scale(1.05);z-index: 100;width: 100%;height: 100%}
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/zs_nav.html" /}
+        </div>
+        <div id="friend">
+            <h1>合作名企</h1>
+            <table id="table" border="1">
+                <tr>
+                    {volist name="list" id="vo" offset="0" length='5'}
+                    <td>
+                        <img src="{$vo.pic}" alt="">
+                        <div>
+                            <h1>{$vo.title}</h1>
+                            <blockquote>{$vo.title}</blockquote>
+                        </div>
+                    </td>
+                    {/volist}
+                </tr>
+                <tr>
+                    {volist name="list" id="vo" offset="5" length='5'}
+                    <td>
+                        <img src="{$vo.pic}" alt="">
+                        <div>
+                            <h1>{$vo.title}</h1>
+                            <blockquote>{$vo.title}</blockquote>
+                        </div>
+                    </td>
+                    {/volist}
+                </tr>
+                <tr>
+                    {volist name="list" id="vo" offset="10" length='5'}
+                    <td>
+                        <img src="{$vo.pic}" alt="">
+                        <div>
+                            <h1>{$vo.title}</h1>
+                            <blockquote>{$vo.title}</blockquote>
+                        </div>
+                    </td>
+                    {/volist}
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script language="javascript">
+    $("#shitizhaoshang").addClass("active");
+    $("#zhaoshang_friend").addClass("active");
+</script>
+{/block}

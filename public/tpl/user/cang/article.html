@@ -1,0 +1,82 @@
+{extend name="layout"}
+
+{block name="head"}
+<style>
+    .setingrigth>p {
+        padding-left: 0px;
+        background-color:transparent;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 30px;
+        color: black;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        margin: 8px 0 0px 0;
+    }
+    .porject p{
+        position: static;
+        bottom: 0px;
+        width: 100%;
+        text-align: center;
+        color: #888888;
+        font-size: 14px;
+        background-color: transparent;
+        padding: 10px 0;
+        text-align: right;
+    }
+</style>
+{/block}
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('user/index/index')}" >个人设置</a>
+            <a href="{:url('user/cang/article')}" class="active">收藏中兴</a>
+            <a href="{:url('user/index/find')}" >求租购物</a>
+        </div>
+        <section style="padding: 30px 15px 0px 15px;display: flex">
+            <div class="setingleft">
+                <p class="pFirst">个人设置</p>
+                <a href="{:url('user/cang/article')}" class="p-link active">新闻收藏</a>
+                <a href="{:url('user/cang/fang')}" class="p-link ">厂房收藏</a>
+                <a href="{:url('user/cang/tudi')}" class="p-link ">土地收藏</a>
+                <a href="{:url('user/cang/lou')}" class="p-link ">写字楼收藏</a>
+            </div>
+            <div class="setingrigth" style="background-color: white">
+
+                <p> <span></span>关注的新闻</p>
+                <div class="new-wrap">
+                    {volist name="list" id="vo"}
+                    <div class="super">
+                        <a href="" class="porject">
+                            <h3>{$vo.title}</h3>
+                            <p class="data">{$vo.time|date='Y-m-d H:i:s',###}</p>
+                            <blockquote>{$vo.content}</blockquote>
+                        </a>
+                    </div>
+                    {/volist}
+                </div>
+                <p style="position: relative">
+                    <span></span><strong>推荐新闻</strong>
+                    <em style="color: black;position: absolute;right: 0;top: 0px"><a href="" style=";display: inline-block;" class="bangding">换一换</a></em>
+                </p>
+                <div class="new-wrap">
+                    {volist name="ran" id="vo"}
+                    <div class="super">
+                        <a href="" class="porject">
+                            <h3>{$vo.title}</h3>
+                            <p class="data">{$vo.time|date='Y-m-d H:i:s',###}</p>
+                            <blockquote>{$vo.content}</blockquote>
+                        </a>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}{/block}

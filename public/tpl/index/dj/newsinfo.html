@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>{$info.title}</title>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/reset.css">
+    <script src="__IMAGES__/zhaoshang/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zhaoshang/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+    <base href="sw-newsinfo.html">
+    <style>
+        #xm-info{padding: 20px 85px}
+        #xm-info>h1{padding: 0 25px;font-size: 18px;color: #333333;font-weight: bold;text-align: center;line-height: 30px}
+        #xm-info>p{padding: 10px 0}
+        #xm-info>blockquote{line-height: 30px;padding: 30px 25px}
+    </style>
+</head>
+<body>
+<input type="hidden" value="navxm" data-active="">
+<input type="hidden" value="xmlink1" data-active="">
+{include file="../public/tpl/index/include_nav.html" /}
+<div class="biaoti">
+    <article>专业&nbsp;&nbsp;&nbsp;&nbsp;精准&nbsp;&nbsp;&nbsp;&nbsp;高效<br/></article>
+    <section>
+        <article>PROFESSIONAL</article>
+        <div>
+            <p>Professional, accurate, efficient and continuous</p>
+            <p>Professional people do professional things</p>
+        </div>
+    </section>
+</div>
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('index/dj/index',array('sort'=>'zf'))}" id="xmlink_zf" ><img src="../img/shitizhaoshang/87.png" alt=""><h1>政府采购</h1></a>
+            <a href="{:url('index/dj/index',array('sort'=>'gc'))}" id="xmlink_gc"><img src="../img/shitizhaoshang/88.png" alt=""><h1>工程项目</h1></a>
+            <a href="{:url('index/dj/index',array('sort'=>'js'))}" id="xmlink_js"><img src="../img/shitizhaoshang/89.png" alt=""><h1>城市建设</h1></a>
+        </div>
+        <div id="xm-info">
+            <h1>{$info.title}</h1>
+            <p class="text-center" >发布时间 : {$info.time} 浏览次数 : {$info.look}</p>
+            <div class="line"></div>
+            <blockquote>{$info.content}</blockquote>
+        </div>
+    </div>
+</div>
+{include file="../public/tpl/index/footer.html" /}
+<script language="javascript">
+    $("#djdj").addClass("active");
+    {eq name="info.sortinfo.name" value="政府采购"}$("#xmlink_zf").addClass("active");{/eq}
+    {eq name="info.sortinfo.name" value="工程项目"}$("#xmlink_gc").addClass("active");{/eq}
+    {eq name="info.sortinfo.name" value="城市建设"}$("#xmlink_js").addClass("active");{/eq}
+</script>
+</body>
+</html>

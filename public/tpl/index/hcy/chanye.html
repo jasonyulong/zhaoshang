@@ -1,0 +1,45 @@
+{extend name="hcy"}
+
+{block name="header"}
+<title>鼓励产业</title>
+{/block}
+
+{block name="content"}
+<!--banner-->
+<div id="banner" class="container-fluid p-0 mt-3 position-relative d-flex align-items-center" style="background-image: url(__IMAGES__/hcy/img/9.jpg)" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-end ">
+                <span class="font-size-55 mr-2 text-uppercase line-height-55 font-weight-normal" >e</span><span class="font-size-24 mr-2 text-uppercase font-weight-light">ncourage</span><span ><img src="__IMAGES__/hcy/img/9.png" alt=""></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-start ">
+                <span class="mr-2"><img src="__IMAGES__/hcy/img/9.png" alt=""></span><span class="font-size-36 mr-2 line-height-36 font-weight-light" >鼓励产业</span><span class="font-size-24 mr-2 text-uppercase align-self-end line-height-24 font-weight-light "  >industry</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-4" style="max-width: 1230px">
+    <div class="row">
+        <div class="col">
+            <p class="my-3 text-666"><a href="{:url('index/hcy/index')}"><span class="iconfont icon-shouye mr-1 "></span>首页</a> &nbsp;&gt;&nbsp;鼓励产业</p>
+        </div>
+    </div>
+</div>
+<div class="container mb-5" style="max-width: 1230px;">
+    <div class="row">
+        <div class="col">
+            <img src="__IMAGES__/hcy/img/10.jpg" width="1200" height="800" alt="">
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#chanye").addClass("active")
+    })
+</script>
+{/block}

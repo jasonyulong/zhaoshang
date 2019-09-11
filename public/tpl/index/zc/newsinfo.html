@@ -1,0 +1,101 @@
+{extend name="body"}
+
+
+
+{block name="header"}
+<style>
+    .newcontent img{max-width: 650px;display: block;margin: 20px auto}
+</style>
+<title>{$info.title}</title>
+<meta name="keywords" content="{$info.seo_key}">
+<meta name="description" content="{$info.seo_des}">
+{/block}
+
+
+
+{block name="content"}
+<!--新闻详情和推荐-->
+<div class="container mt-5 " style="max-width: 1230px" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col-auto bg-white pb-5" style="margin-right: 10px;width: 830px;margin-bottom: 68px">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="font-size-22 text-black font-weight-bold text-center" style="padding: 48px 108px"> {$info.title} </h1>
+                </div>
+            </div>
+            <div class="row font-size-14 text-666 px-4 ">
+                <div class="col-6 " >分类：{$info.sortinfo.name}&nbsp;&nbsp;&nbsp;&nbsp;编辑：招商网</div>
+                <div class="col-6   text-right" >{$info.time}&nbsp;&nbsp;&nbsp;&nbsp;{$info.look}浏览</div>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    <div class=" border-top my-3"></div>
+                </div>
+            </div>
+            <div class="row pb-4">
+                <div class="col-12 px-5 newcontent">{$info.content}</div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 px-5 font-size-12 text-666 line-height-30" >
+                    招商政策网转载目的在于传递更多信息，并不代表招商网赞同其观点和对其真实性负责，如涉及作品内容、版权以及其他问题，请和我们联系，我们将立即删除
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 px-5">
+                    <div class="col-12  p-4 bg-f4f4f4 ">
+                        <div class="row">
+                            <div class="col-auto pr-0"  style="margin-right: 22px">
+                                <img src="__IMAGES__/newzs/img/20.jpg" class="m-0 " width="120" height="120"   alt="">
+                            </div>
+                            <div class="col-auto pl-0">
+                                <h3 class="font-size-18 text-red my-3 font-weight-bold">招商政策网微信公众号</h3>
+                                <p class="font-size-14 text-333 line-height-28">欢迎扫描左侧二维码关注招商政策网官方微信（www.i35wang.com），<br>
+                                    更多招商政策动态</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-auto pos" style="width: 360px">
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">热点资讯</p>
+                {volist name="newszi" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newszi" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">行业推荐</p>
+                {volist name="newstu" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newstu" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div      class="d-block w-100 position-relative ">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="d-block"><img src="__IMAGES__/newzs/img/21.jpg" width="360" height="240" alt="图"></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+
+{/block}

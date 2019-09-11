@@ -1,0 +1,76 @@
+{extend name="chouhua"}
+
+{block name="header"}
+<title>新闻列表</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+<style>
+    .mainwrap {
+
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    .mainwrap>h6{width: 1200px;margin: 0px auto;padding: 15px 0;display: flex;align-items: center}
+    #main{padding: 0px 25px;padding-top: 20px}
+    #aside{margin: 20px 0px;height: 52px;border: 1px solid #dcdcdc;margin-top: 60px;margin-bottom: 40px;border-radius: 26px;display: flex;padding: 0px 80px;justify-content: space-between}
+    #aside>a{height: 100%;line-height: 100%;display: flex;align-items: center;}
+    #aside>a.active{border-bottom: 3px solid #e71c19}
+</style>
+{/block}
+
+{block name="content"}
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/chouhua_nav2.html" /}
+        </div>
+        <aside id="aside">
+            <a href="{:url('index/chouhua/news')}" id="defa"><span>新闻资讯</span></a>
+            <a href="{:url('index/chouhua/news',array('sort'=>'zongbu'))}" id="zongbu">总部经济</a>
+            <a href="{:url('index/chouhua/news',array('sort'=>'sixin'))}" id="sixin">四新经济</a>
+        </aside>
+        <hr>
+        {volist name="list" id="vo"}
+        <div class="ts-list">
+            <div class="data">
+                <h2>{$vo.time2}</h2>
+                {$vo.time1}
+            </div>
+            <div class="content">
+                <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                <article length="60">{$vo.des}</article>
+            </div>
+        </div>
+        <hr>
+        {/volist}
+        <div class="pageoption">{$list->render()}</div>
+        <section class="main-tuijian">
+            <h3 class="active">相关推荐</h3>
+            <div>
+                <section>
+                    <h3 class="have"><span>新闻资讯</span></h3>
+                    {volist name="newszi" id="vo"}
+                    <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}" class="have">{$vo.title}</a>
+                    {/volist}
+                </section>
+                <article>
+                    <h3 class="have"><span>图文资讯</span></h3>
+                    <div class="flex">
+                        {volist name="newstu" id="vo"}
+                        <a href="{:url('index/chouhua/newsinfo',['id'=>$vo['id']])}" class="dis-href"><img src="{$vo.pic}" width="140" height="106" alt=""><p class="abs-rgba">{$vo.title}</p></a>
+                        {/volist}
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#chouhua").addClass("active");
+    $("#swlink11").addClass("active");
+    $("#{$sort}").addClass("active");
+</script>
+{/block}

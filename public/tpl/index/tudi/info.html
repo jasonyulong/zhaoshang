@@ -1,0 +1,354 @@
+{extend name="body"}
+
+{block name="header"}
+<style>
+    .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        top: -40px;
+        bottom: 0;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 15%;
+        color: #fff;
+        text-align: center;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+
+    }
+
+    .carousel-control-next-icon,.carousel-control-prev-icon { background-image: none !important;}
+    .carousel-control-next-icon{
+
+    }
+    .carousel-control-prev{
+        left: auto;
+        right:40px;
+    }
+    .carousel-control-next {
+        right: 0;
+    }
+</style>
+<link rel="stylesheet" href="__IMAGES__/newzs/pugin/lightbox/baguetteBox.min.css">
+<title>{$info.title}</title>
+<meta name="description" content="{$info.seo_key}">
+<meta name="keywords" content="{$info.seo_des}">
+{/block}
+
+
+{block name="content"}
+
+
+<!--标题-->
+<div class="container-fluid p-0 bg-f6f6f6" style="height: 94px;margin-bottom: 25px">
+    <div class="container h-100" style="max-width: 1230px;">
+        <div class="row h-100 align-items-center" >
+            <div class="col-10">
+                <h1 class="text-black font-size-26 font-weight-bold align-items-center d-flex" >
+                    <span length="30">{$info.title}</span>
+                    <span class="ml-4 h-100 d-inline-block  bg-red  text-white  font-size-14 font-weight-light bg-d1231f" style="padding: 4px 11px;border-radius: 13px">{$info.uptype}</span>
+                </h1>
+            </div>
+            <div class="col-2 h-100 d-flex flex-column justify-content-around py-3">
+                <p class="text-ccc m-0 font-size-12 text-right"><span class="iconfont icon-kanguo mr-1"></span>{$info.look}浏览</p>
+                <p  class="text-ccc m-0 font-size-12 text-right">{$info.time|time_ago}更新</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--灯箱-->
+<div class="container" id="linghtbox" style="max-width: 1230px">
+    <div class="row" style="margin: 0 -30px">
+        <div class="col-8" style="padding: 0 30px">
+            <div class="row" style="margin: 0 -3px">
+                {volist name="piclist" id="vo"}
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="{$vo.pic}">
+                        <img src="{$vo.pic}" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                {/volist}
+            </div>
+            <div class="row my-4 no-gutters" >
+                <div class="col-auto text-666 font-size-14" style="width: 140px">基本信息</div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-5 text-666 mb-4 font-size-14">建筑面积</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">{$info.area}m²</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">土地证</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">
+                            {eq name="info.zheng" value="0"}无{/eq}
+                            {eq name="info.zheng" value="1"}有{/eq}
+                        </div>
+                        <div class="col-5 text-666 mb-4 font-size-14">使用年限</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">{$info.year}年</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">土地性质</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">
+                            {eq name="info.xingzhi" value="0"}集体{/eq}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 no-gutters" >
+                <div class="col-auto text-666 font-size-14" style="width: 140px;">其他信息</div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-5 text-666 mb-4 font-size-14">省份</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">{$info.pro}</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">城市</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">{$info.city}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 no-gutters" >
+                <div class="col-auto text-666 font-size-14" style="width: 140px;">土地描述</div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        {$info.des}
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters" style="padding-right: 50px;">
+                <div class="col-12 flex-wrap d-flex ">
+                    <div class="{in name="'物业管理'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+                    <article class="iconfont icon-qiyeyuanquwuye-xianxing font-size-45 "></article>
+                    <p class=" m-0 font-size-14">物业管理</p>
+                </div>
+                <div class="{in name="'多层'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+                <article class="iconfont icon-duocengjiegou font-size-45 "></article>
+                <p class=" m-0 font-size-14">多层</p>
+            </div>
+            <div class="{in name="'可分割'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+            <article class="iconfont icon-fenge font-size-45 "></article>
+            <p class=" m-0 font-size-14">可分割</p>
+        </div>
+        <div class="{in name="'电梯'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+        <article class="iconfont icon-haofangtuo400iconfont2dianti font-size-45 "></article>
+        <p class=" m-0 font-size-14">电梯</p>
+    </div>
+    <div class="{in name="'车库'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+    <article class="iconfont icon-cheku font-size-45 "></article>
+    <p class=" m-0 font-size-14">车库</p>
+</div>
+<div class="{in name="'停车位'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+<article class="iconfont icon-tingchewei font-size-45 "></article>
+<p class=" m-0 font-size-14">停车位</p>
+</div>
+<div class="{in name="'照明设备'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+<article class="iconfont icon-zhaoming font-size-45 "></article>
+<p class=" m-0 font-size-14">照明设备</p>
+</div>
+<div class="{in name="'输水设施'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+<article class="iconfont icon-gshuiguanwang font-size-45 "></article>
+<p class=" m-0 font-size-14">输水设施</p>
+</div>
+<div class="{in name="'供电设施'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+<article class="iconfont icon-icon font-size-45 "></article>
+<p class=" m-0 font-size-14">供电设施</p>
+</div>
+<div class="{in name="'配套家具'" value="$info.liang"}text-d1231f{else/}text-ccc{/in} text-center mb-4" style="padding: 0 -10px;width: 100px">
+<article class="iconfont icon-jiaju font-size-45 "></article>
+<p class=" m-0 font-size-14">配套家具</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class="col-4" id="box" style="padding: 0 30px;height: 350px">
+    <div class="row no-gutters">
+        <div class="col-6">
+            <h2 class="text-333 font-size-14 my-3 font-weight-bold">
+                <span>租</span>
+                <span class="text-d1231f font-size-36 ">{$info.zujing}</span>
+                <span class="text-d1231f"> 元/ m² / 月</span>
+            </h2>
+        </div>
+        <div class="col-6 text-right">
+            <h2 class="text-333 font-size-14 my-3 font-weight-bold">
+                <span>售 </span>
+                <span class="text-d1231f font-size-36 font-weight-bold">{$info.shou}</span>
+                <span class="text-d1231f">元 / m²</span>
+            </h2>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="my-4 col-12" style="border-top: 1px solid #ebebeb"></div>
+    </div>
+    <div class="row px-4 d-flex justify-content-between">
+        <div class="col-4 text-black font-size-18 font-weight-bold">
+            {$info.area} <span class="font-size-14">平</span>
+        </div>
+    <!--    <div class="col-4 text-black font-size-18 font-weight-bold">
+            {$info.pro} <span class="font-size-14">省</span>
+        </div>-->
+        <div class="col-4 text-black font-size-18 font-weight-bold">
+            {$info.city} <span class="font-size-14">市</span>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="my-4 col-12" style="border-top: 1px solid #ebebeb"></div>
+    </div>
+    <div class="row no-gutters justify-content-between">
+        <div class="col text-666 font-size-14 mb-3">发布时间</div>
+        <div class="col-3 text-black font-size-14  mb-3 ">{$info.time|date='Y-m-d',###}</div>
+    </div>
+    <div class="row no-gutters justify-content-between">
+        <div class="col text-666 font-size-14 mb-3">使用年限</div>
+        <div class="col-3 text-black font-size-14  mb-3 ">{$info.year}年</div>
+    </div>
+    <div class="row no-gutters justify-content-between">
+        <div class="col text-666 font-size-14 mb-3">土地性质</div>
+        <div class="col-3 text-black font-size-14  mb-3 ">{eq name="info.xingzhi" value="0"}集体{/eq}</div>
+    </div>
+    <div class="row no-gutters justify-content-between">
+        <div class="col text-666 font-size-14 mb-3">土地证</div>
+        <div class="col-3 text-black font-size-14 -bold mb-3 ">
+            {eq name="info.zheng" value="0"}无{/eq}
+            {eq name="info.zheng" value="1"}有{/eq}
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+
+<!--滑块底部-->
+<div id="dibu" style="width: 1px;height: 1px"></div>
+<!--地图-->
+<div class="container mb-50" style="max-width: 1230px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="font-size-18 font-weight-bold text-black my-4">周边环境</h2>
+        </div>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-12" style="height: 445px" id="map">
+            <div id="panel" style="width: 300px ;right: 0;top: 0;z-index: 1000;overflow: scroll " class="h-100 position-absolute"></div>
+        </div>
+    </div>
+</div>
+
+
+<!--精选轮播-->
+<div class="container" style="max-width: 1230px;margin-bottom: 75px">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="font-size-18 font-weight-bold text-black my-4">附近土地</h2>
+        </div>
+        <div class="col-12">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="">
+                <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev" >
+                    <span class="carousel-control-prev-icon  bg-red iconfont icon-left-copy-copy text-white font-size-12 d-flex align-items-center justify-content-center" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon  bg-black  iconfont icon-left-copy text-white  font-size-12 d-flex align-items-center justify-content-center " aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container p-0" style="max-width: 1200px;min-width: 1200px">
+                            <div class="row" style="margin: 0 -8px">
+                                {volist name="ran" id="vo" offset="0" length='4'}
+                                <div class="col-3 " style="padding: 0 8px;">
+                                    <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="d-block link-overflow mb-3">
+                                        <img src="__IMAGES__/newzs/img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" style="height: 48px" length="30">{$vo.title}</p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        {$info.area}m²
+                                    </p>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container p-0" style="max-width: 1200px;min-width: 1200px">
+                            <div class="row" style="margin: 0 -8px">
+                                {volist name="ran" id="vo" offset="5" length='10'}
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="d-block link-overflow mb-3">
+                                        <img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/newzs/img/29.jpg{/if}" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">{$vo.title}</p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        {$info.area}m²
+                                    </p>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+
+
+{block name="footer"}
+<!--地图API-->
+<script src="__IMAGES__/newzs/pugin/lightbox/baguetteBox.min.js"></script>
+<script>
+    $(function () {
+        baguetteBox.run('#linghtbox');
+        $('#carouselExampleControls').carousel({
+            interval: 0
+        })
+    })
+</script>
+<!--地图API-->
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=578609e98b59a3e97345b5edaaa3861b"></script>
+<script>
+    var cpoint = [{$info.mapx},{$info.mapy}]; //中心点坐标
+    var map = new AMap.Map("map", {
+        resizeEnable: true,
+        zoom:10,
+        center: cpoint //初始化地图层级
+    });
+    AMap.service(["AMap.PlaceSearch"], function() {
+        //构造地点查询类
+        var placeSearch = new AMap.PlaceSearch({
+            type: '公交,地铁', // 兴趣点类别
+            pageSize: 10, // 单页显示结果条数
+            pageIndex: 1, // 页码
+            citylimit: true,  //是否强制限制在设置的城市内搜索
+            map: map, // 展现结果的地图实例
+            panel: "panel", // 结果列表将在此容器中进行展示。
+            autoFitView: true // 是否自动调整地图视野使绘制的 Marker点都处于视口的可见范围
+        });
+
+        placeSearch.searchNearBy('', cpoint, 2000, function(status, result) {
+
+        });
+    });
+
+    var marker = new AMap.Marker({
+        icon: "__IMAGES__/newzs/img/23.png",
+        position: [{$info.mapx},{$info.mapy}],
+    });
+    map.add(marker);
+    map.setFitView();
+</script>
+<script src="__IMAGES__/newzs/js/pub.js"></script>
+{/block}

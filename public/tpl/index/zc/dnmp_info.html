@@ -1,0 +1,96 @@
+{extend name="body"}
+
+
+
+{block name="header"}
+<style>
+    .newcontent img{max-width: 650px;display: block;margin: 20px auto}
+    [data-mime$='png']:before,[data-mime$='jpg']:before,[data-mime$='gif']:before{
+        font-family: 'iconfont';
+        content: "\e64d";
+        color: #2a5699;
+    }
+    [data-mime$='.pdf']:before{
+        font-family: 'iconfont';
+        content: "\e658";
+        color: #2a5699;
+    }
+    [data-mime$='.doc']:before,[data-mime$='.docx']:before{
+        font-family: 'iconfont';
+        content: "\e65a";
+        color: #2a5699;
+    }
+    [data-mime$='.xls']:before,[data-mime$='.xlsx']:before{
+        font-family: 'iconfont';
+        content: "\e68d";
+        color: #2a5699;
+    }
+    [data-mime$='.ppt']:before,[data-mime$='.pptx']:before{
+        font-family: 'iconfont';
+        content: "\e650";
+        color: #2a5699;
+    }
+    [data-mime$='.rar']:before,[data-mime$='.zip']:before{
+        font-family: 'iconfont';
+        content: "\e659";
+        color: #2a5699;
+    }
+</style>
+<title>{$info.title}</title>
+{/block}
+
+
+
+{block name="content"}
+<!--新闻详情和推荐-->
+<div class="container" style="max-width: 1230px" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col-12 bg-white " style="padding: 0 120px;margin-bottom: 68px">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="font-size-22 text-black font-weight-bold text-center" style="padding: 48px 108px"> {$info.title} </h1>
+                </div>
+            </div>
+            <div class="row font-size-14 text-666 px-4 ">
+                <div class="col-6 " >分类：{$info.sortinfo.name}&nbsp;&nbsp;&nbsp;&nbsp;编辑：招商网</div>
+                <div class="col-6   text-right" >{$info.time}&nbsp;&nbsp;&nbsp;&nbsp;{$info.look}浏览</div>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    <div class=" border-top my-3"></div>
+                </div>
+            </div>
+            <div class="row pb-4">
+                <div class="col-12 px-5 newcontent">{$info.content}</div>
+            </div>
+            {notempty name="info.file"}
+            <div class="row">
+                <div class="col-12 ">
+                    <div class="col-12  p-4 bg-f4f4f4 ">
+                        <div class="row">
+                            <article class="col-10 d-flex   align-items-center" ><span class="mr-2 font-size-45" data-mime=".{$info.fileext}"></span><p class="text-333 mb-0 font-size-14" length="45" >附件下载</p></article>
+                            <a href="{$info.file}"  target="_blank" class="col-2 text-center text-2a5699 d-block">
+                                <span class="iconfont icon-xiazai1 font-size-30 d-block"></span>
+                                <div class="font-size-14">点击下载</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/notempty}
+            <div class="row mb-4">
+                <div class="col-12 my-5 font-size-12 text-ccc line-height-30" >
+                    招商政策网转载目的在于传递更多信息，并不代表招商政策网转赞同其观点和对其真实性负责，如涉及作品内容、版权以及其他问题，请和我们联系，我们将立即删除
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+
+{/block}

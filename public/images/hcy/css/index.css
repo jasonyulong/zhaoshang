@@ -1,0 +1,121 @@
+#main a:hover{
+    background-color: #f51127;
+    color: white;
+    font-weight: normal
+}
+#link a{
+    transition:0.2s ease-in-out
+}
+#link a:hover{
+    transform: scale(1.1);
+    font-weight: normal;
+    color:#f51127;
+    z-index: 100;
+    border: 0px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    background-color: white
+}
+.anfont{
+    color:#80ccd6
+}
+#main1{
+    animation: animation 15s ease-in-out infinite alternate
+}
+.option{
+    opacity: 0.75;
+}
+.option:first-child{
+
+}
+.option:hover{
+    opacity: 1
+}
+.option img{
+    transition: 0.5s ease-in-out
+}
+.option:hover img{
+    transform: rotate(60deg)
+}
+.option p{
+    transition: 0.5s ease-in-out;opacity: 0;width: 0px
+}
+.option:hover p{
+    opacity:1;
+    width: 35px
+}
+.quan{
+    animation: info 5s ease-in-out infinite alternate;
+    animation-iteration-count:3;
+}
+#ipad{
+    animation: heart 2.5s ease-in-out infinite alternate;
+}
+
+
+.text-ddd{
+    color: #dddddd
+}
+@keyframes animation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+@-moz-keyframes animation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+@-o-keyframes  animation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+@keyframes info {
+    0%{
+        transform: rotate(0deg) scale(0.8);
+
+    }
+    100%{
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+@-moz-keyframes info{
+    0%{
+        transform: rotate(0deg) scale(0.8);
+
+    }
+    100%{
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+@-o-keyframes info{
+    0%{
+        transform: rotate(0deg) scale(0.8);
+
+    }
+    100%{
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+@keyframes heart{
+    from{transform:translate(0,0)}
+    to{transform:translate(0,5px)}
+}
+@-moz-keyframes heart{
+    from{transform:translate(0,0)}
+    to{transform:translate(0,5px)}
+}
+@-o-keyframes heart{
+    from{transform:translate(0,0)}
+    to{transform:translate(0,5px)}
+}
+

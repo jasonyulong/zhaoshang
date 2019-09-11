@@ -1,0 +1,72 @@
+{extend name="hcy"}
+
+{block name="header"}
+<title>{$info.title}</title>
+{/block}
+
+{block name="content"}
+<!--banner-->
+<div id="banner" class="container-fluid p-0 mt-3 position-relative d-flex align-items-center" style="background-image: url(__IMAGES__/hcy/img/6.jpg)" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-end ">
+                <span class="font-size-55 mr-2 text-uppercase font-weight-light line-height-55" >s</span><span class="font-size-24 mr-2 text-uppercase font-weight-light">upport</span><span ><img src="__IMAGES__/hcy/img/9.png" alt=""></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-start ">
+                <span class="mr-2"><img src="__IMAGES__/hcy/img/9.png" alt=""></span><span class="font-size-36 mr-2 line-height-36 font-weight-light" >扶持政策</span><span class="font-size-24 mr-2 text-uppercase align-self-end line-height-24 font-weight-light"  >policy</span>
+            </div>
+        </div>
+    </div>s
+</div>
+<div class="container mb-4" style="max-width: 1230px">
+    <div class="row">
+        <div class="col" id="mianbao" >
+            <p class="my-3 text-666"><a href="{:url('index/hcy/index')}"><span class="iconfont icon-shouye mr-1 "></span>首页</a> &nbsp;&gt;&nbsp;扶持政策</p>
+        </div>
+    </div>
+</div>
+<div class="container px-5" style="max-width: 1140px">
+    <h1 class="font-size-16 text-333 text-center px-5 line-height-30">
+        {$info.title}
+    </h1>
+    <p class="d-flex justify-content-center my-3 font-size-14">
+        <span class="text-666 mr-4">发布时间：{$info.time}</span>
+        <span class="text-666 mr-4">{$info.sortinfo.name}</span>
+        <span class="text-666">关注度：{$info.look}</span>
+    </p>
+    <hr class="bg-red my-4" style="height: 2px">
+    <div class="row line-height-35 text-indent px-4 text-666" id="newsinfo">{$info.content}</div>
+    <div class="row my-3 mb-5">
+        <div class="col">
+            {if condition="$updown.up.id neq null"}
+            <a href="{:url('info?id='.$updown.up.id)}" class="my-1 d-block text-666">上一篇：{$updown.up.title}</a>
+            {else}
+            暂无
+            {/if}
+            {if condition="$updown.down.id neq null"}
+            <a href="{:url('info?id='.$updown.down.id)}" class="my-1 d-block text-666">下一篇：{$updown.down.title}</a>
+            {else}
+            暂无
+            {/if}
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#zhengce").addClass("active")
+    })
+</script>
+{/block}
+
+
+
+
+
+
+

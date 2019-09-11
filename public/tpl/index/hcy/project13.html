@@ -1,0 +1,82 @@
+
+{extend name="hcy"}
+
+{block name="header"}
+<title>案例</title>
+{/block}
+
+{block name="content"}
+
+<!--banner-->
+<div id="banner" class="container-fluid p-0 mt-3 position-relative d-flex align-items-center" style="background-image: url(__IMAGES__/hcy/img/14.jpg)" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-end ">
+                <span class="font-size-55 mr-2 text-uppercase font-weight-light line-height-55" >p</span><span class="font-size-24 mr-2 text-uppercase font-weight-light">lanning</span><span ><img src="__IMAGES__/hcy/img/9.png" alt=""></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-start ">
+                <span class="mr-2"><img src="__IMAGES__/hcy/img/9.png" alt=""></span><span class="font-size-36 mr-2 line-height-36 font-weight-light" >筹划方案</span><span class="font-size-24 mr-2 text-uppercase align-self-end line-height-24 font-weight-light"  >scheme</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-4" style="max-width: 1230px">
+    <div class="row">
+        <div class="col" id="mianbao" >
+            <p class="my-3 text-666"><a href="{:url('index/hcy/index')}"><span class="iconfont icon-shouye mr-1 "></span>首页</a> &nbsp;&gt;&nbsp;筹划案例</p>
+        </div>
+    </div>
+</div>
+<div class="container" style="max-width:1230px">
+    <div class="row" style="margin: 0 -25px" id="project">
+        <div class="w-200px d-flex mb-2"><a id="project1" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/anli')}">企业财税产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project2" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project2')}">金融交易类财税产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project3" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project3')}">生产贸易财税产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project4" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project4')}">工程建设行业产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project5" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project5')}">薪酬个税产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project6" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project6')}">文化传媒产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project7" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project7')}">四新经济产品</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project8" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project8')}">自然人门征代开</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project9" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project9')}">缺少增值税、成本发票</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project10" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project10')}">增值税+所得税</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project11" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project11')}">股权多次转让</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project12" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project12')}">水产品案例分析</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project13" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project13')}">企业所得税单税种</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project14" class=" p-1 d-inline-block w-100" href="{:url('index/hcy/project14')}">增值税单税种</a></div>
+        <div class="w-200px d-flex mb-2"><a id="project15" class=" p-1 d-inline-block w-100" href="#">更多</a></div>
+    </div>
+
+</div>
+<div class="container " style="max-width: 1180px">
+    <div class="row">
+        <div class="bg-red w-100" style="height: 3px"></div>
+    </div>
+</div>
+<div class="container my-3 mb-5" style="max-width: 1200px">
+    <div class="row">
+        <div class="w-100 font-size-24 text-red font-weight-normal my-4 pl-3">企业所得税单税种筹划案列</div>
+    </div>
+    <div class="row">
+        <img src="__IMAGES__/hcy/img/17.jpg" width="1200" height="702" alt="企业所得税单税种筹划案列" >
+    </div>
+    <div class="row">
+        <div class="w-100 font-size-24 text-center text-red font-weight-normal my-4 pl-3">企业降低所得税单一税种模式及需求分析图2</div>
+    </div>
+    <div class="row">
+        <img src="__IMAGES__/hcy/img/18.jpg" width="1200" height="521" alt="企业降低所得税单一税种模式及需求分析图2" >
+    </div>
+</div>
+
+
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#anli").addClass("active")
+        $("#project13").addClass("active")
+    })
+</script>
+{/block}

@@ -1,0 +1,84 @@
+{extend name="body"}
+
+
+
+{block name="header"}
+<title>新闻列表</title>
+{/block}
+
+
+
+{block name="content"}
+<div class="mb-50"></div>
+<div class="container mb-50" style="max-width: 1230px;" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col-auto  pb-5" style="margin-right: 10px;width: 830px;margin-bottom: 68px">
+            <div class="row mb-3">
+                <div class="col-12 bg-white bg-clip-content">
+                    {empty name="list"}
+                    <div class="text-center d-flex flex-column  my-5" >
+                        <article class="font-size-36 text-secondary iconfont icon-zanwushuju"></article>
+                        <h3 class="text-secondary font-size-24">暂无数据</h3>
+                    </div>
+                    {/empty}
+                    {volist name="list" id="vo"}
+                    <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                            <img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic2.jpg{/if}" width="180" height="120" alt="{$vo.title}" class="d-block">
+                        </a>
+                        <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-black font-size-18 font-weight-bold" length="30">{$vo.title}</a>
+                            <article class="font-size-12 text-666 line-height-24 mb-1" length="88">{$vo.des}</article>
+                            <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>{$vo.look}次浏览</span><sapn>{$vo.time}</sapn></p>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-auto " style="width: 360px">
+            {notempty name="hot"}
+            <a href="{:url('index/zc/newsinfo',['id'=>$hot['id']])}" class="link-overflow w-100 d-block position-relative" style="margin-bottom: 20px">
+                <img src="{if condition="$hot.pic neq ''"}{$hot.pic}{else}__IMAGES__/newzs/img/27.jpg{/if}" class="w-100" alt="">
+                <p class="font-size-14 text-white bg-linered-white-black position-absolute d-block mb-0 w-100 py-2 pl-3" style="bottom: 0px;z-index: 100" length="20 ">{$hot.title}</p>
+            </a>
+            {/notempty}
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">热点资讯</p>
+                {volist name="newszi" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newszi" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">行业推荐</p>
+                {volist name="newstu" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newstu" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div      class="d-block w-100 position-relative ">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="d-block"><img src="__IMAGES__/newzs/img/21.jpg" width="360" height="240" alt="图"></a>
+                    </div>
+                </div>
+                <div     class="font-size-12 px-2 bg-7d7d7d text-white position-absolute d-block" style="right: 10px;top: 15px;z-index: 1000">广告</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+
+{/block}

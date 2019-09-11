@@ -1,0 +1,178 @@
+{extend name="body"}
+
+
+{block name="header"}
+<style>
+    .newcontent img{max-width: 650px;display: block;margin: 20px auto}
+    .btn-outline-danger {
+        color:#ad1a20;
+        background-color: transparent;
+        background-image: none;
+        border-color: #ad1a20;
+    }
+    .btn-outline-danger:hover {
+        color: #fff;
+        background-color: #ad1a20;
+        border-color: #ad1a20;
+    }
+</style>
+<title>招商政策网-国税政策|地方政策|工商信息|招商优惠政策|招商网</title>
+{/block}
+
+
+
+{block name="content"}
+<div class="container mb-50" style="max-width: 1230px" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col-auto  pb-5" style="margin-right: 10px;width: 830px;margin-bottom: 68px">
+            <div class="row mb-3">
+                <div class="container bg-white bg-clip-content  " id="form" style="max-width: 1230px">
+                    <div class="row" >
+                        <div class="col-12 ">
+                            <div class="border-top-red-1"></div>
+                        </div>
+                        <div class="col-12 d-flex bg-white bg-clip-content " style="">
+                            <a href="" class="text-white d-block bg-red p-3 font-size-14 px-4">特色项目</a>
+                        </div>
+                        <div class="col-12">
+                            <div class="border-bottom"></div>
+                        </div>
+                    </div>
+                </div >
+                <div class="col-12 bg-white bg-clip-content" id="newlist">
+                    <div class="row no-gutters mb-2" style="padding: 25px 22px">
+                        <div class="col-auto mr-3" style="width: 257px;height: 163px">
+                            <a href="" class="d-block w-100 h-100 link-overflow">
+                                <img src="http://www.i35wang.com/images/newzs/img/27.jpg" class="d-block w-100 h-100" alt="">
+                            </a>
+                        </div>
+                        <div class="col d-flex flex-column justify-content-between">
+                            <a  href="" class="font-size-18 font-weight-bold text-black d-block w-100">中国特色小镇一乌镇商业圈</a>
+                            <article class="w-100 font-size-14 text-999" style="height: 65px" length="120">
+                                乌镇古镇是国家5A级景区，全国二十个黄金周预报景点及江南六大古镇之一。地处浙江省嘉兴市（地级市）桐乡市（县级市）北端，西临湖州
+                                乌镇古镇是国家5A级景区，全国二十个黄金周预报景点及江南六大古镇之一。地处浙江省嘉兴市（地级市）桐乡市（县级市）北端，西临湖州
+                                乌镇古镇是国家5A级景区，全国二十个黄金周预报景点及江南六大古镇之一。地处浙江省嘉兴市（地级市）桐乡市（县级市）北端，西临湖州
+                                乌镇古镇是国家5A级景区，全国二十个黄金周预报景点及江南六大古镇之一。地处浙江省嘉兴市（地级市）桐乡市（县级市）北端，西临湖州
+                            </article>
+                            <div class="d-flex justify-content-between">
+                                <a href="" class="btn btn-outline-danger font-size-14 " style="border-radius: 3px;padding: 7px 32px">园区介绍</a>
+                                <a href="" class="btn btn-outline-danger font-size-14" style="border-radius: 3px;padding: 7px 32px">入驻流程</a>
+                                <a href="" class="btn btn-outline-danger font-size-14" style="border-radius: 3px;padding: 7px 32px">联系我们</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row ">
+                <div class="bg-white col-12 bg-clip-content">
+                    <div class="py-3 text-999 text-center font-size-14 cursor-pointer" id="more">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-auto " style="width: 360px">
+            {notempty name="hot"}
+            <a href="{:url('index/zc/newsinfo',['id'=>$hot['id']])}" class="link-overflow w-100 d-block position-relative" style="margin-bottom: 20px">
+                <img src="{if condition="$hot.pic neq ''"}{$hot.pic}{else}__IMAGES__/newzs/img/27.jpg{/if}" class="w-100" alt="">
+                <p class="font-size-14 text-white bg-linered-white-black position-absolute d-block mb-0 w-100 py-2 pl-3" style="bottom: 0px;z-index: 100" length="20 ">{$hot.title}</p>
+            </a>
+            {/notempty}
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">热点资讯</p>
+                {volist name="newszi" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newszi" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">行业推荐</p>
+                {volist name="newstu" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newstu" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div      class="d-block w-100 position-relative ">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="newsinfo.html" class="d-block"><img src="__IMAGES__/newzs/img/21.jpg" width="360" height="240" alt="图"></a>
+                    </div>
+                </div>
+                <div     class="font-size-12 px-2 bg-7d7d7d text-white position-absolute d-block" style="right: 10px;top: 15px;z-index: 1000">广告</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        (function () {
+            var num=1;
+            getPage(num,0)
+            $("#more").click(function () {
+                num++
+                getPage(num,1)
+            })
+        })()
+    })
+    function  getPage(num,type) {
+        var html="";
+        $.post("/index/chouhua/zhaoshangp.html",{page:num},function (data) {
+            if(data.data != ""){
+                data.data.forEach(function (value,item) {
+                    html+="<div class=\"row no-gutters mb-2\" style=\"padding: 25px 22px\">\n" +
+                        "                        <div class=\"col-auto mr-3\" style=\"width: 257px;height: 163px\">\n" +
+                        "                            <a href=\""+value.url+"\" class=\"d-block w-100 h-100 link-overflow\">\n" +
+                        "                                <img src=\""+value.pic+"\" class=\"d-block w-100 h-100\" alt=\"\">\n" +
+                        "                            </a>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"col d-flex flex-column justify-content-between\">\n" +
+                        "                            <a  href=\""+ value.url+"\" class=\"font-size-18 font-weight-bold text-black d-block w-100\">"+ value.title+"</a>\n" +
+                        "                            <article class=\"w-100 font-size-14 text-999\" style=\"height: 65px\" length=\"120\">\n" +
+                        "                                "+ value.des.substring(0,120)+"\n" +
+                        "                            </article>\n" +
+                        "                            <div class=\"d-flex justify-content-between\">\n" +
+                        "                                <a href=\""+ value.url+"\" class=\"btn btn-outline-danger font-size-14 \" style=\"border-radius: 3px;padding: 7px 32px\">园区介绍</a>\n" +
+                        "                                <a href=\""+ value.url+"\" class=\"btn btn-outline-danger font-size-14\" style=\"border-radius: 3px;padding: 7px 32px\">入驻流程</a>\n" +
+                        "                                <a href=\""+ value.url+"\" class=\"btn btn-outline-danger font-size-14\" style=\"border-radius: 3px;padding: 7px 32px\">联系我们</a>\n" +
+                        "                            </div>\n" +
+                        "                        </div>\n" +
+                        "                    </div>"
+                })
+                if(type==0){
+                    $("#newlist").html(html)
+                }else if(type==1){
+                    $("#newlist").append(html)
+                }
+            }else{
+                if(type==0){
+                    $("#newlist").html("  <div class=\"row\">\n" +
+                        "                <div class=\"col-12 py-4\">\n" +
+                        "                    <p class=\"iconfont icon-zanwushuju font-size-55 text-center text-999\"></p>\n" +
+                        "                    <p class=\"text-999 text-center font-size-18\">暂无数据</p>\n" +
+                        "                </div>\n" +
+                        "            </div>")
+                }else{
+                    $("#more").text("我是有底线的")
+                }
+
+
+            }
+
+        })
+    }
+</script>
+{/block}
+
+
+
+{block name="footer"}
+
+{/block}

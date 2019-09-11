@@ -1,0 +1,118 @@
+{extend name="chouhua"}
+
+{block name="header"}
+<title>{$info.title}</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+<style>
+    #main {
+        width: 1200px;
+        background-color: white;
+        padding: 65px 30px 55px 10px;
+        margin: 0 auto;
+        position: relative;
+    }
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+
+        <div class="link">
+            {include file="../public/tpl/index/chouhua_nav2.html" /}
+        </div>
+        <div class="mainbox-shadow" id="ts-xiaozhen">
+            <img src="{$info.pic}" width="671" height="434" alt="">
+            <div>
+                <h1>{$info.title}</h1>
+                <section><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/55.png" alt=""><p><span>所</span><span>属</span><span>产</span><span>业:</span></p><article>{$info.hangye}</article></section>
+                <section><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/56.png" alt=""><p><span>投</span><span>资</span><span>规</span><span>模:</span></p><article>{$info.guimo}</article></section>
+                <section><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/57.png" alt=""><p><span>入</span><span>驻</span><span>企</span><span>业:</span></p><article>{$info.qiye}家</article></section>
+                <section><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/58.png" alt=""><p><span>规</span><span>划</span><span>面</span><span>积:</span></p><article>{$info.area}km²</article></section>
+                <section><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/59.png" width="16" height="20" alt=""><p><span>小</span><span>镇</span><span>位</span><span>置:</span></p><article>{$info.pro}-{$info.city}</article></section>
+            </div>
+        </div>
+        <div class="prolist">
+            <div class="listleft">
+                <div id="menu">
+                    <div class="active">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/60.png" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/60X.png" alt="">
+                        <p>小镇简介</p>
+                        <span>▼</span>
+                    </div>
+                    <div>
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/61.png" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/61X.png" alt="">
+                        <p>发展环境</p>
+                        <span>▼</span>
+                    </div>
+                    <div>
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/62.png" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/62X.png" alt="">
+                        <p>优惠政策</p>
+                        <span>▼</span>
+                    </div>
+                    <div>
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/63.png" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/63X.png" alt="">
+                        <p>地理优势</p>
+                        <span>▼</span>
+                    </div>
+                    <div>
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/64.png" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/64X.png" alt="">
+                        <p>企业风采</p>
+                        <span>▼</span>
+                    </div>
+                </div>
+                <div class="ts-content mainbox-shadow">{$info.des}</div>
+                <div class="ts-content mainbox-shadow">{$info.huanjing}</div>
+                <div class="ts-content mainbox-shadow">{$info.zhengche}</div>
+                <div class="ts-content mainbox-shadow">{$info.dili}</div>
+                <div class="ts-content mainbox-shadow">{$info.fengcai}</div>
+            </div>
+            <div class="listright">
+                <aside class="aside mainbox-shadow" id="aside">
+                    <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/28.png" alt="">
+                    <!--<small>张山</small>-->
+                    <input type="text" autocomplete="off" placeholder="请输入电话号码">
+                    <div class="send" ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/31.png" alt=""><span>立即联系</span></div>
+                    <p class="tit">使用加密技术，不会泄密您的手机</p>
+                    <hr>
+                    <div class="flex">
+                        <a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/29.png" alt="">预约参观</a>
+                        <a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/30.png" alt="">留言咨询</a>
+                    </div>
+                </aside>
+                {volist name="tuijian" id="vo"}
+                <div href="{:url('index/chouhua/zheng',['id'=>$vo['id']])}" class="more mainbox-shadow">
+                    <p><span>推荐园区</span><a href="{:url('index/chouhua/zhaoshang')}">MORE</a></p>
+                    <a href="{:url('index/chouhua/zheng',['id'=>$vo['id']])}"><img src="{$vo.pic}" width="206" height="135" alt=""></a>
+                    <article>{$vo.title}</article>
+                </div>
+                {/volist}
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $(".ts-content").first().show()
+        $("#menu>div").click(function () {
+            $(this).addClass("active").siblings("div").removeClass("active")
+            var $index =$(this).index()
+            $(".ts-content").eq($index).show("slow").siblings(".ts-content").hide()
+        })
+    })
+</script>
+<script language="javascript">
+    $("#chouhua").addClass("active");
+    $("#swlink12").addClass("active");
+</script>
+{/block}

@@ -1,0 +1,132 @@
+{extend name="zht"}
+
+{block name="header"}
+<title>商业mall</title>
+
+<style>
+    #main{background-color: #f8f8f8}
+    #paixubar{width: 100%;background-color: white;display: flex;margin: 30px 0;box-shadow: 0 2px 2px rgba(0,0,0,0.2)}
+    #paixubar>div{padding: 0 15px;height: 40px;line-height: 40px;position: relative;cursor: pointer}
+    #paixubar>div.active{background-color: #E71C19;color: white;}
+    #paixubar>div img{transition: 0.2s ease-in-out}
+    #paixubar>div:hover img{transform: rotate(180deg)}
+    #paixubar>div:hover  .absbox{display: block}
+    .absbox{width: 158px;position: absolute;left: 45%;top: 35px;padding-top: 10px;margin-left:-80px;display: none;z-index: 100}
+    .absbox>span{width: 0;
+        height: 0;
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: -5px;
+        margin-left: -4px;
+        border: 8px solid transparent;
+        border-style: dashed dashed solid;    border-bottom-color: white}
+    .absbox>div{border: 1px solid white;background-color: white;padding:5px 20px;display: flex;flex-direction: column;justify-content: space-around}
+    .absbox>div>a{display: block}
+    .dis-href{margin-bottom: 30px;line-height: 0px;margin-right: 40px}
+    .flex{justify-content: flex-start;width: 1250px}
+    p.abs-rgba {
+        display: flex;
+        background-color: rgba(0,0,0,0.5);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    p.abs-rgba>strong{width: 100%;display: inline-block;text-align: left;line-height: 25px}
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/zht_nav2.html" /}
+        </div>
+        <div class="diqu">
+            <div class="product">
+                <div class="tit"><span>地</span><span>区:</span></div>
+                <div class="addr">
+                    <a href="javascript:void(0);" id="setarea_" onclick="setarea('')">不限</a>
+                    {volist name="prolist" id="vo"}
+                    <a href="javascript:void(0);" id="setarea_{$vo.code}" onclick="setarea('{$vo.code}')">{$vo.name}</a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="product">
+                <div class="tit"><span>城</span><span>市:</span></div>
+                <div class="addr">
+                    <a href="javascript:void(0);" id="setcity_" onclick="setcity('')">不限</a>
+                    {volist name="ct" id="vo"}
+                    <a href="javascript:void(0);" id="setcity_{$vo.code}" onclick="setcity('{$vo.code}')">{$vo.name}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <div  id="paixubar" >
+            <div class="active">综合排序</div>
+            <div class="">最新发布</div>
+            <!--
+            <div class="">商业面积 <img src="__IMAGES__/zhaoshang/img/2.svg" width="14" height="14" alt="">
+                <div class="absbox" style="">
+                    <span style=""> </span>
+                    <div style="">
+                        <a href="" >面积重高到低</a>
+                        <a href="">面积从低到高</a>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                开业时间 <img src="__IMAGES__/zhaoshang/img/2.svg" width="14" height="14" alt="">
+                <div class="absbox" style="">
+                    <span style=""> </span>
+                    <div style="">
+                        <a href="" >面积重高到低</a>
+                        <a href="">面积从低到高</a>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+        <form id="formid" method="post">
+            <input type="hidden" id="area" name="area" value="{$area}">
+            <input type="hidden" id="city" name="city" value="{$city}">
+        </form>
+        <div class="flex">
+            {volist name="list" id="vo"}
+            <a href="{:url('index/zht/mallinfo',['id'=>$vo['id']])}" class="dis-href">
+                <img src="{$vo.pic}" width="196" height="203" alt="">
+                <p class="abs-rgba">
+                    <strong>{$vo.title}</strong>
+                    <span>开业{$vo.addtime}年</span><span>{$vo.jianzhu}万平米</span>
+                </p>
+            </a>
+            {/volist}
+        </div>
+        <div class="pageoption">{$list->render()}</div>
+
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#zhtzht").addClass("active");
+    $("#zhlink7").addClass("active");
+</script>
+
+<script language="javascript">
+    function setarea(v){
+        $("#area").val(v);
+        $("#formid").submit()
+    }
+    $("#setarea_"+$("#area").val()).addClass("active");
+
+    function setcity(v){
+        $("#city").val(v);
+        $("#formid").submit()
+    }
+    $("#setcity_"+$("#city").val()).addClass("active");
+</script>
+{/block}

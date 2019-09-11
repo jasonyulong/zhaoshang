@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/reset.css">
+    <script src="__IMAGES__/zhaoshang/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zhaoshang/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+    {block name="header"}{/block}
+</head>
+<body>
+<input type="hidden" value="navts" data-active="">
+<input type="hidden" value="tslink4" data-active="">
+
+{include file="../public/tpl/index/include_nav.html" /}
+
+<div class="biaoti">
+    <article>专业&nbsp;&nbsp;&nbsp;&nbsp;精准&nbsp;&nbsp;&nbsp;&nbsp;高效<br/></article>
+    <section>
+        <article>PROFESSIONAL</article>
+        <div>
+            <p>Professional, accurate, efficient and continuous</p>
+            <p>Professional people do professional things</p>
+        </div>
+    </section>
+    <div style="width: 1200px;margin: 0 auto;position: relative;top:-125px "><a href="{:url('index/zhaoshang/xuqiu',['type'=>'lou'])}" style="position: absolute;right: 0" class="btn btn-danger">免费发布资讯</a></div>
+</div>
+
+{block name="content"}{/block}
+{include file="../public/tpl/index/footer.html" /}
+{block name="footer"}{/block}
+</body>
+</html>

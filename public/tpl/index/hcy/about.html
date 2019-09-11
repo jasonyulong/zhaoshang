@@ -1,0 +1,79 @@
+{extend name="hcy"}
+
+{block name="header"}
+<title>关于我们</title>
+{/block}
+
+{block name="content"}
+<!--banner-->
+<div id="banner" class="container-fluid p-0 mt-3 position-relative d-flex align-items-center" style="background-image: url(__IMAGES__/hcy/img/3.jpg)" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-end ">
+                <span class="font-size-55 mr-2 text-uppercase line-height-55 font-weight-light" >A</span><span class="font-size-24 mr-2 text-uppercase font-weight-light">bout</span><span ><img src="__IMAGES__/hcy/img/9.png" alt=""></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-start ">
+                <span class="mr-2"><img src="__IMAGES__/hcy/img/9.png" alt=""></span><span class="font-size-36 mr-2 line-height-36 font-weight-light" >关于联盟</span><span class="font-size-24 mr-2 text-uppercase align-self-end line-height-24 font-weight-light "  >Union</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-4" style="max-width: 1230px">
+    <div class="row">
+        <div class="col">
+            <p class="my-3 text-666"><a href="{:url('index/hcy/index')}"><span class="iconfont icon-shouye mr-1 "></span>首页</a> &nbsp;&gt;&nbsp;关于联盟</p>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <div class="row justify-content-center">
+        <div class="col-md-3 d-flex mb-3 px-0" style="overflow: hidden;border-radius: 16px">
+            <a href="{:url('index/hcy/about')}" class="bg-red text-white w-50 px-3 text-center py-1">联盟简介</a>
+            <a href="{:url('index/hcy/jiagou')}" class="bg-light  text-666 w-50 px-3 text-center py-1">组织架构</a>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-12 py-1 text-indent text-333 line-height-35">
+                湖北惠创优产业园发展联盟(以下简称患创优联盟)是由湖北省政府及省内地方政府和省内各地区产业园区管委会共同发起成立的政府产业园综合服务
+                联盟,联盟理事会和相关委员会成员由地方政府和产业园管委会负责人兼任。
+            </div>
+            <div class="col-xl-12  d-flex justify-content-center py-5" >
+                <img src="__IMAGES__/hcy/img/4.jpg" width="720"  height="342"  alt="">
+            </div>
+            <div class="col-12  text-indent text-333 line-height-35">
+                联盟为企业成员和园区提供产业定位、产业规划、投融资策划、财政奖励、商事服务、产融结合、政企互联、总部经济、人才引进、项目对接、资源整
+                合等服务,打造政企共赢共同体!同时联盟汇集了湖北省内最优的招商引资优惠政策,凡是入驻联盟的企业均可享受到全省各地市、县政府提供的招商引资
+                优恵政策,井且还可享受到四大行业+四新经济所属:二十三个产业八十多种类型的企业量身定制精准有效的财税筹划方案,联盟从创世至今致力于一站式
+                招商服务,为方便企业入驻简化政务流程,开通绿色办公通道,为解除企业的入驻后的忧患,联盟作为地方政府及其产业园的综合服务和统筹协调机构,通
+                过高效服务精准恵企,打造地方政府产业园星级服务新典范和省级产业园联盟招商新形式
+            </div>
+            <p class="text-red px-3 m-0 py-2">联盟宗旨和特色</p>
+            <div class="col-12 text-indent text-333 line-height-30">
+                为坚决贯彻湖北省委、省政府《关于新形势下进一步加大招商引资力度的若干意见》(鄂政发〔2017〕14号),践行政府职能转变新思想,优化营商环境
+                建设让企业和人民满意的服务型政府
+            </div>
+            <div class="col-12  text-indent text-333 line-height-30">
+                在产业联盟中除可享受国家、省制定的优恵政策外,还可在项目立项、计划、信贷、土地使用、税收、劳动人事等方面享受当地所订的优患政策,同时
+                通过资源整合和资本对接等增值服务,帮助企业实现跨越式发展和裂变式增长!
+            </div>
+            <div class="col-12 text-indent text-333 line-height-30 pb-5 mb-2">
+                恵创优联盟发挥政府顶层协调、政策整合、服务地等优勢,为毎家企业精准提供订制化解决方案,并高效对接政府窗口,全过程落实惠企政策并及时
+                解决相关问题,实现从解决方案提供到执行落地的一条龙政务服务!
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#about").addClass("active")
+    })
+</script>
+{/block}

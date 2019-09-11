@@ -1,0 +1,86 @@
+{extend name="zht"}
+
+{block name="header"}
+<title>案例</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+<style>
+    .anli{margin-top: 80px;}
+    .flex{justify-content: flex-start}
+    .flex>a{margin-bottom: 26px;margin-right: 25px}
+    .flex>a>div{overflow: hidden;width: 260px;height: 168px}
+    .flex>a img{display: block;transition: 0.2s ease-in-out}
+    .flex>a img:hover{transform: scale(1.05)}
+    .anli{display: none;}
+    .anli>.flex h4 {
+        color: #111111;
+        padding: 5px 0;
+
+    }
+
+    #chooes{width: 480px;margin: 0 auto;height: 50px;border-radius: 25px;background-color: #f8f8f8;display: flex;justify-content: space-between;line-height: 50px}
+    #chooes>div{cursor: pointer;width: 50%;height: 50px;color: #666666;text-align: center}
+    #chooes>div.active{background-color: #3d87d1;color: white}
+    #chooes>div:first-child{border-radius: 25px 0 0 25px}
+    #chooes>div:last-child{border-radius: 0px 25px 25px 0px}
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/zht_nav2.html" /}
+        </div>
+
+
+        <div id="zhaoshang">
+            <div id="chooes" style="">
+                <div class="active">最新活动</div>
+                <div>热门活动</div>
+            </div>
+
+            <div class="anli" style="display: block" >
+                <div class="flex">
+                    {volist name="hot" id="vo"}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">
+                        <div>
+                            <img src="{$vo.pic}" width="260" height="168" alt="">
+                        </div>
+                        <h4>{$vo.title|mb_substr=###,0,15,'utf-8'}...</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="anli">
+                <div class="flex">
+                    {volist name="new" id="vo"}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">
+                        <div>
+                            <img src="{$vo.pic}" width="260" height="168" alt="">
+                        </div>
+                        <h4>{$vo.title|mb_substr=###,0,15,'utf-8'}...</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#zhtzht").addClass("active");
+    $("#zhlink5").addClass("active");
+</script>
+<script>
+    $(function () {
+        $("#chooes>div").click(function () {
+            var $index =$(this).index();
+            $(this).addClass("active").siblings().removeClass("active")
+            $(".anli").eq($index).fadeIn().siblings(".anli").fadeOut()
+        })
+    })
+</script>
+{/block}

@@ -1,0 +1,69 @@
+
+
+
+canvas{height: 1022px !important;pointer-events: none}
+html,body{background-color: transparent;width: 100%;overflow-x: hidden}
+body{background:transparent url("../img/log_reg_pwd/6.jpg")no-repeat !important;width: 100%}
+/*导航*/
+/*旋转木马*/
+#lunbo{
+    width: 1025px;height: 300px;margin: 0 auto;margin-top: 150px;display: flex;;justify-content: center;transform-style: preserve-3d;perspective: 2142px;
+}
+#box{transform-style: preserve-3d;width: 240px;height: 210px;position: relative;    bottom: -45px;}
+#box a{	width:240px;
+    height:210px;
+    position:absolute;
+    margin: 0 auto;
+}
+.oImg{transition:transform 1s ease-in-out;}
+/*.oImg:hover{width: 130%!important;height: 130% !important;left: -15%;top: -15%}*/
+.imgbox{width: 100%;height: 70%;display: flex;align-items: center;justify-content: center;box-shadow: 5px 5px 20px rgba(2,1,7,0.3);transition: 0.15s ease-in-out;border-radius: 3px}
+.imgbox:hover{transform: scale(1.2)}
+#box a p{font-size: 25px;text-align: center;font-weight: bold;;padding: 10px;color: white;;margin-top: 30px;
+    text-shadow: 2px 2px 2px  rgba(61,74,96,0.5),-2px -2px 2px rgba(61,74,96,0.5);  }
+
+/*搜索框*/
+form.serach{width: 1025px;height:  130px;padding-left: 80px;padding-right: 80px;padding-bottom: 10px; background-color: rgba(255,255,255,0.3);box-sizing: border-box;
+    margin: 0 auto;box-shadow:  2px 2px 18px rgba(123, 106, 106, 0.3);margin-top: 50px}
+.radio{display: flex;line-height: 0px;height: 50px;font-size: 55px;padding: 10px 0;margin: 0}
+.menu a{position: relative;display: flex;justify-content: center;align-content: center;flex-direction: column;align-items: center;border: 1px solid white;width: 140px;height: 140px;
+    background-color: rgba(255,255,255,0.3);box-shadow:  2px 2px 18px rgba(123, 106, 106, 0.3);}
+.menu a:hover{ background-color: rgba(255,255,255,0.5);transform: scale(1.2);transition: 0.2s ease-in}
+.menu a:hover span{color:#FE620A }
+.menu span{font-size: 25px;margin-top: 10px;font-weight: normal;position: absolute;bottom: 30px;width: 100%;left: 0px}
+.radio input[type=radio]{opacity: 0;width: 0px;height: 0px;margin: 0px;display: none}
+.radio>div{;line-height: 0;vertical-align: top}
+.radio input[type=radio]+label{color: black;font-size: 14px;font-weight: bold;margin-right: 10px;padding-left: 0}
+.radio input[type=radio]:checked + label{color: #FE620A;}
+.textInput{display: flex;margin-top: 10px}
+.textInput>input[type=text]{padding-left: 30px;width: 750px;height: 50px;background-color: white;border: 0px;outline: 0px;box-sizing: border-box;font-size: 16px}
+.textInput>input[type=submit]{width: 120px;height: 50px;border: 0px;outline: 0px;background:#005196 url('../img/index/serach.png')no-repeat center center;cursor: pointer}
+/*
+新闻*/
+#news{ width: 1025px;margin-top: 30px;
+    height: 210px;margin: 0 auto;margin-top:22px;padding: 25px 0px 25px 47px; display: flex;margin-bottom: 50px}
+#myCarousels{width: 298px;height: 160px;
+    box-shadow:5px 5px 10px rgba(7,1,2,0.3);
+
+
+    overflow: hidden}
+.Carousel>div,.Carousel{width: 100%;height: 100%}
+.menu{position: absolute;}
+.newslist{padding-left:48px;display: flex;align-content: space-between;flex-wrap: wrap;width: 70%}
+.newslist>a{display: inline-block;font-size: 16px;color: #666666;line-height: 25px;width: 100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.newslist>a:hover{color: #fe620a; }
+.carousel-indicators{font-size: 0px;margin-left: 0%}
+.carousel-indicators li{    width: 14px;
+    height: 7px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: white;
+    margin: 1px 2px;
+}
+.carousel-indicators .active {
+    width: 14px;
+    height: 7px;
+    background-color: #fe620a;
+    margin: 1px 2px;
+}
+

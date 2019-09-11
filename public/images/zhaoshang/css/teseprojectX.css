@@ -1,0 +1,56 @@
+#main {
+    width: 1200px;
+    background-color: white;
+    padding: 115px 15px 110px 15px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 60px;
+}
+#main>.link {
+    height: 170px;
+    position: absolute;
+    top: -90px;
+    width: 1200px;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 20px;
+    background-color: #005196;
+    background-clip: content-box;
+    background-origin: content-box;
+    left: 0px;
+}
+
+#main>.link>a {
+    width: 300px;
+    padding: 0 20px;
+    display: flex;
+    height: 165px;
+    align-items: flex-end;
+    transition: 0.35s ease-in-out;
+    color: white;
+    font-size: 18px;
+    flex-direction: column;;justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-top: 30px;
+    background-image: url("../img/shitizhaoshang/41.png");
+    background-repeat: no-repeat;
+    background-position:left 40px;
+    flex-grow: 1;
+}
+#main>.link>a:first-child{ background-image:none}
+#main>.link>a>img{display: block;}
+#main>.link>a>h1{font-weight: bold;font-size: 20px;line-height: 50px;;width: 100%;text-align: center}
+
+#main>.link>a:hover {
+    background-color: #E71C19;
+    height: 175px;
+    padding-top: 40px;
+    background-image:none
+}
+#main>.link>a.active {
+    background-color: #E71C19;
+    height: 175px;
+    padding-top: 40px;
+    background-image:none
+}

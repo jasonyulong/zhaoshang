@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        a{background:white url(../img/seting/31.png) no-repeat 26px 26px}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y9XrqIdFduE2IxUeu10pKhsCf5kNEXUv"></script>
+    <title>地图展示</title>
+</head>
+<body>
+<div id="allmap" style="width: 100%;height: 1000px"></div>
+<div style="position: absolute;width: 100px;height: 200px;top:0;left: 0;background-color: white">
+    <button onclick="yinhang()">银行</button>
+    <button onclick="gogjoiao()">公交</button>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var map = new BMap.Map("allmap");            // 创建Map实例
+    var mPoint = new BMap.Point(116.404, 39.915);
+    map.enableScrollWheelZoom();
+    map.setMaxZoom(20);
+    map.setMinZoom(10)
+    map.centerAndZoom(mPoint,16);
+
+    //添加控件
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+    var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+    var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角
+    map.addControl(top_left_control);
+    map.addControl(top_left_navigation);
+    map.addControl(top_right_navigation);
+
+   //创建半透明原型范围
+    var circle = new BMap.Circle(mPoint,1000,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+    map.addOverlay(circle);
+    //收索结果
+    var local =  new BMap.LocalSearch(map,{renderOptions: {map: map,selectFirstResult:false,autoViewport: false},pageCapacity:8,onMarkersSet:function (data) {
+            map.clearOverlays()
+            var pt = new BMap.Point(116.404, 39.915);
+            var myIcon = new BMap.Icon("http://lbsyun.baidu.com/jsdemo/img/fox.gif", new BMap.Size(300,171));
+            var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+            var opts = {
+                width : 200,     // 信息窗口宽度
+                height: 100,     // 信息窗口高度
+                title : "瑟维思商务服有限公司" , // 信息窗口标题
+                enableMessage:true,//设置允许信息窗发送短息
+                message:"bbb"/*"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"*/
+            }
+            var infoWindow = new BMap.InfoWindow("南国大武汉H坐18楼;<br>联系电话13307133879<br>联系人:罗雨祥", opts);  // 创建信息窗口对象
+            marker2.addEventListener("click", function(){
+                map.openInfoWindow(infoWindow,pt); //开启信息窗口
+            });
+            map.addOverlay(marker2);
+            var circle = new BMap.Circle(mPoint,1000,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+            map.addOverlay(circle);
+            data.forEach(function (itme,value) {
+                var pt = new BMap.Point(itme.marker.point.lng, itme.marker.point.lat);
+                var myIcon = new BMap.Icon("../img/seting/(4).png", new BMap.Size(24,24));
+                var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+                var opts = {
+                    width : 200,     // 信息窗口宽度
+                    height: 100,     // 信息窗口高度
+                    title : itme.title , // 信息窗口标题
+                    enableMessage:true,//设置允许信息窗发送短息
+                    message:itme.address/*"亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"*/
+                }
+                console.log(itme)
+                var infoWindow = new BMap.InfoWindow(itme.address, opts);  // 创建信息窗口对象
+                marker2.addEventListener("click", function(){
+                    map.openInfoWindow(infoWindow,pt); //开启信息窗口
+                });
+                map.addOverlay(marker2);
+            })
+    }});
+    local.searchNearby("银行",mPoint,1000);
+   /* local.searchNearby("公交",mPoint,1000);*/
+    function gogjoiao(){
+        local.searchNearby("公交",mPoint,1000);
+    }
+    function  yinhang() {
+        local.searchNearby("银行",mPoint,1000);
+    }
+
+    //创建小狐狸标注
+    var pt = new BMap.Point(116.404, 39.915);
+    var myIcon = new BMap.Icon("http://lbsyun.baidu.com/jsdemo/img/fox.gif", new BMap.Size(300,171));
+    var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+    map.addOverlay(marker2);
+  /*  var label = new BMap.Label("关山",{offset:new BMap.Size(100,20)});
+    label.setStyle({
+        width: "50px",
+        color: 'black',
+        border: '1px solid "#ff8355"',
+        borderRadius: "5px",
+        textAlign: "center",
+        height: "26px",
+        lineHeight: "26px",
+    });
+    marker2.setLabel(label);*/
+</script>
+
+

@@ -1,0 +1,58 @@
+#zh-main{min-height: 100px}
+#zh-fuhua{display: flex;justify-content: space-between;}
+.fuhua-left{width: 525px;height: 530px;align-content: space-between}
+.fuhua-left>h1{display: flex;align-items: center;padding-bottom: 10px;font-size: 24px }
+.fuhua-left>h1:before{content: "";width: 5px;height: 20px;background-color:#E71C19;display: inline-block;margin-right: 10px }
+.fuhua-left p{text-align: left;text-indent: 15px;}
+.fuhua-rigth{width: 592px;display: flex;flex-direction: column}
+.fuhua-rigth>p{justify-content: flex-end;margin-bottom: 20px}
+.fuhua-rigth>p>a{margin-left: 15px;color: #666666;border: 2px solid #666666;padding: 0 5px}
+.fuhua-rigth>p>a.active{font-weight: bold;color: #005196;border: 2px solid #005196}
+.hotnews>section{display: flex;height: 50px;background-color: #F8F8F8;align-items: center;position: relative}
+.hotnews>section .data{text-align: center;background-color: #005196;color: white;font-size: 14px;padding: 0 3px}
+.hotnews>section .data:first-line{font-size: 20px}
+.hotnews>section a:first-of-type{text-indent: 15px;color: #666666;font-weight: bold}
+.hotnews>section a:first-of-type:hover{color: #E71C19}
+.hotnews>section a:last-of-type{position: absolute;right: 0;}
+.hotnews>blockquote{padding: 10px 0;line-height: 25px;color: #666666}
+.article{display: none}
+.article >a{align-items: center;display: flex;justify-content: space-between;line-height: 44px}
+.article >a p{display: flex;align-items: center}
+.article >a span{color: #999999}
+.article >a img{margin-right: 10px}
+article.title{color: #999999;font-size: 14px;text-align: center;margin: 50px 0 }
+article.title:first-line{font-size: 24px;line-height: 35px;font-weight: bold;color: #333333}
+.anli a{margin-bottom: 30px}
+#fuhua-fuwu{padding-left: 20px}
+#fuhua-fuwu>section{display: flex;width: 270px;margin-bottom: 50px}
+#fuhua-fuwu>section>div:last-of-type{margin-left: 15px;font-size: 14px;height: 70px;display: flex;flex-direction:column;justify-content: space-between}
+#fuhua-fuwu>section>div:last-of-type>h1{font-size: 18px;color: #333333;;font-weight: bold;}
+#fuhua-anli{width: 100%;height: 480px;display: flex;padding: 0 30px}
+#fuhua-anli>.lunbowrap{width: 100%;height: 343px;display: flex;position: relative;}
+#fuhua-anli>.lunbowrap>div:first-of-type{width: 50%;height:100%;background-color: #f8f8f8}
+#fuhua-anli>.lunbowrap>div:last-of-type{width: 50%;height:100%;background-color:#005196 }
+#fuhua-anli section{position: absolute;width: 1050px;height: 300px;left: 30px;top: 25px}
+#myCarousels {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#myCarousel .item>div{display: flex;justify-content: space-between}
+#myCarousel .item>div>article{padding: 70px 38px;display: flex;flex-direction: column;width: 500px}
+#myCarousel .item>div>article>h2{font-size: 24px;color: #666666;line-height: 35px;font-weight: bold}
+#myCarousel .item>div>article>blockquote{color: #666666;line-height: 30px}
+#myCarousel .item>div>article>a{background-color:#005196;color: white ;align-self: flex-end;padding: 0 5px;font-size: 14px}
+#myCarouselrigth{position: absolute;right:20px;top:120px;z-index: 999;cursor: pointer;display: none}
+#zh-huodong{display: flex;justify-content: space-between}
+#zh-huodong>a:first-of-type{position: relative;display: block;height: 400px;width: 360px;}
+#zh-huodong article{position: absolute;bottom: 0;width: 100%;color: white;padding: 37px 0;background-color: rgba(0,0,0,0.3)}
+#zh-huodong article>h2{text-align: center;font-size: 18px;font-weight: bold}
+#zh-huodong article>p{font-size: 16px;text-align: center;margin: 5px 0}
+#zh-huodong article>blockquote{ font-size: 14px;padding: 0 20px}
+#zh-huodong>.pro{width: 200px;display: flex;flex-direction: column;justify-content: space-evenly}
+#zh-huodong>.pro>h3{width: 104px;height: 90px;border: 2px solid #005196;border-radius: 5px;display: flex;align-items: center;justify-content: center;flex-direction: column}
+#zh-huodong>.pro>h3>p:first-of-type{font-size: 24px;font-weight: bold;margin-bottom: 5px}
+#zh-huodong>.pro>p{color: #333333;font-weight: bold;font-size: 18px}
+#zh-huodong>.pro>blockquote{ font-size: 14px}
+#zh-huodong>.pro>a{background-color: #3D87D1;color: white;padding: 2px 5px;width: 100px}
+#zh-huodong>.pro>a:hover{background-color: #2e6da4}

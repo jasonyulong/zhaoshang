@@ -1,0 +1,12 @@
+#box {
+  width: 400px;
+  height: 400px;
+  border: 1px solid gray; }
+  #box h1 {
+    font-size: 22px;
+    color: red; }
+  #box p {
+    font-size: 18px;
+    color: green; }
+
+/*# sourceMappingURL=popo.css.map */

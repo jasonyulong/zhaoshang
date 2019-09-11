@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <mata name="renderer" content="webkit"></mata>
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="bookmark"href="../img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_931982_47h2od803tu.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <style>
+        .carousel-control-prev, .carousel-control-next {
+            position: absolute;
+            top: -40px;
+            bottom: 0;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 15%;
+            color: #fff;
+            text-align: center;
+            opacity: 1;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .carousel-control-next-icon,.carousel-control-prev-icon { background-image: none !important;}
+        .carousel-control-next-icon{
+
+        }
+        .carousel-control-prev{
+           left: auto;
+           right:40px;
+        }
+        .carousel-control-next {
+            right: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../pugin/lightbox/baguetteBox.min.css">
+</head>
+
+<body >
+<!--侧边栏-->
+<!--<aside id="mainaside" class="position-fixed" style="width: 65px;right: 0px">
+    <a href="login.html" class="text-white d-block d-flex flex-column justify-content-around" style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe670;</p>
+        <p class="px-1 font-size-12 text-center mb-1">登陆注册</p>
+    </a>
+    <a href="login.html" class="text-white d-block " style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe63d;</p>
+        <p class="px-1 font-size-12 text-center mb-1">免费发布</p>
+    </a>
+    <a href="tencent://message/?uin=52203910&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe662;</p>
+        <p class="px-1 font-size-12 text-center mb-1">免费咨询</p>
+
+    </a>
+    <a href="tencent://message/?uin=52203910&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe62c;</p>
+        <p class="px-1 font-size-12 text-center mb-1">二维码</p>
+        <article class=" justify-content-center align-items-center flex-column bg-white pt-3" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;width: 110px;height: 129px;z-index: 1000" >
+            <div class="d-flex justify-content-center">
+                <img src="../img/1.png" width="84" height="84" class="d-block  tp-4 " alt="图片">
+            </div>
+
+            <p class="text-center text-333">微信公众号</p>
+        </article>
+    </a>
+    <a  class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px;cursor: pointer">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe62f;</p>
+        <p class="px-1 font-size-12 text-center mb-1">联系我们</p>
+        <article class=" align-items-center flex-column  px-2 font-size-24 font-weight-bold" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;height: 65px;z-index: 1000;background-color:#dd0000 " >
+            <div class="d-flex align-items-center h-100">13307133879</div>
+        </article>
+    </a>
+    <a href="javascript:backtop()"  class="text-white d-block " style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe665;</p>
+        <p class="px-1 font-size-12 text-center mb-1">返回顶部</p>
+    </a>
+</aside>-->
+<!--广告-->
+<!-- <aside id="maingao" class="alert alert-dismissible position-fixed" style="width: 202px;left: 93px;top: 30%">
+        <p  class="text-right text-333 font-size-14 mb-0 close"  data-dismiss="alert" style="cursor: pointer;right: -42px;top: -19px" onclick="close()">关闭</p>
+        <a href="newsinfo.html" class="d-block "  >
+            <img src="../img/9.jpg" width="202" height="337"  alt="图片">
+        </a>
+    </aside>-->
+
+
+<!--导航&&搜索框-->
+<div class="container-fluid p-0 banner "  style="height: 443px">
+    <div class="container-fluid bg-linered m-0 " style="background:linear-gradient(#ed444b87,#bf181f)">
+        <nav id="nav" class="container-fluid   d-flex justify-content-between  align-items-center " style="max-width: 1200px;height: 75px;">
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 h-100 d-block px-4 font-weight-bold font-size-22" style="line-height: 75px">首页</a>
+            </div>
+            <div class="navhover h-100">
+                <a href="zhaoshang.html" class="text-white font-size-18 h-100 d-block px-4 " style="line-height: 75px">实体招商</a>
+                <div class="secondnav container-fluid position-absolute col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="{:url('index/zhaoshang/tudi_index')}" class="text-333 mr-5">厂房出租</a>
+                            <a href="{:url('index/zhaoshang/fang_index')}" class="text-333 mr-5">土地租售</a>
+                            <a href="{:url('index/zhaoshang/lou_index')}" class="text-333 mr-5">写字楼出租</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="http://www.i35wang.com/hcy/index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">税务筹划</a>
+            </div>
+            <div class="navhover h-100">
+                <a href="newsinfo.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">政策动态</a>
+                <div class="secondnav container-fluid position-absolute col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="#" class="text-333 mr-5">政策速递</a>
+                            <a href="#" class="text-333 mr-5">行业动态</a>
+                            <a href="#" class="text-333 mr-5">服务咨询</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">综合体</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="#" class="text-333 mr-5">孵化器</a>
+                            <a href="#" class="text-333 mr-5">众创空间</a>
+                            <a href="#" class="text-333 mr-5">商业综合体</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">项目对接</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="#" class="text-333 mr-5">政府采购</a>
+                            <a href="#" class="text-333 mr-5">工程项目</a>
+                            <a href="#" class="text-333 mr-5">城市建设</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">行政办公</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="#" class="text-333 mr-5">工商</a>
+                            <a href="#" class="text-333 mr-5">税务</a>
+                            <a href="#" class="text-333 mr-5">知识产权</a>
+                            <a href="#" class="text-333 mr-5">法律</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">特色项目</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="#" class="text-333 mr-5 ">工业</a>
+                            <a href="#" class="text-333 mr-5">农业</a>
+                            <a href="#" class="text-333 mr-5">AI</a>
+                            <a href="#" class="text-333 mr-5">特色小镇</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container " style="max-width: 1230px;padding-top:65px">
+        <div class="row mt-5" >
+            <div class="col-6">
+                <div class="pl-3">
+                    <img src="../img/3.png" width="471" height="98" alt="图片">
+                </div>
+                <div class="mt-3 pl-3">
+                    <img src="../img/4.png" width="362" height="33" alt="图片">
+                </div>
+            </div>
+            <div class="col-6 px-5">
+                <p class="text-jin font-size-18">热门搜索：写字楼   湖北招商政策   习近平</p>
+                <form >
+                    <div class="input-group " style="height: 50px">
+                        <div class="input-group-prepend  ">
+                            <div class="input-group-text bg-white rounded-0 border-0"><span class="iconfont icon-fangdajing font-weight-bold font-size-24 text-red "></span></div>
+                        </div>
+                        <input type="search" id="search" autofocus autocomplete="off" class="form-control rounded-0 h-100 border-0 " >
+                        <div class="input-group-append  ">
+                            <button class="btn bg-red text-white font-size-18 rounded-0" style="padding: 0 30px;" >搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--标题-->
+<div class="container-fluid p-0 bg-f6f6f6" style="height: 94px;margin-bottom: 25px">
+    <div class="container h-100" style="max-width: 1230px;">
+        <div class="row h-100 align-items-center" >
+            <div class="col-10">
+                <h1 class="text-black font-size-26 font-weight-bold align-items-center d-flex" >
+                    <span length="30">[松岗厂房]松岗大型工业园二楼1500平米精装修现成厂房出租松岗大型工业园二楼1500平米精装修现成厂房出租松岗大型工业园二楼1500平米精装修现成厂房出租松岗大型工业园二楼1500平米精装修现成厂房出租    </span>
+                    <span class="ml-4 h-100 d-inline-block  bg-red  text-white  font-size-14 font-weight-light bg-d1231f" style="padding: 4px 11px;border-radius: 13px">租售</span>
+                </h1>
+            </div>
+            <div class="col-2 h-100 d-flex flex-column justify-content-around py-3">
+                <p class="text-ccc m-0 font-size-12 text-right"><span class="iconfont icon-kanguo mr-1"></span>56浏览</p>
+                <p  class="text-ccc m-0 font-size-12 text-right">15小时前更新</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--灯箱-->
+<div class="container" id="linghtbox" style="max-width: 1230px">
+    <div class="row" style="margin: 0 -30px">
+        <div class="col-8" style="padding: 0 30px">
+            <div class="row" style="margin: 0 -3px">
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/28.jpg">
+                        <img src="../img/28.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/27.jpg">
+                        <img src="../img/27.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/26.jpg">
+                        <img src="../img/26.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/25.jpg">
+                        <img src="../img/25.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/24.jpg">
+                        <img src="../img/24.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/23.jpg">
+                        <img src="../img/23.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/22.jpg">
+                        <img src="../img/22.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+                <div class="col-auto " style="padding: 0 3px;margin-bottom: 6px">
+                    <a class="lightbox" href="../img/21.jpg">
+                        <img src="../img/21.jpg" width="150" height="100" alt="图" title="图片">
+                    </a>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="row my-4 no-gutters" >
+                <div class="col-auto text-666 font-size-14" style="width: 140px">基本信息</div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-5 text-666 mb-4 font-size-14">建筑面积</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">1500m²</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">厂房电梯</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">无</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">地面承重</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">0.50吨/m²</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">厂房食堂</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">无</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-5 text-666 mb-4 font-size-14">厂房层高 </div>
+                        <div class="col-7 text-black  mb-4 font-size-14">4.50m</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">消防等级</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">无</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">厂房跨度</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">12m</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 no-gutters" >
+                <div class="col-auto text-666 font-size-14" style="width: 140px;">其他信息</div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-5 text-666 mb-4 font-size-14">楼层长宽</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">330m²*600m²</div>
+                        <div class="col-5 text-666 mb-4 font-size-14">办公面积</div>
+                        <div class="col-7 text-black  mb-4 font-size-14">按需分配 </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-5 text-666 mb-4 font-size-14">宿舍面积  </div>
+                        <div class="col-7 text-black  mb-4 font-size-14">按需分配</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4 no-gutters" >
+                <div class="col-auto text-666 font-size-14" style="width: 140px;">厂房描述</div>
+                <div class="col">
+                    <div class="row no-gutters">
+                        <div class="col-12 text-black  mb-2 font-size-14 ">【园区特色】²</div>
+                        <div class="col-12 text-black  mb-2 font-size-14">办公：独立办公室²</div>
+                        <div class="col-12 text-black  mb-2 font-size-14">【园区配套】 </div>
+                        <div class="col-12 text-black  mb-2 font-size-14"> 基础配套：给水、排水、通电、通路、通讯</div>
+                        <div class="col-12 text-black  mb-2 font-size-14">区位优势：临近物流园，周边高速发达 生活配套，满足员工的日常生活需求</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters" style="padding-right: 50px;">
+                <div class="col-12 flex-wrap d-flex ">
+                    <div class="text-d1231f text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-qiyeyuanquwuye-xianxing font-size-45 "></article>
+                        <p class=" m-0 font-size-14">物业管理</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-duocengjiegou font-size-45 "></article>
+                        <p class=" m-0 font-size-14">多层</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-fenge font-size-45 "></article>
+                        <p class=" m-0 font-size-14">可分割</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-haofangtuo400iconfont2dianti font-size-45 "></article>
+                        <p class=" m-0 font-size-14">电梯</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-cheku font-size-45 "></article>
+                        <p class=" m-0 font-size-14">车库</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-tingchewei font-size-45 "></article>
+                        <p class=" m-0 font-size-14">停车位</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-zhaoming font-size-45 "></article>
+                        <p class=" m-0 font-size-14">照明设备</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-gshuiguanwang font-size-45 "></article>
+                        <p class=" m-0 font-size-14">输水设施</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-icon font-size-45 "></article>
+                        <p class=" m-0 font-size-14">供电设施</p>
+                    </div>
+                    <div class="text-ccc text-center mb-4" style="padding: 0 -10px;width: 100px">
+                        <article class="iconfont icon-jiaju font-size-45 "></article>
+                        <p class=" m-0 font-size-14">配套家具</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="col-4" id="box" style="padding: 0 30px;height: 350px">
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <h2 class="text-333 font-size-14 my-3 font-weight-bold">
+                        <span>租</span>
+                        <span class="text-d1231f font-size-36 ">4.5</span>
+                        <span class="text-d1231f"> 元/ m² / 月</span>
+                    </h2>
+                </div>
+                <div class="col-6 text-right">
+                    <h2 class="text-333 font-size-14 my-3 font-weight-bold">
+                        <span>售 </span>
+                        <span class="text-d1231f font-size-36 font-weight-bold">4.5万</span>
+                        <span class="text-d1231f">元 / m²</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="my-4 col-12" style="border-top: 1px solid #ebebeb"></div>
+            </div>
+            <div class="row px-4">
+                <div class="col-4 text-black font-size-18 font-weight-bold">
+                    1500 <span class="font-size-14">平</span>
+                </div>
+                <div class="col-4 text-black font-size-18 font-weight-bold">
+                    4 <span class="font-size-14">层</span>
+                </div>
+                <div class="col-4 text-black font-size-18 font-weight-bold">
+                    深圳松岗
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="my-4 col-12" style="border-top: 1px solid #ebebeb"></div>
+            </div>
+            <div class="row no-gutters justify-content-between">
+                <div class="col text-666 font-size-14 mb-3">发布时间</div>
+                <div class="col-3 text-black font-size-14  mb-3 ">2018-12-21</div>
+            </div>
+            <div class="row no-gutters justify-content-between">
+                <div class="col text-666 font-size-14 mb-3">楼层结构</div>
+                <div class="col-3 text-black font-size-14  mb-3 ">标准厂房</div>
+            </div>
+            <div class="row no-gutters justify-content-between">
+                <div class="col text-666 font-size-14 mb-3">新旧程度</div>
+                <div class="col-3 text-black font-size-14  mb-3 ">九成新</div>
+            </div>
+            <div class="row no-gutters justify-content-between">
+                <div class="col text-666 font-size-14 mb-3">适用行业</div>
+                <div class="col-3 text-black font-size-14 -bold mb-3 ">轻纺电子类</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--滑块底部-->
+<div id="dibu" style="width: 1px;height: 1px"></div>
+<!--地图-->
+<div class="container mb-50" style="max-width: 1230px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="font-size-18 font-weight-bold text-black my-4">周边环境</h2>
+        </div>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-12" style="height: 445px" id="map">
+            <div id="panel" style="width: 300px ;right: 0;top: 0;z-index: 1000;overflow: scroll " class="h-100 position-absolute"></div>
+        </div>
+    </div>
+</div>
+
+
+<!--精选轮播-->
+<div class="container" style="max-width: 1230px;margin-bottom: 75px">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="font-size-18 font-weight-bold text-black my-4">附近厂房</h2>
+        </div>
+        <div class="col-12">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="">
+                <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev" >
+                    <span class="carousel-control-prev-icon  bg-red iconfont icon-left-copy-copy text-white font-size-12 d-flex align-items-center justify-content-center" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon  bg-black  iconfont icon-left-copy text-white  font-size-12 d-flex align-items-center justify-content-center " aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container p-0" style="max-width: 1200px;min-width: 1200px">
+                            <div class="row" style="margin: 0 -8px">
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container p-0" style="max-width: 1200px;min-width: 1200px">
+                            <div class="row" style="margin: 0 -8px">
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container p-0" style="max-width: 1200px;min-width: 1200px">
+                            <div class="row" style="margin: 0 -8px">
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container p-0" style="max-width: 1200px;min-width: 1200px">
+                            <div class="row" style="margin: 0 -8px">
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                                <div class="col-3" style="padding: 0 8px">
+                                    <a href="newsinfo.html" class="d-block link-overflow mb-3">
+                                        <img src="../img/29.jpg" class="w-100" height="192" alt="">
+                                    </a>
+                                    <p class="my-3 font-weight-bold text-black" length="30">
+                                        公明镇楼村新出3楼300平方厂房带精装修招租
+                                    </p>
+                                    <p class="mb-0 text-ccc font-size-14">
+                                        300m²
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="container-fluid p-0" id="footer" style="background-image: url(../img/17.jpg);background-repeat: no-repeat;background-position: center;background-size: 100% 100%">
+    <div class="container-fluid p-0 " style="background-color: white">
+        <div class="container align-items-center d-flex" style="max-width: 1230px;height: 77px;">
+            <div class="row w-100">
+                <div class="col-10 d-flex justify-content-between font-size-14 text-333">
+                    <span class="text-666 ">友情链接：</span>
+                    <a href="" class="text-333">惠创优产业园</a>
+                    <a href="" class="text-333">瑟维斯商务服务</a>
+                    <a href="" class="text-333 ">中兴瑞华</a>
+                    <a href="" class="text-333 ">北京招商网</a>
+                    <a href="" class="text-333 ">瑞立诺财税</a>
+                    <a href="" class="text-333 ">湖北财税</a>
+                    <a href="" class="text-333 ">武汉招商网</a>
+                    <a href="" class=" text-333">大楚实业招商</a>
+                </div>
+                <div class="col-2">
+                    <a href="" class="text-333 font-size-14 text-right d-block ">展开&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px;height: 140px">
+        <div class="row align-items-center justify-content-between h-100">
+            <div class="col-2 d-flex" style="height: 50px" >
+                <img src="../img/11.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">400-8888888</p>
+                    <p class="mb-0 text-white font-size-14">平台服务热线</p>
+                </div>
+            </div>
+            <div class="col-2 d-flex" style="height: 50px" >
+                <img src="../img/12.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">i35wang@163.com</p>
+                    <p class="mb-0 text-white font-size-14">邮箱</p>
+                </div>
+            </div>
+            <div class="col-2 d-flex" style="height: 50px" >
+                <img src="../img/13.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">08:30-18:00 </p>
+                    <p class="mb-0 text-white font-size-14">服务时间</p>
+                </div>
+            </div>
+            <div class="col-auto  d-flex  " style="height: 50px" >
+                <img src="../img/14.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">027-13537710</p>
+                    <p class="mb-0 text-white font-size-14">意见反馈</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px">
+        <div class="row">
+            <div class="col">
+                <div class="border-red"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container " style=";padding: 58px 0;height: 304px;max-width: 1200px">
+        <div class="row h-100" style="">
+            <div class="col-2 h-100 d-flex flex-column justify-content-between">
+                <img src="../img/5.png" width="143" height="44" class="d-block mb-4" alt="图片">
+                <img src="../img/16.jpg" width="78" height="78" class="d-block" alt="图片">
+                <span class="text-white font-size-14">扫描二维码，加关注</span>
+            </div>
+            <div class="col-10">
+                <div class="row" style="padding-left: 50px">
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">新手指导</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">帮助中心</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">免费发布信息</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">常见问题</a>
+                    </div>
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">平台服务</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">厂房租售</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">土地租售</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">写字楼出租</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">特色小镇</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">商业综合体</a>
+                    </div>
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">招商服务</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">免费选址</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">公司注册</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">税务筹划</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">法律顾问</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">知识产权</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">入园申请</a>
+                    </div>
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">关于平台</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">招商政策网介绍</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">联系我们</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">网站公告</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">隐私条款</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">网站地图</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px">
+        <div class="row">
+            <div class="col">
+                <div class="border-red"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px;height: 146px" >
+        <div class="row h-100  flex-column justify-content-around">
+            <div class="col-12 text-center font-size-14 text-white align-items-center d-flex justify-content-between flex-column">
+                <p class="pt-5">Copyright2018湖北招商政策网有限公司(www35wang.com)版权所有|CP经营许可证鄂B2-20130239|鄂公网安备3010602000758号</p>
+                <p class="pb-5"> 地址:湖北省武汉市硚口区汉西南国大家裂H座20楼</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!--地图API-->
+<script src="../pugin/lightbox/baguetteBox.min.js"></script>
+
+
+
+<script>
+    $(function () {
+        baguetteBox.run('#linghtbox');
+        $('#carouselExampleControls').carousel({
+            interval: 0
+        })
+    })
+</script>
+<!--地图API-->
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=578609e98b59a3e97345b5edaaa3861b"></script>
+
+
+
+<script>
+    var cpoint = [114.223577,30.586913]; //中心点坐标
+    var map = new AMap.Map("map", {
+        resizeEnable: true,
+        zoom:10,
+        center: cpoint //初始化地图层级
+    });
+    AMap.service(["AMap.PlaceSearch"], function() {
+        //构造地点查询类
+        var placeSearch = new AMap.PlaceSearch({
+            type: '公交,地铁', // 兴趣点类别
+            pageSize: 10, // 单页显示结果条数
+            pageIndex: 1, // 页码
+            citylimit: true,  //是否强制限制在设置的城市内搜索
+            map: map, // 展现结果的地图实例
+            panel: "panel", // 结果列表将在此容器中进行展示。
+            autoFitView: true // 是否自动调整地图视野使绘制的 Marker点都处于视口的可见范围
+        });
+
+        placeSearch.searchNearBy('', cpoint, 2000, function(status, result) {
+
+        });
+    });
+
+    var marker = new AMap.Marker({
+        icon: "../img/23.png",
+        position: [114.223577,30.586913],
+    });
+    map.add(marker);
+    map.setFitView();
+</script>
+<script src="../js/pub.js"></script>
+<script>
+    $(document).ready(function () {
+        const  boxheight=350
+        const  $dibu=$("#dibu").offset().top
+        const  boxtop=$("#box").offset().top
+        const  $chaju=$dibu-(boxtop+boxheight)
+        $(window).scroll(function () {
+            requestAnimationFrame(an)
+        })
+        function an() {
+            var $scrollTop=$(window).scrollTop();
+            if($scrollTop>boxtop && $scrollTop<$dibu-350){
+                document.getElementById("box").style.top=($scrollTop-boxtop)+"px";
+            }
+        }
+    })
+
+</script>
+</body>
+
+</html>

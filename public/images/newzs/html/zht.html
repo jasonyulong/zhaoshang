@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <mata name="renderer" content="webkit"></mata>
+    <link rel="Shortcut Icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../pugin/map/jsMap-1.1.0.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../pugin/bootstrap-fileinput-4.5.2/bootstrap-fileinput-master/js/fileinput.js"></script>
+    <link rel="stylesheet" href="../pugin/bootstrap-fileinput-4.5.2/bootstrap-fileinput-master/css/fileinput.css">
+    <script src="../pugin/bootstrap-fileinput-4.5.2/bootstrap-fileinput-master/js/locales/zh.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <style>
+        .form-group{margin-bottom: 0px}
+        .errormsg{height: 25px;font-size: 13px;color: red}
+    </style>
+    <script src="../pugin/bootstrapvalidator-master/bootstrapvalidator-master/dist/js/bootstrapValidator.js"></script>
+    <link rel="stylesheet" href="../pugin/fontawesome-free-5.6.3-web/fontawesome-free-5.6.3-web/css/all.css">
+    <script src="../pugin/bootstrap-fileinput-4.5.2/bootstrap-fileinput-master/themes/fa/theme.min.js"></script>
+
+</head>
+
+<body>
+<!--Model-->
+<div class="modal fade" id="form" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success">由于各地政策差异,将根据您所在的城市30分钟内提供详细报价</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="modal-body" id="formdata">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend ">
+                            <div class="input-group-text ">所在地址</div>
+                        </div>
+                        <input type="text" class="form-control" name="addr" autocomplete="off" required placeholder="如:湖北省武汉市硚口区宝善街23号">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">联系电话</div>
+                        </div>
+                        <input type="text" class="form-control" name="phone" placeholder="请输入您的联系电话">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">联&nbsp;系&nbsp;人&nbsp;</div>
+                        </div>
+                        <input type="text" class="form-control" name="contacts" placeholder="如:吴先生">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block bg-red text-white" value="提交">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="contentusmodal" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-red ">由于各地政策差异,将根据您所在的城市30分钟内提供详细报价</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="modal-body" id="contentusform">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend ">
+                            <div class="input-group-text ">客户姓名</div>
+                        </div>
+                        <input type="text" class="form-control" name="name" placeholder="如:张三">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">联系电话</div>
+                        </div>
+                        <input type="text" class="form-control" name="phone" placeholder="请输入您的联系电话">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">公司名称</div>
+                        </div>
+                        <input type="text" class="form-control" name="company" placeholder="如:阿里巴巴">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">意向城市</div>
+                        </div>
+                        <input type="text" class="form-control" name="city" placeholder="如:武汉">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">意向地址</div>
+                        </div>
+                        <input type="text" class="form-control" name="address" placeholder="如:武汉">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">空间描述</div>
+                        </div>
+                        <textarea type="text" rows="4" class="form-control" name="describe" placeholder="空间描述"></textarea>
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <input type="file" class="file" name="file" id="fileimg">
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block bg-red text-white">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-linered m-0 " style="background:linear-gradient(#ec434a,#db3239,#c01920)">
+    <nav id="nav" class="container-fluid   d-flex justify-content-between  align-items-center " style="max-width: 1200px;height: 80px;">
+        <div class="navhover h-100">
+            <a href="index.html" class="text-white font-size-18 h-100  d-block px-4 font-weight-bold font-size-22" style="line-height: 80px">首页</a>
+        </div>
+        <div class="navhover h-100">
+            <a href="zhaoshang.html" class="text-white font-size-18 h-100 d-block px-4 " style="line-height: 80px">实体招商</a>
+            <div class="secondnav container-fluid position-absolute col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 80px">税务筹划</a>
+            <div class="secondnav container-fluid position-absolute  col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="newsinfo.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 80px">政策动态</a>
+            <div class="secondnav container-fluid position-absolute col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 80px">综合体</a>
+            <div class="secondnav container-fluid position-absolute  col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 80px">项目对接</a>
+            <div class="secondnav container-fluid position-absolute  col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 80px">行政办公</a>
+            <div class="secondnav container-fluid position-absolute  col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navhover h-100">
+            <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 80px">特色项目</a>
+            <div class="secondnav container-fluid position-absolute  col-12" >
+                <div class="container" style="max-width: 1156px">
+                    <div class="col-12 p-0" >
+                        <a href="" class="text-333 mr-5 ">新闻中心</a>
+                        <a href="" class="text-333 mr-5">厂房出租</a>
+                        <a href="" class="text-333 mr-5">土地租售</a>
+                        <a href="" class="text-333 mr-5">写字楼出租</a>
+                        <a href="" class="text-333 mr-5">合作名企</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container-fluid p-0 " style="background-image: url(../img/zht.jpg);background-position: center;width: 100%;height: 360px;;background-size: 100% 360px">
+    <div class="container d-flex flex-column justify-content-center h-100" style="max-width: 1230px;">
+        <h1 class="font-size-55 text-white font-weight-bold">打造2019最具特色的商业综合体</h1>
+    </div>
+</div>
+<div class="container mt-5" style="max-width: 1230px">
+    <div class="row">
+        <div class="col-12 font-size-14 text-666">
+            中兴瑞华(北京)企业管理有限公司(简称中兴瑞华)成立于2012年1月,总部设在北京,是一家集政府服务外包和企业商务服务于体的政企服务外包公司。<br/><br/>
+            公司以“专业服务外包专家”和“专业财税专家”为目标,发挥企业商务服务专业价值,面向企业提供工商、税务、税务筹划、财税咨询、财政扶持奖励、投融资管理等服务,打造一站式品牌化
+            企业商事服务平台,全面助力企业核心克争力提升<br/><br/>
+            作为湖北经济园企业服务的管理单位,公司在立足湖北经济园落户企业外包服务的同时,从前端服务逐步延伸到后端服务,从园区落户企业拓展到外部企业,并承接政府专项核算项目
+            <br/><br/>
+        </div>
+    </div>
+</div>
+<div class="container " style="max-width: 1230px">
+    <h2 class="font-size-20 text-black font-weight-bold">孵化器 <span class="font-size-16 text-4b4b4b font-weight-bold">The incubator  </span></h2>
+    <div class="row">
+        <div class="col-12 ">
+            <div class="border-bottom mt-1"></div>
+        </div>
+    </div>
+</div>
+<div class="container my-5"  id="container-02" style="max-width: 1230px">
+
+</div>
+<div class="container" style="max-width: 1230px">
+    <h2 class="font-size-20 text-black font-weight-bold">众创空间 <span class="font-size-16 text-4b4b4b font-weight-bold">Maker space</span></h2>
+    <div class="row">
+        <div class="col-12 ">
+            <div class="border-bottom mt-1"></div>
+        </div>
+    </div>
+</div>
+<div class="container mt-4" style="max-width: 1230px;height: 440px;margin-bottom: 110px">
+    <div class="row no-gutters h-100 justify-content-between">
+        <div class="col-auto h-100  d-flex flex-column justify-content-between" style="width:188px ">
+            <div data-toggle="modal"  data-target="#form" class="d-block position-relative" style="height: 184px">
+                <img src="../img/39.jpg" class="w-100 h-100" alt="">
+               <!-- <article class="position-absolute w-100 h-100 pl-3  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                    <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                        <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                        <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                        <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                    </div>
+                </article>-->
+            </div>
+            <div  data-toggle="modal" data-target="#contentusmodal"   class="d-block position-relative" style="height: 246px">
+                <img src="../img/40.jpg "class="w-100 h-100"  alt="">
+              <!--  <article class="position-absolute w-100 h-100 pl-3  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                    <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                        <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                        <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                        <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                    </div>
+                </article>-->
+            </div>
+        </div>
+        <div class="col-auto h-100 d-flex flex-column justify-content-between" style="width:307px ">
+            <a href=""  class="d-block position-relative" style="height: 184px">
+                <img src="../img/43.jpg" class="w-100 h-100" alt="">
+                <!--<article class="position-absolute w-100 h-100 px-4  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                    <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                        <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                        <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                        <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                    </div>
+                </article>-->
+            </a>
+            <a href="" class="d-block position-relative" style="height: 246px">
+                <img src="../img/42.jpg " class="w-100 h-100"  alt="">
+                <!--<article class="position-absolute w-100 h-100 px-4  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                    <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                        <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                        <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                        <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                    </div>
+                </article>-->
+            </a>
+        </div>
+        <div class="col-auto h-100 d-flex flex-column justify-content-between bg-red"  style="width:274px ">
+            <a href="" class="d-block position-relative h-100" >
+                <img src="../img/41.jpg " class="w-100 h-100"  alt="">
+                <article class="position-absolute w-100 h-100 px-5  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                    <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                        <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                        <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                        <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                    </div>
+                </article>
+            </a>
+        </div>
+        <div class="col-auto h-100 d-flex flex-column justify-content-between " style="width:400px ">
+            <a href="" class="d-block position-relative "  style="height: 172px;">
+                <img src="../img/44.jpg " class="w-100 h-100"  alt="">
+               <!-- <article class="position-absolute w-100 h-100 px-5  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                    <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                        <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                        <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                        <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                    </div>
+                </article>-->
+            </a>
+            <div class="justify-content-between d-flex" style="height: 256px">
+                <a href="" class="d-block position-relative h-100"  style="width: 194px;">
+                    <img src="../img/45.jpg " class="w-100 h-100"  alt="">
+                   <!-- <article class="position-absolute w-100 h-100 px-5  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                        <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                            <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                            <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                            <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                        </div>
+                    </article>-->
+                </a>
+                <a href="" class="d-block position-relative h-100"   style="width: 194px;">
+                    <img src="../img/46.jpg " class="w-100 h-100"  alt="">
+                    <!--<article class="position-absolute w-100 h-100 px-5  text-white " style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                        <div class="d-flex w-100 h-100 flex-column justify-content-center ">
+                            <h1 class="font-size-18 font-weight-bold" length="7">光谷国际总部</h1>
+                            <p class="font-size-14 mb-1" length="20">电话：400-150-9896</p>
+                            <p class="font-size-14" length="20">地址：武汉市东湖高新科技区光谷 一路光谷总部国际H栋                </p>
+                        </div>
+                    </article>-->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid p-0" id="footer" style="background-image: url(../img/17.jpg);background-repeat: no-repeat;background-position: center;background-size: 100% 100%">
+    <div class="container-fluid p-0 " style="background-color: white">
+        <div class="container align-items-center d-flex" style="max-width: 1230px;height: 77px;">
+            <div class="row w-100">
+                <div class="col-10 d-flex justify-content-between font-size-14 text-333">
+                    <span class="text-666 ">友情链接：</span>
+                    <a href="" class="text-333">惠创优产业园</a>
+                    <a href="" class="text-333">瑟维斯商务服务</a>
+                    <a href="" class="text-333 ">中兴瑞华</a>
+                    <a href="" class="text-333 ">北京招商网</a>
+                    <a href="" class="text-333 ">瑞立诺财税</a>
+                    <a href="" class="text-333 ">湖北财税</a>
+                    <a href="" class="text-333 ">武汉招商网</a>
+                    <a href="" class=" text-333">大楚实业招商</a>
+                </div>
+                <div class="col-2">
+                    <a href="" class="text-333 font-size-14 text-right d-block ">展开&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px;height: 140px">
+        <div class="row align-items-center justify-content-between h-100">
+            <div class="col-2 d-flex" style="height: 50px" >
+                <img src="../img/11.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">400-8888888</p>
+                    <p class="mb-0 text-white font-size-14">平台服务热线</p>
+                </div>
+            </div>
+            <div class="col-2 d-flex" style="height: 50px" >
+                <img src="../img/12.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">i35wang@163.com</p>
+                    <p class="mb-0 text-white font-size-14">邮箱</p>
+                </div>
+            </div>
+            <div class="col-2 d-flex" style="height: 50px" >
+                <img src="../img/13.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">08:30-18:00 </p>
+                    <p class="mb-0 text-white font-size-14">服务时间</p>
+                </div>
+            </div>
+            <div class="col-auto  d-flex  " style="height: 50px" >
+                <img src="../img/14.png" width="50" height="50" class="d-block" alt="图片">
+                <div class="col-auto d-flex flex-column justify-content-between">
+                    <p class="mb-0 text-white font-size-18">027-13537710</p>
+                    <p class="mb-0 text-white font-size-14">意见反馈</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px">
+        <div class="row">
+            <div class="col">
+                <div class="border-red"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container " style=";padding: 58px 0;height: 304px;max-width: 1200px">
+        <div class="row h-100" style="">
+            <div class="col-2 h-100 d-flex flex-column justify-content-between">
+                <img src="../img/5.png" width="143" height="44" class="d-block mb-4" alt="图片">
+                <img src="../img/16.jpg" width="78" height="78" class="d-block" alt="图片">
+                <span class="text-white font-size-14">扫描二维码，加关注</span>
+            </div>
+            <div class="col-10">
+                <div class="row" style="padding-left: 50px">
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">新手指导</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">帮助中心</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">免费发布信息</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">常见问题</a>
+                    </div>
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">平台服务</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">厂房租售</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">土地租售</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">写字楼出租</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">特色小镇</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">商业综合体</a>
+                    </div>
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">招商服务</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">免费选址</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">公司注册</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">税务筹划</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">法律顾问</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">知识产权</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">入园申请</a>
+                    </div>
+                    <div class="col-3 text-white" style="padding-left: 70px">
+                        <p   class="d-block font-size-16">关于平台</p>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">招商政策网介绍</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">联系我们</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">网站公告</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">隐私条款</a>
+                        <a href="" class="d-block text-white font-size-12 line-height-24">网站地图</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px">
+        <div class="row">
+            <div class="col">
+                <div class="border-red"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 1230px;height: 146px" >
+        <div class="row h-100  flex-column justify-content-around">
+            <div class="col-12 text-center font-size-14 text-white align-items-center d-flex justify-content-between flex-column">
+                <p class="pt-5">Copyright2018湖北招商政策网有限公司(www35wang.com)版权所有|CP经营许可证鄂B2-20130239|鄂公网安备3010602000758号</p>
+                <p class="pb-5"> 地址:湖北省武汉市硚口区汉西南国大家裂H座20楼</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    jsMap.config("#container-02", {
+        name: "china",
+        width: 1100,
+        height: 600,
+        areaName: true
+    })
+    $('#fileimg').fileinput({
+        theme: 'fa',
+        language: 'zh',
+        uploadAsync:false,
+        showUpload:false,
+        maxFileSize:3000,
+        showPreview:false,
+        allowedFileExtensions: ['jpg', 'png', 'gif']
+    });
+    $(function () {
+        $("#container-02 path").click(function () {
+            var $value = $(this).attr("data-name")
+            location.href="#"
+        })
+    })
+    $(document).ready(function() {
+        $('#formdata').validate({
+            errorPlacement: function(error, element) {
+                // Append error within linked label
+                $(element).closest(".form-group").next(".errormsg").append(error)
+            },
+            rules:{
+                addr:{required:true},
+                phone:{required:true},
+                contacts:{required:true},
+            },
+            messages:{
+                addr:{
+                    required:"请输入地址"
+                },
+                phone:{required:"请输入联系方式"},
+                contacts:{required:"请填写联系人"},
+            }
+        })
+        $('#contentusform').validate({
+            debug:true,
+            errorPlacement: function(error, element) {
+                // Append error within linked label
+                $(element).closest(".form-group").next(".errormsg").append(error)
+            },
+            rules:{
+                name:{required:true,maxlength:20},
+                phone:{required:true,maxlength:11},
+                company:{required:true,maxlength:20},
+                city:{required:true,maxlength:20},
+                address:{required:true,maxlength:50},
+                describe:{maxlength:200}
+            },
+            messages:{
+                name:{required:"请填写姓名",maxlength:"字符长度不能超过{0}"},
+                phone:{required:"请填写电话号码",maxlength:"字符长度不能超过{0}"},
+                company:{required:"请填写公司名称",maxlength:"字符长度不能超过{0}"},
+                city:{required:"请填写意向城市",maxlength:"字符长度不能超过{0}"},
+                address:{required:"请填写意向地址",maxlength:"字符长度不能超过{0}"},
+                describe:{maxlength:"字符长度不能超过{0}"}
+            }
+        })
+
+    });
+</script>
+<script src="../js/pub.js"></script>
+</body>
+
+</html>

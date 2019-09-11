@@ -1,0 +1,223 @@
+{extend name="zht"}
+
+{block name="header"}
+<title>{$info.title}</title>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.8&ak=y9XrqIdFduE2IxUeu10pKhsCf5kNEXUv"></script>
+
+
+<style>
+    #project{height: 677px;box-shadow: 0 2px 2px rgba(0,0,0,0.2);padding: 38px;display: flex;flex-direction: column;justify-content: space-around}
+    #project>div:first-of-type{height: 70px;display: flex;justify-content: space-between;border-bottom: 2px solid #dcdcdc;align-items: flex-start;padding-right: 30px;margin-bottom: 30px}
+    #project>div>h1{color: #666666;}
+    #project>div>h1:first-line{color: #333333;font-size: 22px;font-weight: bold;line-height: 35px}
+    #project>div>h1+a{height: 38px;line-height: 38px;padding: 0 10px;background-color: #f8f8f8}
+    #project  a:hover{background-color: red;color: white}
+    .proleft{display: flex;flex-direction: column;justify-content: space-between}
+    .proleft>div:last-child{display: flex;justify-content: space-between}
+    .proleft>div:last-child>img{cursor: pointer}
+    .prorigth{width: 510px;padding-left: 20px}
+    .prorigth>div:first-of-type{display: flex;justify-content: space-around;margin-bottom: 50px;}
+    .first{font-size: 18px;font-weight: bold;color: #333333}
+    .last{font-size: 12px;font-weight: normal;color: #666666}
+    .prorigth>div:nth-child(2){display: flex;line-height: 40px;flex-wrap: wrap;color: #888888;margin-bottom: 50px}
+    .prorigth>div:nth-child(2) .key{width: 30%}
+    .prorigth>div:nth-child(2) .value{width: 70%;padding-left: 20px;color: #333333}
+    .prorigth>div:nth-child(3){display: flex;}
+    .prorigth>div:nth-child(3)>a{background-color: #f8f8f8;color: #666666;margin-right: 30px;font-size: 14px;height: 38px;line-height: 38px;padding: 0 10px}
+    .prorigth>div:nth-child(3)>:hover{background-color: red;color:white}
+    .prorigth>div:nth-child(4){display: flex;align-items: center;margin-top: 50px}
+    .prorigth>div:nth-child(4)>span{margin-right: 20px;display: flex;align-items: center}
+    .prorigth>div:nth-child(4)>span img{margin:  0 5px}
+    .bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more {
+        float: left;
+        font-size: 12px;
+        padding-left: 17px;
+        line-height: 16px;
+        height: 16px;
+        background-image: url(__IMAGES__/zhaoshang/img/3.svg) !important;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        margin: 6px 6px 6px 6px;
+    }
+    bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more:hover{background-color: transparent !important;}
+    #xuqiu{display: flex;height: 86px;padding-left: 20px;margin-top: 20px;}
+    #xuqiu>div{height: 100%;display: flex;border-bottom: 3px solid transparent;margin-right: 30px;align-items: center;cursor: pointer}
+    #xuqiu>div:hover{border-bottom: 3px solid #FF3333;}
+    #xuqiu>div.active{border-bottom: 3px solid #FF3333;}
+    .xuqiu{box-shadow: 0 2px 2px rgba(0,0,0,0.2);min-height: 1px;margin-top: 30px;padding: 15px;display: none}
+    .xuqiu>p,.map>p{font-weight: bold;color: #333333;font-size: 18px;display: flex;align-items: center;padding-bottom: 10px;border-bottom: 1px solid #dcdcdc}
+    .xuqiu>p>img,.map>p>img{margin-right: 10px}
+    .xuqiu>blockquote{padding: 40px 30px;color: #666666;line-height: 30px}
+    .map{margin-top: 30px;padding: 0 15px;box-shadow: 0 2px 2px rgba(0,0,0,0.2)}
+    .map>blockquote{padding: 40px 0px}
+    #baidumap{width: 100%;height: 430px}
+    #tuijian{margin-top: 30px}
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/zht_nav2.html" /}
+        </div>
+
+        <div id="project" style="">
+            <div style="">
+                <h1>
+                    <p>{$info.title}</p>
+                    <p>{$info.address}</p>
+                </h1>
+                <a href="" style="">我要发布项目</a>
+            </div>
+            <div style="width: 100%;height: 515px;display: flex;justify-content: space-between">
+                <div class="proleft">
+                    <img src="{$info.pic}" width="560" height="400" alt="">
+                    <div>
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/82.jpg" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/81.jpg" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/82.jpg" alt="">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/81.jpg" alt="">
+                    </div>
+                </div>
+                <div class="prorigth">
+                    <div>
+                        <div>
+                            <p class="first">项目类型</p>
+                            <p class="last text-center" >{$info.hangye}</p>
+                        </div>
+                        <div>
+                            <p class="first">开业时间</p>
+                            <p class="last text-center" >{$info.addtime}</p>
+                        </div>
+
+                    </div>
+                    <div style="">
+                        <span class="key text-left"    >联系人              </span>
+                        <span class="value"   > {$info.name}</span>
+                        <span class="key text-left"    >电话 </span>
+                        <span class="value"   > {$info.tel}</span>
+                        <span class="key text-left"     >开业时间</span>
+                        <span class="value"   >{$info.addtime}</span>
+                        <span class="key text-left"    >商业楼层</span>
+                        <span class="value"   >{$info.lou}</span>
+                        <span class="key text-left"    >商业建筑面积 </span>
+                        <span class="value"   > {$info.jianzhu}</span>
+                        <span class="key text-left"     >项目地址</span>
+                        <span class="value"   >{$info.addtime}</span>
+                    </div>
+                    <div >
+                        <a href="" >查看联系方式</a>
+                        <a href="" >查看类似项目</a>
+                    </div>
+                    <div>
+                            <span>分享 <div class="bdsharebuttonbox" data-tag="share_1">
+                                <a class="bds_more" data-cmd="more" ></a>
+                            </div></span>
+                        <span>收藏 <img src="__IMAGES__/zhaoshang/img/4.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="xuqiu" class="mainbox-shadow">
+            <div class="active"><span>招商需求</span></div>
+            <div><span>项目概况</span></div>
+            <div><span>项目分析</span></div>
+        </div>
+        <div class="xuqiu" style="display: block;">
+            <p ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/103.png" alt="">招商需求</p>
+            <blockquote>{$info.des}</blockquote>
+        </div>
+        <div class="xuqiu">
+            <p ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/103.png" alt="">项目概况</p>
+            <blockquote>{$info.gaikuang}</blockquote>
+        </div>
+        <div class="xuqiu">
+            <p ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/103.png" alt="">项目分析</p>
+            <blockquote>{$info.fenxi}</blockquote>
+        </div>
+        <div class="map">
+            <p ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/104.png" alt="">项目地图</p>
+            <blockquote>
+                <div id="baidumap">
+
+                </div>
+            </blockquote>
+        </div>
+        <div id="tuijian" class="mainbox-shadow">
+            <h2><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/25.png" alt="">看过该商业mall的用户还看过</h2>
+            <div>
+                {volist name="ran" id="vo"}
+                <a href="">
+                    <img src="{$vo.pic}" alt="">
+                    <h4>{$vo.title}</h4>
+                    <p><span><strong>{$vo.jianzhu}</strong>面积</span><span>{$vo.pro}-{$info.city}</span></p>
+                </a>
+                {/volist}
+            </div>
+            <a href="">点击查看更多</a>
+        </div>
+
+    </div>
+
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    var map = new BMap.Map("baidumap");
+    var point = new BMap.Point({$info.mapx},{$info.mapy});
+    map.centerAndZoom(point,16);
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    $(function () {
+        $("#xuqiu>div").click(function () {
+            var $index = $(this).index()
+            $(this).addClass("active").siblings().removeClass("active")
+            $(".xuqiu").eq($index).fadeIn(300).siblings(".xuqiu").hide()
+        })
+        $(".proleft>div:last-child>img").click(function () {
+            var $src  = $(this).attr("src")
+            $(".proleft>img").attr("src",$src)
+        })
+    })
+</script>
+<script>
+    window._bd_share_config = {
+        common : {
+            bdText : $("#project>div>h1").text().trim(),
+            bdDesc : $("#project>div>h1>p:last-child").text().trim(),
+            bdUrl : location.href,
+            bdPic : ""
+        },
+        share : [{
+            "bdSize" : 16
+        }],
+        slide : [{
+            bdImg : 0,
+            bdPos : "right",
+            bdTop : 100
+        }],
+        /*image : [{
+         viewType : 'list',
+         viewPos : 'top',
+         viewColor : 'black',
+         viewSize : '16',
+         viewList : ['qzone','tsina','huaban','tqq','renren']
+         }],*/
+        selectShare : [{
+            "bdselectMiniList" : ['qzone','tqq','kaixin001','bdxc','tqf']
+        }]
+    }
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<script language="javascript">
+    $("#zhtzht").addClass("active");
+    $("#zhlink7").addClass("active");
+</script>
+{/block}

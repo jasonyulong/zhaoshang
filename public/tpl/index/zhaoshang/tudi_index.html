@@ -1,0 +1,274 @@
+{extend name="body"}
+
+{block name="header"}
+<style>
+    #banner .text-center .position-absolute{display:none}
+    #banner .text-center:hover div:first-child {opacity: 0}
+    #banner .text-center:hover .position-absolute{display: block;z-index: 100}
+    .huizhang{
+        border-top: 1px solid #FF6D00;
+        border-bottom: 1px solid #FF6D00;
+        border-left:1px solid #FFE100;
+        border-right: 1px solid #FFE100;
+        padding: 3px 6px;
+        border-radius: 8px
+    }
+</style>
+<title>实体招商土地</title>
+{/block}
+
+
+{block name="content"}
+<!--tab和推荐-->
+<div class="mb-50"></div>
+<div class="container mb-3" style="max-width: 1230px" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col-12">
+            <div class="row no-gutters">
+                <div class="col-12 ">
+                    <div class="border-top-red-1"></div>
+                </div>
+                <div class="col-12   border-bottom d-flex bg-white bg-clip-content">
+                    <a href="{:url('index/zhaoshang/fang_index')}" class="text-666 d-block p-3 font-size-14" id="fang_index">厂房租售</a>
+                    <a href="{:url('index/zhaoshang/tudi_index')}" class="text-666 d-block p-3 font-size-14" id="tudi_index">土地租售</a>
+                    <a href="{:url('index/zhaoshang/lou_index')}" class="text-666 d-block p-3 font-size-14" id="lou_index">写字楼租售</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters bg-white" id="banner">
+        {volist name="top" id="vo"}
+        <div class="col-3  text-center" style="margin: 36px 0">
+            <div class="">
+                <h2 class="font-size-18 font-weight-bold">{$vo.pro} {$vo.city}</h2>
+                <p class="text-666 font-size-12">{$vo.area}㎡ / {$vo.hangye} /{$vo.zujing}元/㎡/天</p>
+            </div>
+            <div class="position-absolute phone  text-center  w-100 " style="left: 0;top: 0">
+                <h3 class="font-size-16 font-weight-bold ">{$vo.name}</h3>
+                <p class="text-red font-size-18 font-weight-bold">{$vo.tel}</p>
+            </div>
+        </div>
+        {/volist}
+    </div>
+</div>
+
+
+
+<!--N级联动-->
+<div class="container mb-3" style="max-width: 1230px">
+    <div class="row no-gutters bg-white py-3">
+        <div class="col-1 font-weight-bold text-center">
+            地区
+        </div>
+        <div class="col-11  font-size-14">
+            <a href="javascript:void(0);" id="setarea_" onclick="setarea('')" class="text-666 mr-4 d-inline-block">不限</a>
+            {volist name="pro" id="vo"}
+            <a href="javascript:void(0);" id="setarea_{$vo.code}" onclick="setarea('{$vo.code}')" class="text-666 mr-4 d-inline-block">{$vo.name}</a>
+            {/volist}
+        </div>
+    </div>
+    <div class="row no-gutters bg-white py-3">
+        <div class="col-1 font-weight-bold text-center">
+            城市
+        </div>
+        <div class="col-11  font-size-14">
+            <a href="javascript:void(0);" id="setcity_" onclick="setcity('')" class="text-666 mr-4 d-inline-block">不限</a>
+            {volist name="ct" id="vo"}
+            <a href="javascript:void(0);" id="setcity_{$vo.code}" onclick="setcity('{$vo.code}')" class="text-666 mr-4 d-inline-block">{$vo.name}</a>
+            {/volist}
+        </div>
+    </div>
+    <div class="row no-gutters bg-white py-3">
+        <div class="col-1 font-weight-bold text-center">
+            面积
+        </div>
+        <div class="col-11  font-size-14">
+            <a href="javascript:void(0);" id="setmou_" onclick="setmou('')" class="text-666 mr-4 d-inline-block">不限</a>
+            <a href="javascript:void(0);" id="setmou_a" onclick="setmou('a')" class="text-666 mr-4 d-inline-block">0亩-100亩</a>
+            <a href="javascript:void(0);" id="setmou_b" onclick="setmou('b')" class="text-666 mr-4 d-inline-block">100亩-500亩</a>
+            <a href="javascript:void(0);" id="setmou_c" onclick="setmou('c')" class="text-666 mr-4 d-inline-block">500亩-1000亩</a>
+            <a href="javascript:void(0);" id="setmou_d" onclick="setmou('d')" class="text-666 mr-4 d-inline-block">1000亩以上</a>
+        </div>
+    </div>
+    <div class="row no-gutters bg-white py-3">
+        <div class="col-1 font-weight-bold text-center">
+            行业
+        </div>
+        <div class="col-11  font-size-14">
+            <a href="javascript:void(0);" id="sethy_" onclick="sethy('')" class="text-666 mr-4 d-inline-block">不限</a>
+            {volist name="dic.duti_hangye" id="vo"}
+            <a href="javascript:void(0);" id="sethy_{$vo}" onclick="sethy('{$vo}')" class="text-666 mr-4 d-inline-block">{$vo}</a>
+            {/volist}
+        </div>
+    </div>
+    <div class="row no-gutters bg-white py-3">
+        <div class="col-1 font-weight-bold text-center">
+            方式
+        </div>
+        <div class="col-11  font-size-14">
+            <a href="javascript:void(0);" id="setfs_" onclick="setfs('')" class="text-666 mr-4 d-inline-block">不限</a>
+            {volist name="dic.duti_fangshi" id="vo"}
+            <a href="javascript:void(0);" id="setfs_{$vo}" onclick="setfs('{$vo}')" class="text-666 mr-4 d-inline-block">{$vo}</a>
+            {/volist}
+        </div>
+    </div>
+    <form id="formid" method="post">
+        <input type="hidden" id="area" name="area" value="{$area}">
+        <input type="hidden" id="city" name="city" value="{$city}">
+        <input type="hidden" id="mou" name="mou" value="{$mou}">
+        <input type="hidden" id="hy" name="hy" value="{$hy}">
+        <input type="hidden" id="fs" name="fs" value="{$fs}">
+        <input type="hidden" id="order" name="order" value="{$order}">
+    </form>
+</div>
+
+<!--产品列表和推荐-->
+<div class="container mb-50" style="max-width: 1230px;">
+    <div class="row no-gutters justify-content-between  py-3 align-items-center">
+        <div class="col-auto" style="width: 910px">
+            <div class="row bg-white no-gutters py-3" >
+                <div class="col-3">
+                    <span class="text-red pl-3">所有土地</span>
+                </div>
+                <div class="col-9 justify-content-end d-flex " style="padding-right: 50px">
+                    <div class="dropdown">
+                        <div class="btn  text-666 font-size-14 p-0 h-100 " style="cursor: pointer"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            默认排序 <span class="iconfont icon-xia font-size-12 ml-1"></span>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item  pb-2 text-333 font-size-14" href="#" onclick="setorder('all')">全部</a>
+                            <a class="dropdown-item  pb-2 text-333 font-size-14" href="#" onclick="setorder('new')">最近更新</a>
+                            <a class="dropdown-item  pb-2 text-333 font-size-14" href="#" onclick="setorder('pricea')">价格从低到高</a>
+                            <a class="dropdown-item  pb-2 text-333 font-size-14" href="#" onclick="setorder('priceb')">价格从高到低</a>
+                            <a class="dropdown-item  pb-2 text-333 font-size-14" href="#" onclick="setorder('areaa')">面积从高到低</a>
+                            <a class="dropdown-item  pb-2 text-333 font-size-14" href="#" onclick="setorder('areab')">面积从低到高</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-auto border-top-red-1" style="width: 120px;">
+                </div>
+            </div>
+            <div class="row mb-3" >
+                <div class="col-12 bg-white  bg-clip-content">
+                    {volist name="list" id="vo"}
+                    <div class="row my-3">
+                        <div class="col-auto ">
+                            <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="link-overflow position-relative d-block ml-3" style="width: 180px;height: 120px">
+                                <img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/newzs/img/31.jpg{/if}" width="180" height="120" class="" alt="">
+                                <span class="text-white font-size-14 px-2 position-absolute" style="bottom: 0px;right: 0px;background-color: rgba(45, 37, 35,0.6)">{$vo.picsum}图</span>
+                            </a>
+                        </div>
+                        <div class="col d-flex flex-column justify-content-between ">
+                            <div>
+                                <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="font-size-18 text-black font-weight-bold d-block mb-1" length="25">{$vo.title}</a>
+                                <span class="font-size-12 text-white  px-2 huizhang " style="background-color:rgba({eq name="vo.uptype" value="出租"}189, 27, 27,1{/eq}{eq name="vo.uptype" value="出售"}255, 109, 0{/eq});">{$vo.uptype}</span>
+                            </div>
+                            <div>
+                                <p class="font-size-14 text-333 mb-1">{$vo.city} / {$vo.area}亩 / {$vo.hangye} / {$vo.year}年</p>
+                                <p class="font-size-12 text-666 mb-0">{$vo.time|time_ago}</p>
+                            </div>
+                        </div>
+                        <div class="col-2 text-nowrap text-red font-size-14  d-flex flex-column justify-content-end" style="margin-right: 53px">
+                            {eq name="vo.zujing" value="0"}
+                            <p class="text-ccc font-size-20 font-weight-bold text-right " style="font-family: 宋体;color: #828282">暂未定价</p>
+                            {else/}
+                            {eq name="vo.uptype" value="出租"}<p class="text-red font-size-14  text-right ">￥ <span class="font-size-18 font-weight-bold">{$vo.zujing}</span>元 / m²</p>{/eq}
+                            {eq name="vo.uptype" value="出售"}<p class="text-red font-size-14  text-right ">￥ <span class="font-size-18 font-weight-bold">{$vo.shou}</span>万元</p>{/eq}
+                            {/eq}
+                            <p class="text-ccc font-size-12 text-right mb-0 "><span class="iconfont icon-kanguo mr-2"></span>{$vo.look}</p>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+            <div class="row ">
+                <div class="bg-white col-12 bg-clip-content">
+                    <nav aria-label="Page navigation example " class="py-2">
+                        {$list->render()}
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto bg-white  align-self-start" style="width: 270px;">
+            <h3 class="font-size-14 font-weight-bold text-center border-bottom py-4 mb-0 bg-white">精选推荐 </h3>
+            {volist name="xuan" id="vo"}
+            <div class="row no-gutters bg-white " style="margin: 22px 0">
+                <div class="col-auto ml-1">
+                    <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="link-overflow d-block" style="width: 108px;height: 72px;margin: 0 10px">
+                        <img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/newzs/img/31.jpg{/if}" width="108" height="72" alt="{$vo.title}">
+                    </a>
+                </div>
+                <div class="col d-flex flex-column justify-content-between">
+                    <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="text-black font-size-14" length="15">{$vo.title}</a>
+                    <article class="text-666 font-size-14" length="10">
+                        {$vo.city} / {$vo.hangye}
+                    </article>
+                </div>
+            </div>
+            {/volist}
+            <div class="row">
+                <div class="col-12">
+                    <a href="#" class="position-relative d-block" style="width: 270px;height: 194px">
+                        <img src="__IMAGES__/newzs/img/37.jpg" width="270" height="194" alt="广告图">
+                        <div     class="font-size-12 px-2 bg-7d7d7d text-white position-absolute d-block" style="right: 10px;top: 15px;z-index: 1000">广告</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script>
+    function setcityclear(v){
+        $("#area").val("");
+        setcity(v);
+    }
+
+    function setarea(v){
+        $("#area").val(v);
+        $("#formid").submit()
+    }
+    $("#setarea_"+$("#area").val()).addClass("text-red");
+
+    function setcity(v){
+        $("#city").val(v);
+        $("#formid").submit()
+    }
+    $("#setcity_"+$("#city").val()).addClass("text-red");
+
+    function setmou(v){
+        $("#mou").val(v);
+        $("#formid").submit()
+    }
+    $("#setmou_"+$("#mou").val()).addClass("text-red");
+
+    function sethy(v){
+        $("#hy").val(v);
+        $("#formid").submit()
+    }
+    $("#sethy_"+$("#hy").val()).addClass("text-red");
+
+    function setfs(v){
+        $("#fs").val(v);
+        $("#formid").submit()
+    }
+    $("#setfs_"+$("#fs").val()).addClass("text-red");
+
+    function setorder(v){
+        $("#order").val(v);
+        $("#formid").submit()
+    }
+</script>
+
+<script language="javascript">
+    $("#tudi_index").addClass("text-white");
+    $("#tudi_index").addClass("bg-red");
+</script>
+{/block}

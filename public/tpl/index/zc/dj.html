@@ -1,0 +1,326 @@
+{extend name="body"}
+
+
+{block name="header"}
+<style>
+    .newcontent img{max-width: 650px;display: block;margin: 20px auto}
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        color: #b80608;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+        border-bottom: 2px solid #b80608;
+    }
+    .nav-tabs .nav-link {
+        border: 0px solid transparent;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+    }
+    input[type=radio]:checked+label{
+        color: #b80608;
+    }
+    #new input[type=radio]:checked+label{
+        color: #b80608;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+        border-bottom: 2px solid #b80608;
+    }
+
+</style>
+<title>招商政策网-国税政策|地方政策|工商信息|招商优惠政策|招商网</title>
+{/block}
+
+
+
+{block name="content"}
+<div class="container bg-white bg-clip-content" id="form" style="max-width: 1230px">
+    <div class="row " >
+        <div class="col-12 ">
+            <div class="border-top-red-1"></div>
+        </div>
+        <div class="col-12 d-flex bg-white bg-clip-content" style="">
+            <a href="" class="text-white d-block bg-red p-3 font-size-14 px-4">项目需求</a>
+            <a href="" class="text-666 d-block p-3 font-size-14 px-4">专家咨询</a>
+        </div>
+    </div>
+    <div class="row" style="padding: 34px 36px 0px 36px">
+        <div class="col-12">
+            <div class="row " style="margin-bottom: 25px">
+                <div class="col-1 font-weight-bold text-black">片区</div>
+                <div class="col-10">
+                    {volist name="dic.art_area" id="vo"}
+                    <input type="radio" class="sr-only" name="p_area" value="{$vo}" id="{$vo}">
+                    <label for="{$vo}"  class="font-size-14 mr-4 text-666 text-nowrap cursor-pointer" >{$vo}</label>
+                    {/volist}
+                </div>
+                <div class="col-1 text-999 font-size-14 cursor-pointer align-items-center d-flex shaixuan line-height-24 align-self-start"></div>
+            </div>
+            <div class="row" style="margin-bottom: 25px">
+                <div class="col-1 font-weight-bold text-black">分类</div>
+                <div class="col-10 text-over justify-content-between">
+                    {volist name="dic.art_hy" id="vo"}
+                    <input type="radio" class="sr-only" name="p_sort" value="{$vo}" id="{$vo}">
+                    <label for="{$vo}"  class="font-size-14 mr-4 text-666 text-nowrap cursor-pointer" >{$vo}</label>
+                    {/volist}
+                </div>
+                <div class="col-1 text-999 font-size-14 cursor-pointer align-items-center d-flex shaixuan line-height-24 align-self-start"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-3"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--列表和推荐-->
+<div class="container mb-5" style="max-width: 1230px;" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col pb-5" style="margin-right: 10px;width: 830px;margin-bottom: 68px">
+            <ul class="nav nav-tabs  border-0 bg-white "  role="tablist">
+                <li class="nav-item  ">
+                    <input type="radio" class="sr-only" name="p_type"  checked value="已发布" id="most1">
+                    <label for="most1"  style="padding: 18px 38px"  class="mb-0    text-666  font-size-14" >已发布 </label>
+                </li>
+                <li class="nav-item ">
+                    <input type="radio" class="sr-only" name="p_type"  value="已确定" id="most2">
+                    <label for="most2"  style="padding: 18px 38px"  class="mb-0    text-666  font-size-14" >已确定 </label>
+                </li>
+                <li class="nav-item ">
+                    <input type="radio" class="sr-only" name="p_type" value="已发布" id="most3">
+                    <label for="most3"  style="padding: 18px 38px"  class="mb-0    text-666  font-size-14" >已完成 </label>
+                </li>
+            </ul>
+            <div class="border-bottom"></div>
+            <div class="row" >
+                <div class="col-12 bg-clip-content bg-white" id="newlist">
+                  <!--  <div class="bg-white" style="padding: 36px 33px" >
+                        <div class="row justify-content-between align-items-start" style="height: 150px">
+                            <div class="col-8 h-100">
+                                <div class="row font-size-14 h-100">
+                                    <div class="col-12">
+                                        <a href="" class="font-size-18 font-weight-bold text-black">高速公路行业企业管理培训专家</a>
+                                    </div>
+                                    <div class="col-4"><span class="text-666">项目预算：</span><span class="text-red">150万元</span></div>
+                                    <div class="col-4"><span class="text-666">所在地区：</span><span></span>上海</div>
+                                    <div class="col-4"><span class="text-666">所属行业：</span><span></span>工程</div>
+                                    <div class="col-12 text-666 line-height-26" length="120" style="height: 80px">
+                                        需求背景：我公司是广西一家高速公路运营企业，主要从事高速公路运营和管理业务，打算11月份组织一期中层干部的培训，希望可以通过培
+                                        需求背景：我公司是广西一家高速公路运营企业，主要从事高速公路运营和管理业务，打算11月份组织一期中层干部的培训，希望可以通过培
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex  flex-wrap justify-content-end ">
+                                <span class="font-size-12 text-999 w-100 text-right pt-1 pb-3 d-block align-content-start">279次浏览</span>
+                                <a href= ""><img src="__IMAGES__/newzs/img/request.png"   width="126" height="37" class="d-block mt-4" alt="图" title="图"></a>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="bg-white col-12 bg-clip-content">
+                    <div class="py-3 text-999 text-center font-size-14 cursor-pointer" id="more">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+           <!-- <div class="tab-content "  role="tablist">
+                <div class="tab-pane active" id="home" >
+
+                    <div class="cursor-pointer py-3 font-size-14 text-center bg-white text-999 mt-2" onclick="getPage()">加载更多</div>
+                </div>
+                <div class="tab-pane " id="home1">
+                    <div class="bg-white" style="padding: 36px 33px" >
+                        <div class="row justify-content-between align-items-start" style="height: 150px">
+                            <div class="col-8 h-100">
+                                <div class="row font-size-14 h-100">
+                                    <div class="col-12">
+                                        <h2 class="font-size-18 font-weight-bold text-black">高速公路行业企业管理培训专家</h2>
+                                    </div>
+                                    <div class="col-4"><span class="text-666">项目预算：</span><span class="text-red">150万元</span></div>
+                                    <div class="col-4"><span class="text-666">所在地区：</span><span></span>上海</div>
+                                    <div class="col-4"><span class="text-666">所属行业：</span><span></span>工程</div>
+                                    <div class="col-12 text-666 line-height-26" length="120" style="height: 80px">
+                                        需求背景：我公司是广西一家高速公路运营企业，主要从事高速公路运营和管理业务，打算11月份组织一期中层干部的培训，希望可以通过培
+                                        需求背景：我公司是广西一家高速公路运营企业，主要从事高速公路运营和管理业务，打算11月份组织一期中层干部的培训，希望可以通过培
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex  flex-wrap justify-content-end ">
+                                <span class="font-size-12 text-999 w-100 text-right pt-1 pb-3 d-block align-content-start">279次浏览</span>
+                                <a href= ""><img src="__IMAGES__/newzs/img/ongoing.png"   width="126" height="37" class="d-block mt-4" alt="图" title="图"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cursor-pointer py-3 font-size-14 text-center bg-white text-999 mt-2" onclick="getPage()">加载更多</div>
+                </div>
+                <div class="tab-pane " id="home2">
+                    <div class="bg-white" style="padding: 36px 33px" >
+                        <div class="row justify-content-between align-items-start" style="height: 150px">
+                            <div class="col-8 h-100">
+                                <div class="row font-size-14 h-100">
+                                    <div class="col-12">
+                                        <h2 class="font-size-18 font-weight-bold text-black">高速公路行业企业管理培训专家</h2>
+                                    </div>
+                                    <div class="col-4"><span class="text-666">项目预算：</span><span class="text-red">150万元</span></div>
+                                    <div class="col-4"><span class="text-666">所在地区：</span><span></span>上海</div>
+                                    <div class="col-4"><span class="text-666">所属行业：</span><span></span>工程</div>
+                                    <div class="col-12 text-666 line-height-26" length="120" style="height: 80px">
+                                        需求背景：我公司是广西一家高速公路运营企业，主要从事高速公路运营和管理业务，打算11月份组织一期中层干部的培训，希望可以通过培
+                                        需求背景：我公司是广西一家高速公路运营企业，主要从事高速公路运营和管理业务，打算11月份组织一期中层干部的培训，希望可以通过培
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex  flex-wrap justify-content-end ">
+                                <span class="font-size-12 text-999 w-100 text-right pt-1 pb-3 d-block align-content-start">279次浏览</span>
+                                <a href= ""><img src="__IMAGES__/newzs/img/finish.png"   width="126" height="37" class="d-block mt-4" alt="图" title="图"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cursor-pointer py-3 font-size-14 text-center bg-white text-999 mt-2" onclick="getPage()">加载更多</div>
+                </div>
+            </div>-->
+        </div>
+
+
+        <div class="col-auto " style="width: 360px">
+            {notempty name="hot"}
+            <!--<a href="{:url('index/zc/newsinfo',['id'=>$hot['id']])}" class="link-overflow w-100 d-block position-relative" style="margin-bottom: 20px">
+                <img src="{if condition="$hot.pic neq ''"}{$hot.pic}{else}__IMAGES__/newzs/img/27.jpg{/if}" class="w-100" alt="">
+                <p class="font-size-14 text-white bg-linered-white-black position-absolute d-block mb-0 w-100 py-2 pl-3" style="bottom: 0px;z-index: 100" length="20 ">{$hot.title}</p>
+            </a>-->
+            {/notempty}
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">热点资讯</p>
+                {volist name="newszi" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newszi" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">行业推荐</p>
+                {volist name="newstu" id="vo" offset="0" length='1'}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">{$vo.title}</a>
+                {/volist}
+                {volist name="newstu" id="vo" offset="1"}
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">{$vo.title}</span> </a>
+                {/volist}
+            </div>
+           <!-- <div      class="d-block w-100 position-relative ">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="newsinfo.html" class="d-block"><img src="__IMAGES__/newzs/img/21.jpg" width="360" height="240" alt="图"></a>
+                    </div>
+                </div>
+                <div     class="font-size-12 px-2 bg-7d7d7d text-white position-absolute d-block" style="right: 10px;top: 15px;z-index: 1000">广告</div>
+            </div>-->
+        </div>
+
+
+    </div>
+</div>
+<script>
+    $(function () {
+        (function () {
+            var num=1;
+            getPage(num,0)
+            $("input[type=radio]").on("change",function () {
+                num=1;
+                getPage(num,0)
+            })
+            $("#more").click(function () {
+                num++
+                getPage(num,1)
+            })
+        })()
+    })
+    function  getPage(num,type) {
+        var $p_area=$("input[name='p_area']:checked").val()
+        var $p_sort=$("input[name='p_sort']:checked").val()
+        var $p_type=$("input[name='p_type']:checked").val()
+        var html="";
+        $.post("/zc/djp.html",{p_area:$p_area,p_sort:$p_sort,p_type:$p_type,page:num},function (data) {
+            var async=""
+            if(data.data != ""){
+
+                if($p_type=="已发布"){
+                    async="__IMAGES__/newzs/img/request.png"
+
+                }else if($p_type=="已确定"){
+                    async="__IMAGES__/newzs/img/ongoing.png"
+
+                }else if($p_type=="已完成"){
+                    async="__IMAGES__/newzs/img/finish.png"
+                }
+                data.data.forEach(function (value,item) {
+                    html+="<div class=\"bg-white\" style=\"padding: 36px 33px\" >\n" +
+                        "                        <div class=\"row justify-content-between align-items-start\" style=\"height: 150px\">\n" +
+                        "                            <div class=\"col-8 h-100\">\n" +
+                        "                                <div class=\"row font-size-14 h-100\">\n" +
+                        "                                    <div class=\"col-12\">\n" +
+                        "                                        <a href=\""+ value.url+"\" class=\"font-size-18 font-weight-bold text-black\">"+value.title.substring(0,20)+"</a>\n" +
+                        "                                    </div>\n" +
+                        "                                    <div class=\"col-4\"><span class=\"text-666\">项目预算：</span><span class=\"text-red\">"+value.p_yusuan+"万元"+"</span></div>\n" +
+                        "                                    <div class=\"col-4\"><span class=\"text-666\">所在地区：</span><span></span>"+value.p_area+"</div>\n" +
+                        "                                    <div class=\"col-4\"><span class=\"text-666\">所属行业：</span><span></span>"+value.p_sort+"</div>\n" +
+                        "                                    <div class=\"col-12 text-666 line-height-26\" length=\"120\" style=\"height: 80px\">\n" +
+                        "                                        "+value.des.trim().substring(0,100)+"\n" +
+                        "                                    </div>\n" +
+                        "                                </div>\n" +
+                        "                            </div>\n" +
+                        "                            <div class=\"col-3 d-flex  flex-wrap justify-content-end \">\n" +
+                        "                                <span class=\"font-size-12 text-999 w-100 text-right pt-1 pb-3 d-block align-content-start\">"+value.look+"次浏览"+"</span>\n" +
+                        "                                <a href= \""+value.url+"\"><img src=\""+async+"\"   width=\"126\" height=\"37\" class=\"d-block mt-4\" alt=\"图\" title=\"图\"></a>\n" +
+                        "                            </div>\n" +
+                        "                        </div>\n" +
+                        "                    </div>";
+                })
+                if(type==0){
+                    $("#newlist").html(html)
+                }else if(type==1){
+                    $("#newlist").append(html)
+                }
+
+            }else{
+                if(type==0){
+                    $("#newlist").html("  <div class=\"row\">\n" +
+                        "                <div class=\"col-12   py-4\">\n" +
+                        "                    <p class=\"iconfont icon-zanwushuju font-size-55 text-center text-999\"></p>\n" +
+                        "                    <p class=\"text-999 text-center font-size-18\">暂无数据</p>\n" +
+                        "                </div>\n" +
+                        "            </div>")
+                }else{
+                    $("#more").text("我是有底线的")
+                }
+
+
+            }
+
+        })
+    }
+</script>
+
+<script src="/images/newzs/js/come.js"></script>
+
+{/block}
+
+
+
+{block name="footer"}
+
+{/block}

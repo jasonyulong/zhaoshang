@@ -1,0 +1,210 @@
+{extend name="zs"}
+
+{block name="header"}
+<title>{$type_ch}需求发布</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+<script src="__IMAGES__/zhaoshang/js/jquery.validate.min.js"></script>
+<script src="__IMAGES__/zhaoshang/js/validateAddMethods.js"></script>
+<script src="__IMAGES__/zhaoshang/js/jquery.messages_cn.js"></script>
+<script src="__IMAGES__/zhaoshang/js/distpicker.data.js"></script>
+<script src="__IMAGES__/zhaoshang/js/distpicker.js"></script>
+<style>
+    .errormsg{padding-left: 240px}
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+
+        <div class="link">
+            {include file="../public/tpl/index/zs_nav.html" /}
+        </div>
+        <div style="display: flex;justify-content: space-evenly;">
+            <a href="{:url('index/zhaoshang/fabu',['type'=>'tudi'])}" class="btn btn-info"><span class="iconfont icon-fangzi_ mr-1"></span>土地</a>
+            <a href="{:url('index/zhaoshang/fabu',['type'=>'lou'])}" class="btn btn-info"><span class="iconfont icon-hxzfont16  mr-1"></span>写字楼</a>
+            <a href="{:url('index/zhaoshang/fabu',['type'=>'fang'])}" class="btn btn-info"><span class="iconfont icon-fangzi_  mr-1" ></span>厂房</a>
+        </div>
+        <form id="form" method="post">
+            <input type="hidden" name="需求类型" value="{$type_ch}">
+
+            {eq name="islogin" value="yes"}
+            <input type="hidden" name="member_id" value="{$memberinfo.id}">
+            {/eq}
+            {eq name="islogin" value="no"}
+            <input type="hidden" name="member_id" value="-1">
+            {/eq}
+
+            <nav>
+                <a href="{:url('index/zhaoshang/fabu',['type'=>$type])}" class="active"><span>免费发布{$type_ch}</span></a>
+                <a href="{:url('index/zhaoshang/xuqiu',['type'=>$type])}"><span>登记{$type_ch}需求</span></a>
+            </nav>
+            <div class="form-group">
+                <div class="name"><span>标题：</span></div>
+                <div class="value">
+                    <input type="text" name="title" required="true" maxlength="50"  autocomplete="off">
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>联系人：</span></div>
+                <div class="value">
+                    <input name="name" type="text" required="true" maxlength="20"  autocomplete="off">
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>联系电话：</span></div>
+                <div class="value">
+                    <input name="tel" type="text" required="true"  autocomplete="off">
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>区域：</span></div>
+                <div class="value">
+                    <div data-toggle="distpicker" >
+                        <div class="select" >
+                            <select   name="省"  id="province1" required="true"></select>
+                        </div>
+                        <div class="select" >
+                            <select name="市" id="city1" required="true"></select>
+                        </div>
+                        <div class="select" >
+                            <select name="区"  id="district1" ></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name" ><span>详情说明：</span></div>
+                <div class="value">
+                    <textarea name="des" maxlength="200"></textarea>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+
+
+
+            {eq name="type_ch" value="土地"}
+            <div class="form-group">
+                <div class="name"><span>{$type_ch}面积：</span></div>
+                <div class="value">
+                    <input name="area" type="text" required="true">亩
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>流转类型：</span></div>
+                <div class="value">
+                    <div class="radiobox">
+                        <input type="radio" checked name="fangshi" value="出租" id="zu" >
+                        <label for="zu">出租</label>
+                    </div>
+                    <div class="radiobox">
+                        <input type="radio" name="fangshi" value="出售" id="gou">
+                        <label for="gou">出售</label>
+                    </div>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>租金：</span></div>
+                <div class="value">
+                    <input type="text" name="zujing" required="true"><span>元</span>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            {/eq}
+
+
+
+            {eq name="type_ch" value="厂房"}
+            <div class="form-group">
+                <div class="name"><span>{$type_ch}面积：</span></div>
+                <div class="value">
+                    <input name="area" type="text" required="true"><span>㎡</span>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>流转类型：</span></div>
+                <div class="value">
+                    <div class="radiobox">
+                        <input type="radio" checked name="yixiang" value="出租" id="zu" >
+                        <label for="zu">出租</label>
+                    </div>
+                    <div class="radiobox">
+                        <input type="radio" name="yixiang" value="出售" id="gou">
+                        <label for="gou">出售</label>
+                    </div>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>适用行业：</span></div>
+                <div class="value">
+                    <input name="hang" type="text" required="true"  autocomplete="off">
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            {/eq}
+
+
+            {eq name="type_ch" value="写字楼"}
+            <div class="form-group">
+                <div class="name"><span>{$type_ch}面积：</span></div>
+                <div class="value">
+                    <input name="area" type="text" required="true"><span>㎡</span>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>租金：</span></div>
+                <div class="value">
+                    <input type="text" name="zujing" required="true"><span>元</span>
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            <div class="form-group">
+                <div class="name"><span>地址：</span></div>
+                <div class="value">
+                    <input type="text" name="address" required="true">
+                </div>
+            </div>
+            <div class="errormsg"></div>
+            {/eq}
+
+
+
+            <div class="form-group">
+                <div class="name"></div>
+                <div class="value">
+                    <input type="submit" value="立即发布">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#form").validate({
+            errorPlacement:function(error,element){
+                $(element).closest(".form-group").next(".errormsg").append(error)
+            },
+        })
+    })
+</script>
+
+<script language="javascript">
+    $("#shitizhaoshang").addClass("active");
+    $("#zhaoshang_{$type}").addClass("active");
+</script>
+{/block}

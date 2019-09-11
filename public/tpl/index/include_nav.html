@@ -1,0 +1,55 @@
+
+<div id="nav">
+    <a href="/"><img src="__IMAGES__/zhaoshang/img/log_reg_pwd/logo.png" width="220" alt=""></a>
+    <div id="navbar">
+        <a href="/">首页
+        </a>
+        <a href="{:url('index/zhaoshang/index')}" id="shitizhaoshang"  >实体招商
+
+        </a>
+        <a href="{:url('index/zht/index')}" id="zhtzht">综合体</a>
+        <a href="{:url('index/dj/index')}" id="djdj">项目对接</a>
+        <!-- <a href="{:url('index/chouhua/index')}" id="chouhua">税务筹划</a> -->
+        <a href="{:url('index/xz/index')}" id="xzxz">行政办公</a>
+        <a href="{:url('index/teshe/index')}" id="tese">特色项目</a>
+        <a href="{:url('index/zc/index')}" id="zczc">政策动态</a>
+        <a href="{:url('index/about/index')}" id="about">关于我们</a>
+    </div>
+    <div id="user">
+        {eq name="islogin" value="no"}
+        <!--登陆前-->
+        <div class="login">
+            <a href="{:url('index/index/userlogin')}"><span>登录</span></a><p style="padding: 0 2px;">|</p><a href="{:url('index/index/userregister')}"><span>注册</span></a>
+        </div>
+        {/eq}
+        {eq name="islogin" value="yes"}
+        <!--登录后-->
+        <div class="ico" style="padding: 0 5px">
+            <!--没有新消息-->
+            <a href="{:url('user/cang/index')}"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/2.png" alt=""></a>
+            <!--有新消息-->
+            <!--<a href="{:url('user/cang/index')}"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/2.png" alt="新消息" title="新消息"><span> </span></a>-->
+        </div>
+        <div class="ico" style="padding-left: 15px">
+            <a href="{:url('user/index/index')}">
+                <img src="{$memberinfo.face}" width="28" height="28" style="border-radius:15px" alt="个人中心" title="个人中心" >
+            </a>
+        </div>
+        <div id="setbox">
+            <section>
+                <div><a href="{:url('user/index/index')}"><img src="{$memberinfo.face}" width="50" height="50" style="border-radius:15px" alt=""></a></div>
+                <article>
+                    <p>{$memberinfo.username}</p>
+                    <p>经验1,634 积分0</p>
+                </article>
+            </section>
+            <section>
+                <a href="{:url('user/index/index')}" class="active">个人中心</a>
+                <a href="{:url('user/cang/index')}">我的收藏</a>
+                <a href="{:url('user/index/index')}">个人设置</a>
+                <a href="{:url('user/index/logout')}">安全退出</a>
+            </section>
+        </div>
+        {/eq}
+    </div>
+</div>

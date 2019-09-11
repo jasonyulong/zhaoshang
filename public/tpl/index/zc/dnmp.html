@@ -1,0 +1,73 @@
+{extend name="body"}
+
+
+
+{block name="header"}
+<style>
+    .newcontent img{max-width: 650px;display: block;margin: 20px auto}
+</style>
+<title>新闻列表</title>
+{/block}
+
+
+
+{block name="content"}
+<!--新闻详情和推荐-->
+<div class="container" style="max-width: 1230px" id="new" >
+    <div class="row no-gutters justify-content-between">
+        <div class="col-12  " style="margin-bottom: 80px" >
+            <div class="row mb-3" style="margin-bottom: 20px">
+                <div class="col-12 ">
+                    <div class="border-top-red-1"></div>
+                </div>
+                <div class="col-12 d-flex bg-white bg-clip-content" >
+                    {volist name="linksort" id="vo"}
+                    {eq name="vo.id" value="$sortinfo.id"}
+                    <a href="{:url('index/zc/newslist',array('id'=>$vo["id"]))}" class="text-white d-block bg-red p-3 font-size-14">{$vo.name}</a>
+                    {else/}
+                    <a href="{:url('index/zc/newslist',array('id'=>$vo["id"]))}" class="text-666 d-block p-3 font-size-14">{$vo.name}</a>
+                    {/eq}
+                    {/volist}
+                </div>
+            </div>
+            <div class="row mb-3" >
+                <div class="col-12 bg-white bg-clip-content">
+                    <div class="row" style="padding:30px 30px 10px 30px;">
+                        {volist name="list" id="vo" key="k"}
+                        <div class="col-12 d-flex mb-3 justify-content-between"><a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 font-size-14" length="60">{$vo.title}</a><span class="font-size-14 text-666">{$vo.time}</span></div>
+                        {eq name="k" value="5"}<div class="col-12 mb-3"><img src="__IMAGES__/newzs/img/22.png" alt=""></div>{/eq}
+                        {/volist}
+                    </div>
+                </div>
+            </div>
+            <!--分页-->
+            <div class="row ">
+                <div class="bg-white col-12 bg-clip-content">
+                    <nav aria-label="Page navigation example " class="py-2">
+                        <ul class="pagination mb-0 d-flex justify-content-center ">
+                            <li class="page-item disabled">
+                                <a class="page-link " href="#" aria-label="Previous">
+                                    <span aria-hidden="true">上一页</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link " href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">下一页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+{/block}

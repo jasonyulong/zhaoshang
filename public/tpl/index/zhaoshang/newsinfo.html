@@ -1,0 +1,103 @@
+{extend name="zs"}
+
+{block name="header"}
+<title>{$info.title}</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+<script src="__IMAGES__/zhaoshang/js/jquery.validate.min.js"></script>
+<script src="__IMAGES__/zhaoshang/js/validateAddMethods.js"></script>
+<script src="__IMAGES__/zhaoshang/js/jquery.messages_cn.js"></script>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div id="news">
+            <section>
+                <h3>土地</h3>
+                <article>
+                    {volist name="sort_tudi" id="vo"}
+                    <a href="{:url('index/Zhaoshang/news',['sort'=>$vo['id']])}">{$vo.name}</a>
+                    {/volist}
+                </article>
+            </section>
+            <section>
+                <h3>厂房</h3>
+                <article>
+                    {volist name="sort_fang" id="vo"}
+                    <a href="{:url('index/Zhaoshang/news',['sort'=>$vo['id']])}">{$vo.name}</a>
+                    {/volist}
+                </article>
+            </section>
+            <section>
+                <h3>写字楼</h3>
+                <article>
+                    {volist name="sort_lou" id="vo"}
+                    <a href="{:url('index/Zhaoshang/news',['sort'=>$vo['id']])}">{$vo.name}</a>
+                    {/volist}
+                </article>
+            </section>
+        </div>
+        <div class="link">
+            {include file="../public/tpl/index/zs_nav.html" /}
+        </div>
+
+        <a href="" id="guanggao"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/28.jpg" alt=""></a>
+
+        <div class="prolist">
+            <div class="listleft">
+                <div id="newsinfo">
+                    <h1>{$info.title}</h1>
+                    <p>   <span>发布日期：&nbsp;&nbsp;{$info.time}</span>  <span>{$info.sortinfo.name}</span><span>关注度:&nbsp;&nbsp;{$info.look}</span>    </p>
+                    <div class="newscontent">{$info.content}</div>
+                    <div class="pagenext">
+                        <div class="pageoption">
+                            {if condition="$updown.up.id neq null"}
+                            <a href="{:url('info?id='.$updown.up.id)}">上一篇：{$updown.up.title}</a>
+                            {else}
+                            暂无
+                            {/if}
+                            {if condition="$updown.down.id neq null"}
+                            <a href="{:url('info?id='.$updown.down.id)}">下一篇：{$updown.down.title}</a>
+                            {else}
+                            暂无
+                            {/if}
+                        </div>
+                        <div class="cangX">收藏</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="listright">
+
+                <div id="newsrigth">
+                    <h3 >今日头条</h3>
+                    <a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/37.jpg" alt=""><p></p></a>
+                    {volist name="hot" id="vo" key="k"}
+                    <a href="{:url('index/zhaoshang/newsinfo',['id'=>$vo['id']])}"><span>{$k}</span><span>{$vo.title}</span></a>
+                    {/volist}
+                </div>
+
+                <div class="page">
+                    <h3>优质土地</h3>
+                    {volist name="tuijiantudi" id="vo"}
+                    <div class="project">
+                        <a href="{:url('index/tudi/info',['id'=>$vo['id']])}"><img src="{$vo.pic}" style=" width:240px; height: 138px;"><p class="bantouming">{$vo.title}</p></a>
+                        <p class="flex"><span>{$vo.zujing}元</span><span>{$vo.area}亩</span></p>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script language="javascript">
+    $("#shitizhaoshang").addClass("active");
+    $("#zhaoshang_news").addClass("active");
+</script>
+{/block}

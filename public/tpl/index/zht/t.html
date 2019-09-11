@@ -1,0 +1,366 @@
+{extend name="zht"}
+
+{block name="header"}
+<title>商业综合体</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/zh-fuhuaindex.css">
+<base href="zh-newsinfo.html">
+<style>
+    #zh-tixi>.content{ width: 360px;height: 540px;padding-bottom: 33px;display: flex;flex-direction: column;align-content: center;justify-content: space-between;border-radius: 3px}
+    #zh-tixi>.content>div{}
+    #zh-tixi>.content>div>span{font-size: 24px;font-weight: bold;text-align: center;width: 100%;display: block}
+    #zh-tixi>.content>div>small{width: 100px;height: 3px;background-color: #1d223f;margin: 5px auto;display: block}
+    #zh-tixi>.content>blockquote{font-size: 14px;color: #666666;padding: 0 20px}
+    #zh-tixi>.content>a{width: 160px;height: 40px;border-radius: 20px;border: 2px solid #005196;text-align: center;line-height: 40px;margin: 0 auto}
+    .wrap{
+        width:1100px;
+        height:500px;
+        margin:0 auto;
+        background-color:transparent;
+        position:relative;
+        padding: 0;
+    }
+    .wrap ul{
+        position:relative;
+    }
+    .wrap ul li{
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .wrap ul li img{
+        width:100%;
+        border-radius: 5px;
+    }
+    .ctrl{
+        display:block;
+        width:100%;
+        position:absolute;
+        z-index:99;
+        top:220px;
+    }
+    .ctrl button{
+        width: 42px;
+        height: 42px;
+        background-color: transparent;border: 0px;
+        outline: 0;
+    }
+    .prev{
+        float:left;
+        margin-left:15px;
+    }
+    .next{
+        float:right;
+        margin-right:15px;
+    }
+    .carouseltit{width: 100%;text-align: center;display: inline-block;text-align: center;;font-size: 24px;color: #333333;padding: 20px 0 }
+
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/zht_nav.html" /}
+        </div>
+        <div id="zh-main">
+            <section id="zh-fuhua">
+                <div class="fuhua-left flex">
+                    <h1>最新资讯</h1>
+                    {volist name="top" id="vo" key="k"}
+                    {eq name="k" value="1"}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dis-href "><img src="{$vo.pic}" width="524" height="310" alt=""><p class="abs-rgba " style="padding:  12px 0;font-size: 16px">{$vo.title}</p></a>
+                    {else}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dis-href"><img src="{$vo.pic}" width="260" height="158" alt=""><p class="abs-rgba ">{$vo.title}</p></a>
+                    {/eq}
+                    {/volist}
+                </div>
+                <div class="fuhua-rigth">
+                    <p class="flex">
+                        <a href="javascript:void(0)"  class="active" >新闻资讯</a>
+                        <a href="javascript:void(0)">法规政策</a>
+                        <a href="javascript:void(0)">行业动态</a>
+                    </p>
+                    <article class="article" style="display: block">
+                        {volist name="t1" id="vo" key="k"}
+                        {eq name="k" value="1"}
+                        <div class="hotnews">
+                            <section>
+                                <div class="data">{$vo.time|date='d',###}<br>{$vo.time|date='Y-m',###}</div>
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">更多</a>
+                            </section>
+                            <blockquote length="100">{$vo.content|remove_html|mb_substr=###,0,200,'utf-8'}</blockquote>
+                        </div>
+                        {else}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"><p class="textover"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/93.png" alt="">{$vo.title}</p><span>{$vo.time|date='Y-m-d',###}</span></a>
+                        {/eq}
+                        {/volist}
+                    </article>
+                    <article class="article">
+                        {volist name="t2" id="vo" key="k"}
+                        {eq name="k" value="1"}
+                        <div class="hotnews">
+                            <section>
+                                <div class="data">{$vo.time|date='d',###}<br>{$vo.time|date='Y-m',###}</div>
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">更多</a>
+                            </section>
+                            <blockquote length="100">{$vo.content|remove_html|mb_substr=###,0,200,'utf-8'}</blockquote>
+                        </div>
+                        {else}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"><p class="textover"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/93.png" alt="">{$vo.title}</p><span>{$vo.time|date='Y-m-d',###}</span></a>
+                        {/eq}
+                        {/volist}
+                    </article>
+                    <article class="article">
+                        {volist name="t3" id="vo" key="k"}
+                        {eq name="k" value="1"}
+                        <div class="hotnews">
+                            <section>
+                                <div class="data">{$vo.time|date='d',###}<br>{$vo.time|date='Y-m',###}</div>
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">更多</a>
+                            </section>
+                            <blockquote length="100">{$vo.content|remove_html|mb_substr=###,0,200,'utf-8'}</blockquote>
+                        </div>
+                        {else}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"><p class="textover"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/93.png" alt="">{$vo.title}</p><span>{$vo.time|date='Y-m-d',###}</span></a>
+                        {/eq}
+                        {/volist}
+                    </article>
+                </div>
+
+            </section>
+            <article class="title">
+                热门项目<br>
+                我们为您提供专业的服务
+            </article>
+            <!--新闻start-->
+            <a href="{:url('index/chouhua/zhaoshang')}"  class="flex text-right" style="text-align: right;position: relative;display: block;top: -25px;"><img
+                    src="__IMAGES__/zhaoshang/img/shitizhaoshang/94.png" alt=""></a>
+            <!--新闻end-->
+            <!--案例start-->
+            <div class="anli">
+                <div class="flex">
+                    {volist name="zt" id="vo"}
+                    <a href="{:url('index/chouhua/zheng',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}" width="260" height="168" alt="">
+                        <h4>{$vo.title}</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+            <!--案例end-->
+            <article class="title">
+                服务体系<br>
+                我们为您提供专业的服务
+            </article>
+            <a href="{:url('index/zht/mall')}" class="flex text-right" style="text-align: right;position: relative;display: block;top: -25px;"><img
+                    src="__IMAGES__/zhaoshang/img/shitizhaoshang/94.png" alt=""></a>
+            <!--服务体系start-->
+            <div id="zh-tixi" class="flex">
+                <div class="content mainbox-shadow">
+                    <div><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/72.jpg" alt=""></div>
+                    <div>
+                        <span>产业招商</span>
+                        <small></small>
+                    </div>
+                    <blockquote>中国人气设计师互动平台。深耕设计领域十年,站酷聚集了470万优秀设计师、摄影师、插画师、艺术家、创意人,设计创意群体中具有较高</blockquote>
+                    <a href="{:url('index/zht/mall')}">查看更多</a>
+                </div>
+                <div class="content mainbox-shadow">
+                    <div><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/72.jpg" alt=""></div>
+                    <div>
+                        <span>产业招商</span>
+                        <small></small>
+                    </div>
+                    <blockquote>中国人气设计师互动平台。深耕设计领域十年,站酷聚集了470万优秀设计师、摄影师、插画师、艺术家、创意人,设计创意群体中具有较高</blockquote>
+                    <a href="{:url('index/zht/mall')}">查看更多</a>
+                </div>
+                <div class="content mainbox-shadow">
+                    <div><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/72.jpg" alt=""></div>
+                    <div>
+                        <span>产业招商</span>
+                        <small></small>
+                    </div>
+                    <blockquote>中国人气设计师互动平台。深耕设计领域十年,站酷聚集了470万优秀设计师、摄影师、插画师、艺术家、创意人,设计创意群体中具有较高</blockquote>
+                    <a href="{:url('index/zht/mall')}">查看更多</a>
+                </div>
+
+            </div>
+            <!--服务体系end-->
+            <article class="title">
+                成功案例<br>
+                我们为您提供专业的服务
+            </article>
+            <a href="{:url('index/zht/mall')}" class="flex text-right" style="text-align: right;position: relative;display: block;top: -25px;"><img
+                    src="__IMAGES__/zhaoshang/img/shitizhaoshang/94.png" alt=""></a>
+            <div class="wrap" id="wrap">
+                <ul>
+                    {volist name="anli" id="vo"}
+                    <li><a href="{:url('index/zht/mallinfo',['id'=>$vo['id']])}"><img src="{$vo.pic}" alt=""><span class="carouseltit" >{$vo.title}</span></a></li>
+                    {/volist}
+                </ul>
+                <span class="ctrl">
+                    <button class="prev"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/left.png" width="42" height="42" alt=""></button>
+                    <button class="next"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/rigth.png" alt=""></button>
+                </span>
+            </div>
+
+            <!--合作伙伴start-->
+            <table class="table">
+                <tr>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/2.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/4.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/5.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/6.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/7.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/8.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/9.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/9.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/11.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/12.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/13.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/14.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/15.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/16.jpg" alt=""></td>
+                    <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/17.jpg" alt=""></td>
+                </tr>
+            </table>
+            <!--合作伙伴end-->
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+
+    $(function(){
+        var json=[
+            {
+                top:'0px',
+                left:'200px',
+                width:'300px',
+                height:'187px',
+                zIndex:6,
+                opacity:0
+            },
+            {
+                top:'88px',
+                left:'75px',
+                width:'400px',
+                height:'250px',
+                zIndex:8,
+                opacity:0.8
+            },
+            {
+                top:'60px',
+                left:'300px',
+                width:'500px',
+                height:'404px',
+                zIndex:10,
+                opacity:1
+            },
+            {
+                top:'88px',
+                left:'625px',
+                width:'400px',
+                height:'250px',
+                zIndex:8,
+                opacity:0.8
+            },
+            {
+                top:'0px',
+                left:'600px',
+                width:'300px',
+                height:'187px',
+                zIndex:6,
+                opacity:0
+            }
+        ];
+        var jieliu=true;
+//          封装一个函数，将json每个数据通过遍历加在每个'li'容器上
+        function addCss(){
+            for(var i in json){
+                $('#wrap ul li').eq(i).css({zIndex:json[i].zIndex});
+                $('#wrap ul li').eq(i).animate({
+                    top:json[i].top,
+                    left:json[i].left,
+                    width:json[i].width,
+                    height:json[i].height,
+                    opacity:json[i].opacity
+                },'slow',function(){
+                    jieliu=true;
+                    console.log($(this).index())
+                    var $index = $(this).index()
+                    console.log($('#wrap ul li').eq($index).css("opacity"))
+                    if($('#wrap ul li').eq($index).css("opacity")==1){
+                        $('#wrap ul li').eq($index).find("span").fadeIn().end().siblings("li").find("span").hide()
+                    }
+                });
+
+            }
+        }
+
+        /*      if($('#wrap ul li').eq(i).css("opacity")==1){
+         console.log($('#wrap ul li').eq(i).css("opacity"))
+         $('#wrap ul li').eq(i).find("span").show().siblings("li").hide()
+         }*/
+        //页面打开先调用一次，页面不会乱
+        addCss();
+        $('.prev').click(function(){
+            if(jieliu==true){
+                jieliu=false;
+                //json.shift(),删除数组的第一个值，并返回第一个值
+                //json.push(json.shift())将返回的第一个值追加到数组末尾
+                json.push(json.shift());
+                //重新遍历
+                addCss();
+            }
+
+
+        });
+        $('.next').click(function(){
+            if(jieliu==true){
+                jieliu=false;
+                //json.pop(),删除数组的最后个值，并返回最后一个值
+                //json.unshift(json.pop())将返回的最后一个值添加到数组最前面
+                json.unshift(json.pop());
+                //重新遍历
+                addCss();
+            }
+        });
+        $(".fuhua-rigth>p>a").click(function () {
+            var $index = $(this).index()
+            $(this).addClass("active").siblings().removeClass("active")
+            $(".article").eq($index).fadeIn().siblings(".article").hide()
+        })
+    });
+</script>
+
+<script>
+    $(function () {
+        $("#myCarousel").hover(function () {
+            $("#myCarouselrigth").show()
+        },function () {
+            $("#myCarouselrigth").hide()
+        })
+        /*     $("#myCarousel").carousel({interval:3000})*/
+        $("#myCarouselrigth").click(function () {
+            $("#myCarousel").carousel('next')
+        })
+    })
+</script>
+
+<script language="javascript">
+    $("#zhlink3").addClass("active");
+    $("#zhtzht").addClass("active");
+</script>
+{/block}

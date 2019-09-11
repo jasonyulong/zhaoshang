@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,IAAI;EACF,KAAK,EAAC,KAAK;EACX,MAAM,EAAC,KAAK;EACZ,MAAM,EAAC,cAAc;EACrB,OAAE;IACA,SAAS,EAAC,IAAI;IACd,KAAK,EAAC,GAAG;EAEX,MAAC;IACC,SAAS,EAAC,IAAI;IACd,KAAK,EAAC,KAAK",
+"sources": ["../../%E6%96%B0%E6%8B%9B%E5%95%86/scss/popo.scss"],
+"names": [],
+"file": "popo.css"
+}

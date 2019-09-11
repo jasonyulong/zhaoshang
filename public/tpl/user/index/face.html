@@ -1,0 +1,87 @@
+{extend name="layout"}
+
+{block name="content"}
+
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('user/index/index')}" class="active">个人设置</a>
+            <a href="{:url('user/cang/article')}">收藏中兴</a>
+            <a href="{:url('user/index/find')}" >求租购物</a>
+        </div>
+        <section style="padding: 30px 15px 0px 15px;display: flex">
+            <div class="setingleft">
+                <p class="pFirst">个人设置</p>
+                <a href="{:url('user/index/index')}" class="p-link ">信息修改</a>
+                <a href="{:url('user/index/face')}" class="p-link active">头像设置</a>
+            </div>
+            <div class="setingrigth">
+                <p><span></span>头像修改</p>
+                <form id="head" method="post" enctype="multipart/form-data">
+                    <div style="display: flex">
+                        <div class="wrap-left">
+                            <div class="form-group">
+                                <input type="file" accept="image/*" id="imgfile" name="face">
+                                <div class="wrap text-center">请选择要上传的头像
+                                </div>
+                            </div>
+                            <p class="imgtip">建议图片尺寸不小于200×200：支持JPG、PNG、JPEG、 GIF格式的图片，大小不超过2M</p>
+                            <div class="headbox">
+                                <img src="{$userinfo.face}" id="img" width="100%" height="100%" alt="">
+                            </div>
+                        </div>
+                        <div class="wrap-rigth">
+                            <p>
+                                效果预览。<br>
+                                您上传的图片会自动生成两种尺寸，<br>请注意小尺寸 的图像是否清晰
+                            </p>
+                            <div style="display: flex">
+                                <div class="img100">
+                                    <img src="{$userinfo.face}"  id="img2" alt="">
+                                </div>
+                                <p>100x100</p>
+                            </div>
+                            <div style="display: flex;padding-left: 10%;margin-top: 5%">
+                                <div class="img50">
+                                    <img src="{$userinfo.face}" id="img3" alt="">
+                                </div>
+                                <p>50x50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="errormsg"></div>
+                    <input type="submit" class="btn btn-primary" value="保存">
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $("input[type=file]").on("change",function () {
+        var url;
+        url = window.URL.createObjectURL(document.getElementById("imgfile").files.item(0));
+        $("#img,#img2,#img3").attr("src",url)
+    })
+    $("#head").validate({
+        errorPlacement: function(error, element) {
+            // Append error within linked label
+            $( element )
+                    .closest( "form" )
+                    .find( ".errormsg" )
+                    .append( error );
+        },
+        rules:{
+            imgfile:{required:true,accept:"image/*",fileSize:1}
+        },
+        messages:{
+            imgfile:{required:"上传文件不能为空",accept:"上传文件类型必须为图片",fileSize:"图片大小不能超过{0}M"}
+        }
+    })
+
+
+    $("#action_face").addClass("active")
+</script>
+{/block}

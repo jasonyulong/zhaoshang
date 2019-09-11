@@ -1,0 +1,81 @@
+{extend name="hcy"}
+
+{block name="header"}
+<title>联系我们</title>
+{/block}
+
+{block name="content"}
+
+<!--banner-->
+<div id="banner" class="container-fluid p-0 mt-3 position-relative d-flex align-items-center" style="background-image: url(__IMAGES__/hcy/img/8.jpg)" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-end ">
+                <span class="font-size-55 mr-2 text-uppercase line-height-55 font-weight-normal" >c</span><span class="font-size-24 mr-2 text-uppercase font-weight-light">ontact us</span><span ><img src="__IMAGES__/hcy/img/9.png" alt=""></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 d-flex align-items-center text-white justify-content-start ">
+                <span class="mr-2"><img src="__IMAGES__/hcy/img/9.png" alt=""></span><span class="font-size-36 mr-2 line-height-36 font-weight-light" ></span><span class="font-size-24 mr-2 text-uppercase align-self-end line-height-24 font-weight-light "  >联系我们</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-4" style="max-width: 1230px">
+    <div class="row">
+        <div class="col">
+            <p class="my-3 text-666"><a href="{:url('index/hcy/index')}"><span class="iconfont icon-shouye mr-1 "></span>首页</a> &nbsp;&gt;&nbsp;联系我们</p>
+        </div>
+    </div>
+</div>
+<div class="container" style="max-width: 1230px;margin-bottom: 150px">
+    <div class="row align-items-stretch"  >
+        <div class="col " id="map" style="height:800px">
+        </div>
+        <div class="position-absolute col-3 px-5 d-flex flex-column justify-content-between" style="background-color: #7e8488;height: 800px;padding: 200px 0" >
+            <div class="text-white font-size-36">联系我们</div>
+            <div>
+                <div class="text-white font-size-16">电话号码:</div>
+                <div class="text-white font-size-24 font-weight-light">400-150-9896</div>
+            </div>
+           <!-- <div>
+                <div class="text-white font-size-16">企业邮箱:</div>
+                <div class="text-white font-size-24 font-weight-light">hcy@163.com</div>
+            </div>-->
+            <div>
+                <div class="text-white font-size-16">电话号码:</div>
+                <div class="text-white font-size-24 font-weight-light">武汉市硚口区南国大家 装H座20楼</div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#content").addClass("active")
+    })
+</script>
+<script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.11&key=578609e98b59a3e97345b5edaaa3861b"></script>
+<script type="text/javascript">
+
+    var map = new AMap.Map('map', {
+        resizeEnable: true,
+        center: [114.224468,30.587898],
+        zoom: 15
+    });
+
+    var marker = new AMap.Marker({
+        position: map.getCenter(),
+        icon: '__IMAGES__/hcy/img/11.png',
+        offset: new AMap.Pixel(-13, -30)
+    });
+
+    marker.setMap(map);
+
+</script>
+{/block}

@@ -1,0 +1,224 @@
+{extend name="zs"}
+
+{block name="header"}
+<title>实体招商首页</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+
+        <div class="link">{include file="../public/tpl/index/zs_nav.html" /}</div>
+
+        <h2><span>热门推荐</span><a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.png" alt=""></a></h2>
+        <div class="line"></div>
+        <div  id="hot">
+            {volist name="hotbanner" id="vo"}
+            <a href="{:url('index/Fang/info',['id'=>$vo['id']])}">
+                <img src="{$vo.pic}" width="266" height="190" alt="{$vo.title}">
+                <p length="15">{$vo.title}</p>
+            </a>
+            {/volist}
+        </div>
+
+
+        <h2><span>土地出租</span><a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.png" alt=""></a></h2>
+        <div class="line"></div>
+        <div class="product">
+            <div class="productfirst">
+                <h3>土地城市推荐</h3>
+                <section>
+                    {volist name="pro" id="vo" key="k"}
+                    <a href="javascript:tudi_index_area_{$vo.code}();" {if condition="$k % 3!=0"}class="border"{/if}>{$vo.name}</a>
+                    <form action="{:url('index/Zhaoshang/tudi_index')}" id="tudi_index_area_{$vo.code}" method="post"><input type="hidden" name="area" value="{$vo.code}"></form>
+                    <script>
+                        function tudi_index_area_{$vo.code}(){
+                            $("#tudi_index_area_{$vo.code}").val({$vo.code});
+                            $("#tudi_index_area_{$vo.code}").submit()
+                        }
+                    </script>
+                    {/volist}
+                </section>
+                <h3>土地需求推荐</h3>
+                <article>
+                    {volist name="tudizi" id="vo"}
+                    <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </article>
+            </div>
+            <div class="productsecond">
+                {volist name="tudipic" id="vo"}
+                <div class="pro">
+                    <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}"  width="196" height="127" alt="">
+                        <p length="10">{$vo.title}</p>
+                        <p><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/5.png" width="11" height="9" alt="">万元</span><strong><span>{$vo.area}</span>亩</strong></p>
+                        <p><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/6.png" alt="">{$vo.pro_name}-{$vo.city_name}</span></p>
+                    </a>
+                </div>
+                {/volist}
+            </div>
+            <div class="productthree">
+                <h3><span>政策速递</span><a href="{:url('index/Zhaoshang/news')}">更多</a></h3>
+                <div class="newlist">
+                    {volist name="tudiart" id="vo" offset="0" length='7'}
+                    <a href="{:url('index/Zhaoshang/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </div>
+                <h3><span>政策速递</span><a href="{:url('index/Zhaoshang/news')}">更多</a></h3>
+                <div class="newlist">
+                    {volist name="tudiart" id="vo" offset="7" length='7'}
+                    <a href="{:url('index/Zhaoshang/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+
+
+        <h2><span>厂房出租</span><a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.png" alt=""></a></h2>
+        <div class="line"></div>
+        <div class="product">
+            <div class="productfirst">
+                <h3>厂房城市推荐</h3>
+                <section>
+                    {volist name="pro" id="vo" key="k"}
+                    <a href="javascript:fang_index_area_{$vo.code}();" {if condition="$k % 3!=0"}class="border"{/if}>{$vo.name}</a>
+                    <form action="{:url('index/Zhaoshang/fang_index')}" id="fang_index_area_{$vo.code}" method="post"><input type="hidden" name="area" value="{$vo.code}"></form>
+                    <script>
+                        function fang_index_area_{$vo.code}(){
+                            $("#fang_index_area_{$vo.code}").val({$vo.code});
+                            $("#fang_index_area_{$vo.code}").submit()
+                        }
+                    </script>
+                    {/volist}
+                </section>
+                <h3>厂房需求推荐</h3>
+                <article>
+                    {volist name="fangzi" id="vo"}
+                    <a href="{:url('index/Fang/info',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </article>
+            </div>
+            <div class="productsecond">
+                {volist name="fangpic" id="vo"}
+                <div class="pro">
+                    <a href="{:url('index/Fang/info',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}"  width="196" height="127" alt="">
+                        <p length="13">{$vo.title}</p>
+                        <p><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/5.png" width="11" height="9" alt="">万元</span><strong><span>{$vo.area}</span>亩</strong></p>
+                        <p><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/6.png" alt="">{$vo.pro_name}-{$vo.city_name}</span></p>
+                    </a>
+                </div>
+                {/volist}
+            </div>
+            <div class="productthree">
+                <h3><span>政策速递</span><a href="{:url('index/Zhaoshang/news')}">更多</a></h3>
+                <div class="newlist">
+                    {volist name="fangart" id="vo" offset="0" length='7'}
+                    <a href="{:url('index/Zhaoshang/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </div>
+                <h3><span>政策速递</span><a href="{:url('index/Zhaoshang/news')}">更多</a></h3>
+                <div class="newlist">
+                    {volist name="fangart" id="vo" offset="7" length='7'}
+                    <a href="{:url('index/Zhaoshang/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+
+
+
+        <h2><span>写字楼出租</span><a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.png" alt=""></a></h2>
+        <div class="line"></div>
+        <div class="product">
+            <div class="productfirst">
+                <h3>写字楼城市推荐</h3>
+                <section>
+                    {volist name="pro" id="vo" key="k"}
+                    <a href="javascript:lou_index_area_{$vo.code}();" {if condition="$k % 3!=0"}class="border"{/if}>{$vo.name}</a>
+                    <form action="{:url('index/Zhaoshang/lou_index')}" id="lou_index_area_{$vo.code}" method="post"><input type="hidden" name="area" value="{$vo.code}"></form>
+                    <script>
+                        function lou_index_area_{$vo.code}(){
+                            $("#lou_index_area_{$vo.code}").val({$vo.code});
+                            $("#lou_index_area_{$vo.code}").submit()
+                        }
+                    </script>
+                    {/volist}
+                </section>
+                <h3>写字楼需求推荐</h3>
+                <article>
+                    {volist name="louzi" id="vo"}
+                    <a href="{:url('index/Lou/info',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </article>
+            </div>
+            <div class="productsecond">
+                {volist name="loupic" id="vo"}
+                <div class="pro">
+                    <a href="{:url('index/Lou/info',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}"  width="196" height="127" alt="">
+                        <p>{$vo.title}</p>
+                        <p><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/5.png" width="11" height="9" alt="">万元</span><strong><span>{$vo.area}</span>亩</strong></p>
+                        <p><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/6.png" alt="">{$vo.pro_name}-{$vo.city_name}</span></p>
+                    </a>
+                </div>
+                {/volist}
+            </div>
+            <div class="productthree">
+                <h3><span>政策速递</span><a href="{:url('index/Zhaoshang/news')}">更多</a></h3>
+                <div class="newlist">
+                    {volist name="louart" id="vo" offset="0" length='7'}
+                    <a href="{:url('index/Zhaoshang/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </div>
+                <h3><span>政策速递</span><a href="{:url('index/Zhaoshang/news')}">更多</a></h3>
+                <div class="newlist">
+                    {volist name="louart" id="vo" offset="7" length='7'}
+                    <a href="{:url('index/Zhaoshang/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <h2><span>合作名企</span><a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.png" alt=""></a></h2>
+        <div class="line"></div>
+        <table class="table">
+            <tr>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/2.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/3.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/4.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/5.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/6.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/7.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/8.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/9.jpg" alt=""></td>
+            </tr>
+            <tr>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/9.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/11.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/12.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/13.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/14.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/15.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/16.jpg" alt=""></td>
+                <td><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/17.jpg" alt=""></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+{/block}
+
+
+
+{block name="footer"}
+<script language="javascript">
+$("#shitizhaoshang").addClass("active");
+$("#zhaoshang_index").addClass("active");
+</script>
+<script src="__IMAGES__/zhaoshang/js/niti.js"></script>
+{/block}

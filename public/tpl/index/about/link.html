@@ -1,0 +1,99 @@
+{extend name="about"}
+
+{block name="header"}
+<title>联系我们</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/about.css">
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y9XrqIdFduE2IxUeu10pKhsCf5kNEXUv"></script>
+<style>
+    #main {
+        width: 1200px;
+        background-color: white;
+        padding: 45px 95px 55px 95px;
+        margin: 0 auto;
+        position: relative;
+    }
+    #newslist>.pro>article {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        padding-left: 25px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px 25px;
+        flex-grow: 1;
+    }
+    #newslist>.pro {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0;
+        padding-left: 5px;
+        position: relative;
+        transition: top 1s ease-in-out;
+        -webkit-transition: top 1s ease-in-out;
+        margin-top: 20px;
+    }
+</style>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/about_nav.html" /}
+        </div>
+        <div id="address">
+            <div class="pro">
+                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/66.png" alt="">
+                <p > 全国热线<br>400-000-0000</p>
+            </div>
+            <div class="pro">
+                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/67.png" alt="">
+                <p >座机热线 <br>400-000-0000</p>
+            </div>
+            <div class="pro">
+                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/68.png" alt="">
+                <p >电子邮箱 <br> zgzsw@163.com</p>
+            </div>
+            <div class="pro">
+                <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/69.png" alt="">
+                <p >总部地址 <br>北京市海淀区</p>
+            </div>
+        </div>
+        <div id="baidumap"></div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script language="javascript">
+    $("#about").addClass("active");
+    $("#abtoulianxi").addClass("active");
+</script>
+<script>
+    // 百度地图API功能
+    var map = new BMap.Map("baidumap");
+    var point = new BMap.Point(114.23088,30.59439);
+    map.centerAndZoom(point, 15);
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+    var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+    var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角
+    map.addControl(top_left_control);
+    map.addControl(top_left_navigation);
+    map.addControl(top_right_navigation);
+    //创建小狐狸/*http://lbsyun.baidu.com/jsdemo/img/fox.    gif*/
+    var pt = new BMap.Point(114.2311,30.5945);
+    var myIcon = new BMap.Icon("__IMAGES__/zhaoshang/img/shitizhaoshang/70.png", new BMap.Size(300,157));
+    var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+    map.addOverlay(marker2);
+</script>
+{/block}
+
+
+
+
+

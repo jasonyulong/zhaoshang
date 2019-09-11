@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="hello">
+    <meta name="keywords" content="a,b,c">
+    <mata name="renderer" content="webkit"></mata>
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="bookmark"href="../img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="newsinfo.html">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_931982_bruyuhob1ss.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <style>
+        .newcontent img{max-width: 650px;display: block;margin: 20px auto}
+    </style>
+</head>
+
+<body class="bg-fafafa">
+<!--导航&&搜索框-->
+<div class="container-fluid p-0 banner mb-50"  style="height: 443px">
+    <div class="container-fluid bg-linered m-0 " style="background:linear-gradient(#ed444b87,#bf181f)">
+        <nav id="nav" class="container-fluid   d-flex justify-content-between  align-items-center " style="max-width: 1200px;height: 75px;">
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 h-100 d-block px-4 font-weight-bold font-size-22" style="line-height: 75px">首页</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="zhaoshang.html" class="text-white font-size-18 h-100 d-block px-4 " style="line-height: 75px">实体招商</a>
+                <div class="secondnav container-fluid position-absolute col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">税务筹划</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="newsinfo.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">政策动态</a>
+                <div class="secondnav container-fluid position-absolute col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">综合体</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">项目对接</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">行政办公</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navhover h-100">
+                <a href="index.html" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">特色项目</a>
+                <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="" class="text-333 mr-5 ">新闻中心</a>
+                            <a href="" class="text-333 mr-5">厂房出租</a>
+                            <a href="" class="text-333 mr-5">土地租售</a>
+                            <a href="" class="text-333 mr-5">写字楼出租</a>
+                            <a href="" class="text-333 mr-5">合作名企</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container " style="max-width: 1230px;padding-top:65px">
+        <div class="row mt-5" >
+            <div class="col-6">
+                <div class="pl-3">
+                    <img src="../img/3.png" width="471" height="98" alt="图片">
+                </div>
+                <div class="mt-3 pl-3">
+                    <img src="../img/4.png" width="362" height="33" alt="图片">
+                </div>
+            </div>
+            <div class="col-6 px-5">
+                <p class="text-jin font-size-18">热门搜索：写字楼   湖北招商政策   习近平</p>
+                <form >
+                    <div class="input-group " style="height: 50px">
+                        <div class="input-group-prepend  ">
+                            <div class="input-group-text bg-white rounded-0 border-0"><span class="iconfont icon-fangdajing font-weight-bold font-size-24 text-red "></span></div>
+                        </div>
+                        <input type="search" id="search" autofocus autocomplete="off" class="form-control rounded-0 h-100 border-0 " >
+                        <div class="input-group-append  ">
+                            <button class="btn bg-red text-white font-size-18 rounded-0" style="padding: 0 30px;" >搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--筛选-->
+<div class="container bg-white bg-clip-content" id="form" style="max-width: 1230px">
+    <div class="row " >
+        <div class="col-12 ">
+            <div class="border-top-red-1"></div>
+        </div>
+        <div class="col-12 d-flex bg-white bg-clip-content" style="">
+            <a href="" class="text-white d-block bg-red p-3 font-size-14 px-5">全部</a>
+            <a href="" class="text-666 d-block p-3 font-size-14 px-5">国家级</a>
+        </div>
+    </div>
+    <div class="row" style="padding: 34px 36px 0px 36px">
+        <div class="col-12">
+            <div class="row " style="margin-bottom: 40px">
+                <div class="col-1 font-weight-bold text-black">类别</div>
+                <div class="col-10">
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-red text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+
+
+
+                </div>
+                <div class="col-1 text-999 font-size-14 cursor-pointer align-items-center d-flex shaixuan line-height-24 align-self-start"></div>
+            </div>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-1 font-weight-bold text-black">省份</div>
+                <div class="col-10 text-over justify-content-between">
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-red text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                </div>
+                <div class="col-1 text-999 font-size-14 cursor-pointer align-items-center d-flex shaixuan line-height-24 align-self-start"></div>
+            </div>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-1 font-weight-bold text-black">城市</div>
+                <div class="col-10 text-over justify-content-between">
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-red text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                    <a href="" class="font-size-14 mr-4 text-666 text-nowrap ">国税</a>
+                </div>
+                <div class="col-1 text-999 font-size-14 cursor-pointer align-items-center d-flex shaixuan line-height-24 align-self-start"></div>
+            </div>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-1 font-weight-bold text-black">时间</div>
+                <div class="col-10 text-over justify-content-between">
+                    <a href="" class="font-size-14 mr-4 text-d1231f d-inline-block">全部</a>
+                    <a href="" class="font-size-14 mr-4 text-666 d-inline-block">最近三天</a>
+                    <a href="" class="font-size-14 mr-4 text-666 d-inline-block">最近一周</a>
+                    <a href="" class="font-size-14 mr-4 text-666 d-inline-block">最近一月</a>
+                    <a href="" class="font-size-14 mr-4 text-666 d-inline-block">最近三月</a>
+                    <a href="" class="font-size-14 mr-4 text-666 d-inline-block">最近半年</a>
+                </div>
+                <div class="col-1 text-999 font-size-14 cursor-pointer align-items-center d-flex shaixuan line-height-24 align-self-start"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-3"></div>
+<!--列表和推荐-->
+<div class="container" style="max-width: 1230px" id="new">
+    <div class="row no-gutters justify-content-between">
+        <div class="col-auto  pb-5" style="margin-right: 10px;width: 830px;margin-bottom: 68px">
+            <div class="row mb-3">
+                <div class="col-12 bg-white bg-clip-content" id="newlist">
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/22.jpg" width="180" height="120" title="插图" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-999 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-999 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/23.jpg" width="180" height="120" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/24.jpg" width="180" height="120" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-999 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                        <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                            <img src="../img/25.jpg" width="180" height="120" alt="插图" class="d-block">
+                        </a>
+                        <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                            <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                            <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                            <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                        </div>
+                    </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/23.jpg" width="180" height="120" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/24.jpg" width="180" height="120" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/25.jpg" width="180" height="120" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                      <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                          <img src="../img/26.jpg" width="180" height="120" alt="插图" class="d-block">
+                      </a>
+                      <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                          <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                          <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                          <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                      </div>
+                  </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                        <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                            <img src="../img/22.jpg" width="180" height="120" alt="插图" class="d-block">
+                        </a>
+                        <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                            <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                            <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                            <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                        </div>
+                    </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                        <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                            <img src="../img/23.jpg" width="180" height="120" alt="插图" class="d-block">
+                        </a>
+                        <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                            <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                            <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                            <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                        </div>
+                    </div>
+                  <div class="col-auto p-0 d-flex " style="height: 120px;margin-bottom: 10px">
+                        <a href="" class="d-block link-overflow  h-100" style="min-width: 180px;">
+                            <img src="../img/24.jpg" width="180" height="120" alt="插图" class="d-block">
+                        </a>
+                        <div class="h-100 d-flex flex-column justify-content-between " style="padding:0 25px;">
+                            <a href="newsinfo.html" class="text-black font-size-18 font-weight-bold" length="20">探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路探索特色小镇的未来之路</a>
+                            <article class="font-size-12 text-666 line-height-24 mb-1 w-75" length="60">党的十九大报告明确提出要“建立健全城乡融合发展体制机制和政策体系”为更好推进城乡融合发展，须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载须破解经济社会发展中要素更织间载</article>
+                            <p class="d-flex font-size-12 text-666 m-0 justify-content-between"><span>887次浏览</span><sapn>7小时前</sapn></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="bg-white col-12 bg-clip-content">
+                    <div class="py-3 text-999 text-center font-size-14 cursor-pointer" id="more">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-auto " style="width: 360px">
+            <a class="link-overflow w-100 d-block position-relative" style="margin-bottom: 20px">
+                <img src="../img/27.jpg" class="w-100" alt="">
+                <p class="font-size-14 text-white bg-linered-white-black position-absolute d-block mb-0 w-100 py-2 pl-3" style="bottom: 0px;z-index: 100" length="20 ">高达来袭！请各部门准备战斗，这不是演习！</p>
+            </a>
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">热点咨询</p>
+                <a href="newsinfo.html" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">金立正式进入破产程序 初步重组方案出炉</a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+            </div>
+            <div class="border-top-red-2"></div>
+            <div class="text-red bg-white flex-column d-flex pb-3 justify-content-between mb-3" style="height: 300px">
+                <p class="px-4 d-inline-block pt-3 mb-0">热点咨询</p>
+                <a href="newsinfo.html" class="font-weight-bold text-black font-size-16 pl-4 my-3" length="18">金立正式进入破产程序 初步重组方案出炉</a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+                <a href="" class="d-block pl-3 text-333 d-flex align-items-center"><span class="iconfont icon-dian font-size-24  mr-1"></span><span class="font-size-14" length="18">咸阳工业纪实科技创新催生发展新活力咸阳工业纪实科技创新催生发展新活力</span> </a>
+            </div>
+            <div      class="d-block w-100 position-relative ">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="newsinfo.html" class="d-block"><img src="../img/21.jpg" width="360" height="240" alt="图"></a>
+                    </div>
+                </div>
+                <div     class="font-size-12 px-2 bg-7d7d7d text-white position-absolute d-block" style="right: 10px;top: 15px;z-index: 1000">广告</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+<script src="../js/pub.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>行政办公</title>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/reset.css">
+    <script src="__IMAGES__/zhaoshang/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zhaoshang/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+    <style>
+        .have{margin-bottom: 30px;margin-right: 30px;overflow: hidden}
+        .have img{transition: 0.2s ease-in-out;display: block}
+        .have img:hover{transform: scale(1.05)}
+        .flex{justify-content: flex-start;margin-top: 40px}
+        p.abs-rgba{height: 40px;background-color:rgba(0,0,0,0.4);display: flex;align-items: center;justify-content: center}
+    </style>
+</head>
+<body>
+<!--选中效果-->
+<input type="hidden" value="navxz" data-active="">
+<input type="hidden" value="xzlink1" data-active="">
+<!--导航start-->
+
+{include file="../public/tpl/index/include_nav.html" /}
+<div class="biaoti">
+    <article>专业&nbsp;&nbsp;&nbsp;&nbsp;精准&nbsp;&nbsp;&nbsp;&nbsp;高效<br/></article>
+    <section>
+        <article>PROFESSIONAL</article>
+        <div>
+            <p>Professional, accurate, efficient and continuous</p>
+            <p>Professional people do professional things</p>
+        </div>
+    </section>
+    <div style="width: 1200px;margin: 0 auto;position: relative;top:-125px "><a href="/zhaoshang/xuqiu/type/lou.html" style="position: absolute;right: 0" class="btn btn-danger">免费发布资讯</a></div>
+</div>
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('index/xz/index',array('sort'=>'gs'))}" id="xzlink_gs">工商</a>
+            <a href="{:url('index/xz/index',array('sort'=>'sw'))}" id="xzlink_sw">税务</a>
+            <a href="{:url('index/xz/index',array('sort'=>'zs'))}" id="xzlink_zs">知识产权</a>
+            <a href="{:url('index/xz/index',array('sort'=>'fl'))}" id="xzlink_fl">产权法律</a>
+        </div>
+        <div class="diqu">
+            <div class="product">
+                <div class="tit"><span>地</span><span>区:</span></div>
+                <div class="addr">
+                    <a href="javascript:void(0);" id="setarea_" onclick="setarea('')">不限</a>
+                    {volist name="prolist" id="vo"}
+                    <a href="javascript:void(0);" id="setarea_{$vo.code}" onclick="setarea('{$vo.code}')">{$vo.name}</a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="product">
+                <div class="tit"><span>城</span><span>市:</span></div>
+                <div class="addr">
+                    <a href="javascript:void(0);" id="setcity_" onclick="setcity('')">不限</a>
+                    {volist name="ct" id="vo"}
+                    <a href="javascript:void(0);" id="setcity_{$vo.code}" onclick="setcity('{$vo.code}')">{$vo.name}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <form id="formid" method="post">
+            <input type="hidden" id="area" name="area" value="{$area}">
+            <input type="hidden" id="city" name="city" value="{$city}">
+        </form>
+        <div class="anli">
+            <div class="flex">
+
+                {volist name="list" id="vo"}
+                <a href="{:url('index/xz/newsinfo',['id'=>$vo['id']])}" class="have">
+                    <div>
+                        <img src="{$vo.pic}" width="196" height="198" alt="">
+                    </div>
+                    <p class="abs-rgba">{$vo.title}</p>
+                </a>
+                {/volist}
+
+            </div>
+            <div class="pageoption">{$list->render()}</div>
+        </div>
+    </div>
+</div>
+{include file="../public/tpl/index/footer.html" /}
+<script language="javascript">
+    $("#xzxz").addClass("active");
+    $("#xzlink_{$sort}").addClass("active");
+
+    function setarea(v){
+        $("#area").val(v);
+        $("#formid").submit()
+    }
+    $("#setarea_"+$("#area").val()).addClass("active");
+
+    function setcity(v){
+        $("#city").val(v);
+        $("#formid").submit()
+    }
+    $("#setcity_"+$("#city").val()).addClass("active");
+</script>
+
+</body>
+</html>

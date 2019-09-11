@@ -1,0 +1,93 @@
+{extend name="zs"}
+
+{block name="header"}
+<title>实体招商首页</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+<script src="__IMAGES__/zhaoshang/js/jquery.validate.min.js"></script>
+<script src="__IMAGES__/zhaoshang/js/validateAddMethods.js"></script>
+<script src="__IMAGES__/zhaoshang/js/jquery.messages_cn.js"></script>
+{/block}
+
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/ts_nav2.html" /}
+        </div>
+
+        <a href="" id="guanggao"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/1.gif" alt=""></a>
+
+        <div class="prolist">
+            <div class="listleft">
+                <section class="title">
+                    <span>最新信息</span>
+                    <div style="height: 3px"></div>
+                </section>
+                <div id="newslist">
+                    {volist name="list" id="vo"}
+                    <div class="pro">
+                        <a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}"><img src="{$vo.pic}" width="294" height="171" alt=""><span>{$vo.sortname}</span></a>
+                        <article>
+                            <h3><a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a></h3>
+                            <blockquote>{$vo.des}</blockquote>
+                            <p><span>发布时间：{$vo.time}</span><span><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/32.png" alt="">{$vo.look}</span></p>
+                        </article>
+                    </div>
+                    {/volist}
+                    <div class="pageoption">{$list->render()}</div>
+                </div>
+            </div>
+            <div class="listright">
+
+                <div id="newsrigth">
+                    <h3 >今日头条</h3>
+                    <a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/37.jpg" alt=""><p></p></a>
+                    {volist name="hot" id="vo" key="k"}
+                    <a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}"><span>{$k}</span><span>{$vo.title}</span></a>
+                    {/volist}
+                </div>
+
+                <div class="page">
+                    <h3>优质土地</h3>
+                    {volist name="tuijiantudi" id="vo"}
+                    <div class="project">
+                        <a href="{:url('index/tudi/info',['id'=>$vo['id']])}"><img src="{$vo.pic}" style=" width:240px; height: 138px;"><p class="bantouming">{$vo.title}</p></a>
+                        <p class="flex"><span>{$vo.zujing}元</span><span>{$vo.area}亩</span></p>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <div id="tuijian" class="mainbox-shadow">
+            <h2><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/25.png" alt="">看过该土地的用户还看过</h2>
+            <div>
+                {volist name="bomtudi" id="vo"}
+                <a href="{:url('index/tudi/info',['id'=>$vo['id']])}">
+                    <img src="{$vo.pic}" width="235" height="182" alt="">
+                    <h4>{$vo.title}</h4>
+                    <p><span><strong>{$vo.area}</strong>亩</span><span>{$vo.pro}-{$vo.city}</span></p>
+                </a>
+                {/volist}
+            </div>
+            <a href="{:url('index/teshe/tudi_index')}">点击查看更多</a>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#newslist>.pro>article>blockquote").text(function () {
+            return $(this).text().substring(0,60)+"...."
+        })
+    })
+</script>
+<script language="javascript">
+    $("#tese").addClass("active");
+    $("#tslink12").addClass("active");
+</script>
+{/block}

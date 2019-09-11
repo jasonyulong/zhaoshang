@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <mata name="renderer" content="webkit"></mata>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="__IMAGES__/newzs/css/bootstrap.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_931982_3hkhfvaeq6n.css">
+    <link rel="stylesheet" href="__IMAGES__/newzs/css/public.css">
+    <script src="__IMAGES__/newzs/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/newzs/js/popper.js"></script>
+    <script src="__IMAGES__/newzs/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
+    {block name="header"}{/block}
+</head>
+<body class="bg-fafafa">
+<aside id="mainaside" class="position-fixed" style="width: 65px;right: 0px">
+    <!--<a href="{:url('404')}" class="text-white d-block d-flex flex-column justify-content-around" style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe670;</p>
+        {eq name="islogin" value="no"}
+        <p class="px-1 font-size-12 text-center mb-1">登陆注册</p>
+        {/eq}
+        {eq name="islogin" value="yes"}
+        <p class="px-1 font-size-12 text-center mb-1">会员中心</p>
+        {/eq}
+    </a>-->
+    <!-- <a href="{:url('404')}" class="text-white d-block " style="width: 65px;height: 65px;margin-bottom: 1px">
+         <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe63d;</p>
+         <p class="px-1 font-size-12 text-center mb-1">免费发布</p>
+     </a>-->
+    <a href="tencent://message/?uin=52203910&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe662;</p>
+        <p class="px-1 font-size-12 text-center mb-1">免费咨询</p>
+        <article class=" justify-content-center align-items-center flex-column bg-white pt-3" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;width: 110px;height: 129px;z-index: 1000" >
+            <div class="d-flex justify-content-center">
+                <img  src="__IMAGES__/newzs/img/16.jpg" width="84" height="84" class="d-block  tp-4 " alt="图片">
+            </div>
+            <p class="text-center text-333 font-size-14">添加免费咨询</p>
+        </article>
+
+    </a>
+    <a href="tencent://message/?uin=52203910&amp;Site=http://vps.shuidazhe.com&amp;Menu=yes" class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe62c;</p>
+        <p class="px-1 font-size-12 text-center mb-1">二维码</p>
+        <article class=" justify-content-center align-items-center flex-column bg-white pt-3" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;width: 110px;height: 129px;z-index: 1000" >
+            <div class="d-flex justify-content-center">
+                <img  src="__IMAGES__/newzs/img/16.jpg" width="84" height="84" class="d-block  tp-4 " alt="图片">
+            </div>
+            <p class="text-center text-333 font-size-14">微信公众号</p>
+        </article>
+    </a>
+    <a  class="text-white d-block position-relative" style="width: 65px;height: 65px;margin-bottom: 1px;cursor: pointer">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe62f;</p>
+        <p class="px-1 font-size-12 text-center mb-1">联系我们</p>
+        <article class=" align-items-center flex-column  px-2 font-size-24 font-weight-bold" style="position: absolute;right: 65px;top: 0px;border: 2px solid #dd0000;height: 65px;z-index: 1000;background-color:#dd0000 " >
+            <div class="d-flex align-items-center h-100 text-nowrap">400-150-9896</div>
+        </article>
+    </a>
+    <a href="javascript:backtop()"  class="text-white d-block " style="width: 65px;height: 65px;margin-bottom: 1px">
+        <p class="m-0 pt-1 iconfont font-size-24 text-center">&#xe665;</p>
+        <p class="px-1 font-size-12 text-center mb-1">返回顶部</p>
+    </a>
+</aside>
+<!--导航&&搜索框-->
+<div class="container-fluid p-0 banner"  style="height: 443px">
+    <div class="container-fluid bg-linered m-0 " style="background:linear-gradient(#ed444b87,#bf181f)">
+        <nav id="nav" class="container-fluid   d-flex justify-content-between  align-items-center " style="max-width: 1200px;height: 75px;">
+            <div class="navhover h-100">
+                <a href="/" class="text-white font-size-18 h-100 d-block px-4 font-weight-bold font-size-22" style="line-height: 75px">首页</a>
+            </div>
+            <div class="navhover h-100">
+                <a href="{:url('index/zhaoshang/tudi_index')}" class="text-white font-size-18 h-100 d-block px-4 " style="line-height: 75px">实体招商</a>
+              <!--  <div class="secondnav container-fluid position-absolute col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="{:url('index/zhaoshang/tudi_index')}" class="text-333 mr-5">厂房出租</a>
+                            <a href="{:url('index/zhaoshang/fang_index')}" class="text-333 mr-5">土地租售</a>
+                            <a href="{:url('index/zhaoshang/lou_index')}" class="text-333 mr-5">写字楼出租</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="navhover h-100">
+                <a href="/hcy/" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">税务筹划</a>
+            </div>
+            <div class="navhover h-100">
+                <a href="{:url('index/zc/bg')}" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">政策动态</a>
+               <!-- <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            {volist name="zcdt" id="vo"}
+                            <a href="{:url('index/zc/newslist',array('id'=>$vo["id"]))}" class="text-333 mr-5">{$vo.name}</a>
+                            {/volist}
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="navhover h-100">
+                <a href="{:url('index/zht/index')}" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">综合体</a>
+               <!-- <div class="secondnav container-fluid position-absolute col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="{:url('404')}" class="text-333 mr-5">孵化器</a>
+                            <a href="{:url('404')}" class="text-333 mr-5">众创空间</a>
+                            <a href="{:url('404')}" class="text-333 mr-5">商业综合体</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="navhover h-100">
+                <a href="{:url('index/zc/dj')}" class="text-white font-size-18 font-weight-light h-100 d-block px-4" style="line-height: 75px">项目对接</a>
+              <!--  <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="{:url('index/zc/dj')}" class="text-333 mr-5">项目需求</a>
+                            <a href="{:url('index/zc/zx')}" class="text-333 mr-5">专家咨询</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="navhover h-100">
+                <a href="{:url('index/index/404')}" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">行政办公</a>
+            </div>
+            <div class="navhover h-100">
+                <a href="{:url('index/chouhua/zhaoshang')}" class="text-white font-size-18 font-weight-light h-100 d-block px-4 " style="line-height: 75px">特色项目</a>
+               <!-- <div class="secondnav container-fluid position-absolute  col-12" >
+                    <div class="container" style="max-width: 1156px">
+                        <div class="col-12 p-0" >
+                            <a href="{:url('404')}" class="text-333 mr-5 ">工业</a>
+                            <a href="{:url('404')}" class="text-333 mr-5">农业</a>
+                            <a href="{:url('404')}" class="text-333 mr-5">AI</a>
+                            <a href="{:url('404')}" class="text-333 mr-5">特色小镇</a>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </nav>
+    </div>
+    <div class="container " style="max-width: 1230px;padding-top:65px">
+        <div class="row mt-5" >
+            <div class="col-6">
+                <div class="pl-3">
+                    <img src="__IMAGES__/newzs/img/3.png" width="69%"  alt="图片" style="margin-left: 120px">
+                </div>
+                <div class="mt-3 pl-3"  style="margin-left: 120px">
+                    <img src="__IMAGES__/newzs/img/4.png" width="362" height="33" alt="图片">
+                </div>
+            </div>
+            <div class="col-6 px-5" id="searchbox">
+                <p class="text-jin font-size-18">热门搜索：<a class="text-jin" href="{:url('index/index/search',['title'=>'写字楼'])}">写字楼</a>   <a class="text-jin" href="{:url('index/index/search',['title'=>'湖北招商政策'])}">湖北招商政策</a>   <a class="text-jin" href="{:url('index/index/search',['title'=>'习近平'])}">习近平</a></p>
+                <form method="get" action="{:url('index/index/search')}">
+                    <div class="input-group " style="height: 56px">
+                        <div class="input-group-prepend  ">
+                            <div class="input-group-text bg-white rounded-0"><span class="iconfont icon-fangdajing font-weight-bold font-size-28 text-red "></span></div>
+                        </div>
+                        <input name="title" type="search" autocomplete="off" id="search" class="form-control rounded-0 h-100 border-left-0" >
+                        <div class="input-group-append  ">
+                            <button class="btn bg-red text-white font-size-18 rounded-0" style="padding: 0 30px;" >搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{block name="content"}{/block}
+
+{include file="../public/tpl/index/allfooter.html" /}
+<script src="__IMAGES__/newzs/js/pub.js"></script>
+{block name="footer"}{/block}
+<div style="display: none;"><script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1275956744&web_id=1275956744"></script></div>
+</body>
+
+</html>

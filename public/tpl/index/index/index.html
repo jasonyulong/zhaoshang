@@ -1,0 +1,615 @@
+{extend name="layout"}
+
+
+
+{block name="header"}
+<title>招商政策网-招商引资|政府招商|政策动态|招商信息|实体招商|产业园招商</title>
+{/block}
+
+
+
+{block name="content"}
+<!--轮播-->
+<main class="container mb-50" style="max-width: 1220px;height: 425px;">
+    <div class="row h-100">
+        <div class="col-auto h-100" style="padding: 0 10px;">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel"  data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                    <li data-target="#carousel" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    {volist name="top" id="vo" key="k"}
+                    <div class="carousel-item {eq name="$k" value="1"}active{/eq}">
+                        <a href="{$vo.url}">
+                            <img class="d-block " src="{$vo.pic}" width="669"  height="424" alt="{$vo.title}">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block w-100">
+                            <p class="m-0 text-left pl-3 font-size-18 w-75 text-over">{$vo.title}</p>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <div class="col h-100 align-content-between d-flex flex-column justify-content-between" style="padding: 0 10px; ">
+            <div class="row align-items-center">
+                <div class="col-6 font-size-18 text-red font-weight-bold">今日要闻 <img src="__IMAGES__/newzs/img/18.jpg" width="19" height="19" alt="徽章"></div>
+                <div class="col-6 text-right align-item--center"><a href="{:url('index/zc/bg')}" class="text-red font-size-14">更多&gt;</a></div>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    {volist name="news" id="vo" offset="0" length='1'}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class=" text-black font-size-18 font-weight-bold line-height-30" length="20">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {volist name="news" id="vo" offset="1" length='3'}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-666 font-size-14 d-block w-100 p-1" length="30">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-12 border-bottom" ></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {volist name="news" id="vo" offset="4" length='3'}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-666 font-size-14 d-block w-100 p-1" length="30">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-12 border-bottom" ></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {volist name="news" id="vo" offset="7" length='3'}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-666 font-size-14 d-block w-100 p-1" length="30">{$vo.title}</a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--政策解读-->
+<div class="container mb-50" style="max-width: 1230px;height: 307px;">
+    <div class="row">
+        <div class="col-8">
+            <div class="border-red w-100"></div>
+            <div class="row">
+                <div class="col-8">
+                    <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                        <li class="nav-item">
+                            <a href="#block1" class="nav-link active text-333  rounded-0 text-left px-0 mr-4 border-top" data-toggle="tab" >政策解读</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block2" class="nav-link text-333 rounded-0 text-left px-0  mr-4" data-toggle="tab" >政策速递</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block3" class="nav-link text-333  rounded-0 text-left px-0  mr-4" data-toggle="tab" >行业规划</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block4" class="nav-link text-333 rounded-0 text-left px-0 mr-4" data-toggle="tab" >土地招拍</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 text-right justify-content-center d-flex flex-column">
+                    <a href="{:url('index/zc/bg')}" class="text-red font-size-14 line-height-35">更多&gt;</a>
+                </div>
+            </div>
+            <div class="tab-content row" style="height: 257px;">
+                <div class="col-12 h-100">
+                    <div class="tab-content h-100">
+                        <div class="tab-pane  h-100 fade active show" id="block1"  >
+                            <div class="row h-100 " >
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_all" id="vo" offset="0" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_all" id="vo" offset="1" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_all" id="vo" offset="4" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_all" id="vo" offset="5" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane  h-100 fade " id="block2"  >
+                            <div class="row h-100 " >
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_gs" id="vo" offset="0" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_gs" id="vo" offset="1" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_gs" id="vo" offset="4" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_gs" id="vo" offset="5" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane  h-100 fade"  id="block3"  >
+                            <div class="row h-100 " >
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_sw" id="vo" offset="0" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_sw" id="vo" offset="1" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_sw" id="vo" offset="4" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_sw" id="vo" offset="5" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane  h-100 fade " id="block4"  >
+                            <div class="row h-100 " >
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_cq" id="vo" offset="0" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_cq" id="vo" offset="1" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                                <div class="col-6 d-flex flex-column align-content-between justify-content-between " >
+                                    {volist name="zc_cq" id="vo" offset="4" length='1'}
+                                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="22" class="text-333 w-100 ">{$vo.title}</a>
+                                    <div class="row align-content-stretch" >
+                                        <div class="col-6">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"  class="link-overflow d-block"><img src="{if condition="$vo.pic neq ''"}{$vo.pic}{else}__IMAGES__/notpic.jpg{/if}"  width="100%"  height="94" class="d-block" alt="图片"></a>
+                                        </div>
+                                        <div class="col-6 font-size-12 pl-1 text-666  line-height-24" length="55">{$vo.content|remove_html|mb_substr=0,80}</div>
+                                    </div>
+                                    {/volist}
+
+                                    {volist name="zc_cq" id="vo" offset="5" length='3'}
+                                    <div class="row">
+                                        <div class="col-12 line-height-30">
+                                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14 w-100" length="25">{$vo.title}</a>
+                                        </div>
+                                    </div>
+                                    {/volist}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="border-red w-100 mb-1"></div>
+            <div class="bg-red w-100" style="height: 3px"></div>
+            <div class="row" >
+                <div class="col-12 d-flex flex-column  justify-content-between " id="nav-xz">
+                    <h3 class="text-red text-center font-size-18 font-weight-bold mt-2 pt-4 mb-0" style="letter-spacing: 3px" ><span class="iconfont ">&#xe630;</span >&nbsp;四新经济&nbsp;<span class="iconfont ">&#xe630;</span></h3>
+                    <div class="row  "style="padding: 0 30px;margin: 0 -10px;" >
+                        <div class="col-4  text-center mb-2 " style="padding: 0 5px;">
+                            <a href="{:url('hcy/index')}" class="w-100 d-block bg-red text-white py-2 font-size-14">免费选址</a>
+                        </div>
+                        <div class="col-4  text-center mb-2 " style="padding: 0 5px;">
+                            <a href="{:url('hcy/index')}" class="w-100 d-block bg-red text-white py-2 font-size-14">公司注册</a>
+                        </div>
+                        <div class="col-4  text-center mb-2  " style="padding: 0 5px;">
+                            <a href="{:url('hcy/index')}" class="w-100 d-block bg-red text-white py-2 font-size-14">税务筹划</a>
+                        </div>
+                        <div class="col-4  text-center " style="padding: 0 5px;">
+                            <a href="{:url('hcy/index')}" class="w-100 d-block bg-red text-white py-2 font-size-14">法律顾问</a>
+                        </div>
+                        <div class="col-4  text-center " style="padding: 0 5px;">
+                            <a href="{:url('hcy/index')}" class="w-100 d-block bg-red text-white py-2 font-size-14">知识产权</a>
+                        </div>
+                        <div class="col-4  text-center " style="padding: 0 5px;">
+                            <div  data-toggle="modal" data-target="#contentusmodal" class="w-100 d-block bg-red text-white py-2 cursor-pointer font-size-14">入园申请</div>
+                        </div>
+                    </div>
+                    <div class="row  flex-column " style="padding: 0 30px;margin: 0 -10px;height: 103px">
+                        <div class="col-12 d-flex flex-column justify-content-between" style="padding: 0 5px;">
+                            {volist name="zc_ran" id="vo"}
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="text-333 d-block font-size-14" length="18">{$vo.title} </a>
+                            {/volist}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-50" style="max-width: 1230px;">
+    <div class="row">
+        <div class="col-12">
+            <div class="border-red w-100"></div>
+            <div class="row">
+                <div class="col-8 align-item-center">
+                    <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                        <li class="nav-item">
+                            <a href="#block5" class="nav-link active text-333 border-top rounded-0 px-0 mr-4 text-left" data-toggle="tab">实体招商</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block6" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-4 text-left" data-toggle="tab" >厂房租售</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block7" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-4 text-left" data-toggle="tab" >土地租售</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block8" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-4 text-left" data-toggle="tab" >写字楼租售</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 text-right justify-content-center d-flex flex-column"><a href="{:url('index/zhaoshang/fang_index')}" class="text-red font-size-14 ">更多&gt;</a></div>
+            </div>
+            <div class="row" >
+                <div class="col-12 ">
+                    <div class="tab-content " role="tablist">
+                        <div class="tab-pane   fade show active" id="block5" >
+                            <div class="row "  style="margin: 0 -25px">
+                                {volist name="zs_fang" id="vo"}
+                                <div class="col-3  " style="padding: 0 25px">
+                                    <div class="w-100  d-flex flex-column mb-4 justify-content-between" style="height: 390px" >
+                                        <a href="{:url('index/Fang/info',['id'=>$vo['id']])}" class="link-overflow">
+                                            <img src="{$vo.pic}" width="265" height="222" alt="265">
+                                        </a>
+                                        <p class="font-size-18 mb-2" length="12">{$vo.title}</p>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-dizhi2 mr-1 "></span><span length="13">项目地址：{$vo.address}</span></article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-riqi mr-1"></span>发布日期：{$vo.time|date='Y年m月d日',###}</article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-mianji mr-1"></span>项目面积：<span class="text-red">{$vo.area}m²</span></article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-zujin mr-1"></span>项目租金：<span class="text-red">{$vo.price}元/月</span></article>
+                                    </div>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+                        <div class="tab-pane   fade " id="block6" >
+                            <div class="row "  style="margin: 0 -25px">
+                                {volist name="zs_fang" id="vo"}
+                                <div class="col-3  " style="padding: 0 25px">
+                                    <div class="w-100  d-flex flex-column mb-4 justify-content-between" style="height: 390px" >
+                                        <a href="{:url('index/Fang/info',['id'=>$vo['id']])}" class="link-overflow">
+                                            <img src="{$vo.pic}" width="265" height="222" alt="265">
+                                        </a>
+                                        <p class="font-size-18 mb-2" length="12">{$vo.title}</p>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-dizhi2 mr-1"></span><span length="13">项目地址：{$vo.address}</span></article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-riqi mr-1"></span>发布日期：{$vo.time|date='Y年m月d日',###}</article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-mianji mr-1"></span>项目面积：<span class="text-red">{$vo.area}m²</span></article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-zujin mr-1"></span>项目租金：<span class="text-red">{$vo.price}元/月</span></article>
+                                    </div>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+                        <div class="tab-pane   fade " id="block7" >
+                            <div class="row "  style="margin: 0 -25px">
+                                {volist name="zs_tudi" id="vo"}
+                                <div class="col-3  " style="padding: 0 25px">
+                                    <div class="w-100  d-flex flex-column mb-4 justify-content-between" style="height: 390px" >
+                                        <a href="{:url('index/Tudi/info',['id'=>$vo['id']])}" class="link-overflow">
+                                            <img src="{$vo.pic}" width="265" height="222" alt="265">
+                                        </a>
+                                        <p class="font-size-18 mb-2" length="12">{$vo.title}</p>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-push mr-1"></span>发布方式：{$vo.uptype}</article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-riqi mr-1"></span>发布日期：{$vo.time|date='Y年m月d日',###}</article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-mianji mr-1"></span>项目面积：<span class="text-red">{$vo.area}m²</span></article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-zujin mr-1"></span>项目租金：<span class="text-red">{$vo.zujing}元</span></article>
+                                    </div>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+                        <div class="tab-pane   fade " id="block8" >
+                            <div class="row "  style="margin: 0 -25px">
+                                {volist name="zs_lou" id="vo"}
+                                <div class="col-3  " style="padding: 0 25px">
+                                    <div class="w-100  d-flex flex-column mb-4 justify-content-between" style="height: 390px" >
+                                        <a href="{:url('index/Lou/info',['id'=>$vo['id']])}" class="link-overflow">
+                                            <img src="{$vo.pic}" width="265" height="222" alt="265">
+                                        </a>
+                                        <p class="font-size-18 mb-2" length="12">{$vo.title}</p>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-mingcheng mr-1"></span>楼盘名称：{$vo.panname}</article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-riqi mr-1"></span>发布日期：{$vo.time|date='Y年m月d日',###}</article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-mianji mr-1"></span>项目面积：<span class="text-red">{$vo.area}m²</span></article>
+                                        <article class="text-666 d-flex align-items-center font-size-14"><span class="iconfont icon-zujin mr-1"></span>项目租金：<span class="text-red">{$vo.zujing}元</span></article>
+                                    </div>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="container mb-50" style="max-width: 1230px;height: 380px">
+    <div class="row">
+        <div class="col-12">
+            <div class="border-red w-100"></div>
+            <div class="row">
+                <div class="col-8">
+                    <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                        <li class="nav-item">
+                            <a href="#block9" class="nav-link active text-333 font-size-18 rounded-0 px-0 mr-3 text-left border-top" data-toggle="tab">综合体</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block10" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-3 text-left" data-toggle="tab" >孵化器</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block11" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-3 text-left" data-toggle="tab" >众创空间</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#block12" class="nav-link text-333 font-size-18 rounded-0 px-0 mr-3 text-left" data-toggle="tab" >商业综合体</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 text-right justify-content-center d-flex flex-column "><a href="{:url('about/wenhua')}" class="text-red font-size-14">更多&gt;</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="">
+        <div class="col-12 h-100">
+            <div class="tab-content h-100" >
+                <div class="tab-pane  h-100 fade show active" id="block9" >
+                    <div class="row h-100"  >
+                        {volist name="zht_all" id="vo"}
+                        <div class="col-4 h-100 flex-column  d-flex" >
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="link-overflow d-block"> <img src="{$vo.pic}" width="380" height="197" alt="{$vo.title}"></a>
+                            <article class="text-333 line-height-30 font-size-14" length="75" >{$vo.content|remove_html|mb_substr=0,80}</article>
+                        </div>
+                        {/volist}
+                    </div>
+                </div>
+                <div class="tab-pane  h-100 fade " id="block10" >
+                    <div class="row h-100"  >
+                        {volist name="zht_fhq" id="vo"}
+                        <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="link-overflow d-block"> <img src="{$vo.pic}" width="380" height="197" alt="{$vo.title}"></a>
+                            <article class="text-333 line-height-30 font-size-14" length="75">{$vo.content|remove_html|mb_substr=0,80}</article>
+                        </div>
+                        {/volist}
+                    </div>
+                </div>
+                <div class="tab-pane  h-100 fade " id="block11" >
+                    <div class="row h-100"  >
+                        {volist name="zht_zckj" id="vo"}
+                        <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="link-overflow d-block"> <img src="{$vo.pic}" width="380" height="197" alt="{$vo.title}"></a>
+                            <article class="text-333 line-height-30 font-size-14" length="75">{$vo.content|remove_html|mb_substr=0,80}</article>
+                        </div>
+                        {/volist}
+                    </div>
+                </div>
+                <div class="tab-pane  h-100 fade " id="block12" >
+                    <div class="row h-100"  >
+                        {volist name="zht_zckj" id="vo"}
+                        <div class="col-4 h-100 flex-column justify-content-between d-flex" >
+                            <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="link-overflow d-block"> <img src="{$vo.pic}" width="380" height="197" alt="{$vo.title}"></a>
+                            <article class="text-333 line-height-30 font-size-14" length="75">{$vo.content|remove_html|mb_substr=0,80}</article>
+                        </div>
+                        {/volist}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="container mb-50" style="max-width: 1230px;height: 260px;">
+    <div class="row">
+        <div class="col-12">
+            <div class="border-red w-100"></div>
+            <div class="row">
+                <div class="col-8">
+                    <ul class="nav nav-tabs border-bottom-0 mb-1" style="height: 50px">
+                        <li class="nav-item">
+                            <a href="#block13" class="nav-link active text-333 rounded-0 px-0 mr-3 text-left border-top" data-toggle="tab">特色小镇</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 text-right justify-content-center d-flex flex-column"><a href="{:url('chouhua/zhaoshang')}" class="text-red font-size-14 ">更多&gt;</a></div>
+            </div>
+            <div class="row" style="">
+                <div class="col-12">
+                    <div class="row" style="height: 290px">
+                        <div class="col-12 h-100">
+                            <div class="tab-content h-100" >
+                                <div class="tab-pane  h-100 fade show active" id="block13" >
+                                    <div class="row h-100"  style="max-width: 1246px;margin: 0 -23px">
+                                        {volist name="zheng" id="vo"}
+                                        <div class="col-4 h-100 flex-column justify-content-between d-flex"  style="padding: 0 23px">
+                                            <a href="#" class="d-block position-relative">
+                                                <img  src="{$vo.pic}" width="100%" height="193" alt="图片"/>
+                                                <article class="position-absolute w-100 h-100 pl-5 py-5 text-white line-height-28" style="left: 0;top: 0;background: rgba(221, 81, 81,0.9)">
+                                                    <h3 class="font-size-18" length="6">{$vo.title}</h3>
+                                                    <p class="m-0 font-size-14" style=""><img src="__IMAGES__/newzs/img/18.png" width="20" class="mr-1" height="20" alt="图片"><span length="8">面积:{$vo.area}km²</span></p>
+                                                    <p class="m-0 font-size-14"><img src="__IMAGES__/newzs/img/19.png" width="20" class="mr-1" height="20" alt="图片"><span length="8">入驻企业:{$vo.qiye}家</span></p>
+                                                    <p class="m-0 font-size-14"><img src="__IMAGES__/newzs/img/20.png" width="20" class="mr-1" height="20" alt="图片"><span length="8">产业集群:{$vo.hangye}</span></p>
+                                                </article>
+                                            </a>
+                                        </div>
+                                        {/volist}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="contentusmodal">
+    <div class="modal-dialog">
+        <form action="{:url('index/index/msg')}" method="post" class="modal-content" id="formdata">
+            <div class="modal-header">
+                <h5 class="modal-title text-red ">由于各地政策差异,将根据您所在的城市30分钟内提供详细报价</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend ">
+                            <div class="input-group-text ">所在地址</div>
+                        </div>
+                        <input type="text" class="form-control" name="所在地址" autocomplete="off" required placeholder="如:湖北省武汉市硚口区宝善街23号">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">联系电话</div>
+                        </div>
+                        <input type="text" class="form-control" name="联系电话" placeholder="请输入您的联系电话">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">联&nbsp;系&nbsp;人&nbsp;</div>
+                        </div>
+                        <input type="text" class="form-control" name="联系人" placeholder="如:吴先生">
+                    </div>
+                </div>
+                <div class="errormsg"></div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block bg-red text-white" value="提交">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#formdata').validate({
+            errorPlacement: function (error, element) {
+                // Append error within linked label
+                $(element).closest(".form-group").next(".errormsg").append(error)
+            },
+            rules: {
+                所在地址: {required: true,maxlength:50},
+                联系电话: {required: true,maxlength:20,number:true},
+                联系人: {required: true,maxlength:20},
+            },
+            messages: {
+                所在地址: {
+                    required: "请输入地址",
+                    maxlength:"最大字符数为{0}"
+                },
+                联系电话: {required: "请输入联系方式",maxlength:"最大字符数为{0}",number:"电话号码由数组组成"},
+                联系人: {required: "请填写联系人",maxlength:"最大字符数为{0}"},
+            }
+        })
+    })
+</script>
+{/block}
+
+
+
+{block name="footer"}
+
+{/block}

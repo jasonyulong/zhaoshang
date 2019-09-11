@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/reset.css">
+    <script src="__IMAGES__/zhaoshang/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zhaoshang/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <base href="xm-indexfuinfo.html">
+    <style>
+        .title section{width: 100%}
+        .title article{width: 100%;display: flex;justify-content: space-between}
+        .title article>span{font-family: "Heiti SC";color: #015293;font-weight: bold;font-size: 15px}
+        #search {
+            width: 100%;
+            height: 80px;
+            box-shadow: 0px 3px 5px rgba(0,0,0,0.0);
+            margin-top: 0px;
+            padding: 20px 56px;
+        }
+        .diqu {
+            width: 100%;
+            padding: 0px 26px;
+            box-shadow: 0px 3px 5px rgba(0,0,0,0.0);
+            margin-top: 0px;
+        }
+        #newsrigth>h3, #newsrigth~.page>h3 {
+            font-weight: bold;
+            color: black;
+            font-size: 18px;
+            padding: 40px 0 0 0 ;
+        }
+        .listleft>h1{font-size: 16px;color: #333333;font-weight: bold;padding-bottom: 10px}
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: #005196;
+            padding: 0 0px;
+            background-clip: content-box;
+        }
+        .zh-porject{padding: 20px 0;display: flex;justify-content: space-between;border-bottom: 1px solid #dcdcdc}
+        .zh-porject>.data {
+            font-size: 14px;
+        }
+        .zh-porject>.data>h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        .zh-porject>.data {
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #005196;
+            color: white;
+            align-content: center;
+        }
+        .zh-porject>.content{display: flex;flex-wrap: wrap;padding-left: 20px;align-content: space-between;width: 670px;margin-right: 150px}
+        .zh-porject>.content>a{width: 100%;display: block;color: #333333;font-weight: bold;padding-left: 12px}
+        .zh-porject>.content>.key{width: 13%;text-align: right;color: #666666;font-size: 14px}
+        .zh-porject>.content>.vlaue{width: 20%;color: #666666;font-size: 14px}
+    </style>
+</head>
+<body>
+<input type="hidden" value="navxm" data-active="">
+<input type="hidden" value="xmlink1" data-active="">
+
+{include file="../public/tpl/index/include_nav.html" /}
+
+<div class="biaoti">
+    <article>专业&nbsp;&nbsp;&nbsp;&nbsp;精准&nbsp;&nbsp;&nbsp;&nbsp;高效<br/></article>
+    <section>
+        <article>PROFESSIONAL</article>
+        <div>
+            <p>Professional, accurate, efficient and continuous</p>
+            <p>Professional people do professional things</p>
+        </div>
+    </section>
+    <div style="width: 1200px;margin: 0 auto;position: relative;top:-125px "><a href="{:url('index/zhaoshang/xuqiu',['type'=>'lou'])}" style="position: absolute;right: 0" class="btn btn-danger">免费发布资讯</a></div>
+</div>
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('index/dj/index',array('sort'=>'zf'))}" id="xmlink_zf" ><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/87.png" alt=""><h1>政府采购</h1></a>
+            <a href="{:url('index/dj/index',array('sort'=>'gc'))}" id="xmlink_gc"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/88.png" alt=""><h1>工程项目</h1></a>
+            <a href="{:url('index/dj/index',array('sort'=>'js'))}" id="xmlink_js"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/89.png" alt=""><h1>城市建设</h1></a>
+        </div>
+        <div id="ts-main">
+            <div class="diqu">
+                <div class="product">
+                    <div class="tit"><span>地</span><span>区:</span></div>
+                    <div class="addr">
+                        <a href="javascript:void(0);" id="setarea_" onclick="setarea('')">不限</a>
+                        {volist name="prolist" id="vo"}
+                        <a href="javascript:void(0);" id="setarea_{$vo.code}" onclick="setarea('{$vo.code}')">{$vo.name}</a>
+                        {/volist}
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="tit"><span>城</span><span>市:</span></div>
+                    <div class="addr">
+                        <a href="javascript:void(0);" id="setcity_" onclick="setcity('')">不限</a>
+                        {volist name="ct" id="vo"}
+                        <a href="javascript:void(0);" id="setcity_{$vo.code}" onclick="setcity('{$vo.code}')">{$vo.name}</a>
+                        {/volist}
+                    </div>
+                </div>
+            </div>
+            <form id="search" method="post">
+                <input type="hidden" id="area" name="area" value="{$area}">
+                <input type="hidden" id="city" name="city" value="{$city}">
+                <div class="search">
+                    <input type="text" name="title" value="{$title}" placeholder="输入关键字搜索"><input type="submit" value="搜索">
+                </div>
+            </form>
+        </div>
+        <div class="prolist">
+            <div class="listleft">
+                <h1>全部信息</h1>
+                <div class="line"></div>
+
+                {volist name="list" id="vo"}
+                <div class="zh-porject">
+                    <div class="data">
+                        <h2>{$vo.time2}</h2>
+                        {$vo.time1}
+                    </div>
+                    <div class="content">
+                        <a href="{:url('index/dj/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        <span class="key">地址：</span>
+                        <span class="vlaue"> {$vo.pro} - {$vo.city}</span>
+                        <span class="key">发布时间： </span>
+                        <span class="vlaue">  {$vo.time|date='Y-m-d',###}</span>
+                        <span class="key">浏览量：</span>
+                        <span class="vlaue">{$vo.look}</span>
+                    </div>
+                </div>
+                {/volist}
+
+                <div class="pageoption">{$list->render()}</div>
+            </div>
+            <div class="listright">
+                <form class="aside mainbox-shadow" id="aside">
+                    <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/28.png" alt="">
+                    <!--<small>张山</small>-->
+                    <input type="text" autocomplete="off" placeholder="请输入电话号码">
+                    <button type="submit" class="send" value="" >立即联系</button>
+                    <p class="tit">使用加密技术，不会泄密您的手机</p>
+                    <hr>
+                    <div class="flex">
+                        <b href="" style="cursor: pointer;font-size: 14px"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/29.png" alt="">预约参观</b>
+                        <b href="" style="cursor: pointer;font-size: 14px"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/30.png" alt="">留言咨询</b>
+                    </div>
+                </form>
+                <div id="newsrigth">
+                    <h3 >对接资讯</h3>
+                    <a href=""><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/37.jpg" alt=""><p class="abs-rgba">xxxxx</p></a>
+                    {volist name="tuijian" id="vo" key="k"}
+                    <a href="{:url('index/dj/newsinfo',['id'=>$vo['id']])}"><span>{$k}</span><span>{$vo.title}</span></a>
+                    {/volist}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="formwrap" class="container  " style="position:fixed;left: 50%;top: 50%;margin-left: -600px;margin-top: 0%;display: none" >
+        <div class="row justify-content-center  ">
+            <div class="col-md-8">
+                <form action="{:url('index/index/msg')}" method="post"  class="border p-3 box-shadow-sm bg-light needs-validation" novalidate>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="姓名" id="validationCustom01" placeholder="请输入姓名" required>
+                        <div class="invalid-feedback">
+                           请填写您的姓名
+                        </div>
+                        <div class="valid-feedback">
+                            验证成功
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="电话号码" class="form-control" placeholder="请输入电话号码" required>
+                        <div class="invalid-feedback">
+                            请填写正确的电话号码
+                        </div>
+                        <div class="valid-feedback">
+                            验证成功
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary  btn-block">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{include file="../public/tpl/index/footer.html" /}
+<script language="javascript">
+    $("#djdj").addClass("active");
+    $("#xmlink_{$sort}").addClass("active");
+    $(".close").click(function () {
+        $("#formwrap").hide();
+    })  
+    $("#aside .flex b").click(function () {
+        $("#formwrap").show();
+    })
+    function setarea(v){    
+        $("#area").val(v);
+        $("#search").submit()
+    }
+    $("#setarea_"+$("#area").val()).addClass("active");
+
+    function setcity(v){
+        $("#city").val(v);
+        $("#search").submit()
+    }
+    $("#setcity_"+$("#city").val()).addClass("active");
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+</body>
+</html>

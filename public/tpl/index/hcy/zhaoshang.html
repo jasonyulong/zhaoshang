@@ -1,0 +1,114 @@
+{extend name="hcy"}
+
+{block name="header"}
+<title>招商</title>
+<style>
+    .error{margin-right: 10px;font-size: 14px}
+    .msg{position: absolute;right: 0px;top: -10px;z-index: 100;background-color: red}
+</style>
+<script src="__IMAGES__/hcy/js/bootstrap.js"></script>
+<script src="__IMAGES__/hcy/js/valied.js"></script>
+<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+{/block}
+
+{block name="content"}
+<div class="container-fluid p-0 mt-4" style="background: url(__IMAGES__/hcy/img/32.jpg)no-repeat;height: 946px;">
+    <div class="container " style="padding-top: 120px">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center text-white " style="letter-spacing: 12px;font-size: 60px">全国委托招商</h1>
+                <h1 class="text-center text-white iconfont " style="letter-spacing: 3px;font-size: 48px">&#xe608;010-53345721</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center  " style="margin-top: 95px">
+            <div class="col-9 bg-white " style="padding: 50px 190px 25px 190px;border-radius: 10px">
+                <form id="form" method="post"   class="row no-gutters align-items-center " >
+                    <div class="form-group w-100 d-flex no-gutters align-items-center">
+                        <div class="col-2 text-right font-weight-bold font-size-14"><span class="text-red">*</span>公司名称：</div>
+                        <div class="col-10">
+                            <input type="text" autocomplete="off" name="公司名称"  class="form-control rounded-0 p-1" >
+                        </div>
+                    </div>
+                    <div class="errormsg text-red"></div>
+                    <div class="form-group w-100 d-flex no-gutters align-items-center">
+                        <div class="col-2 text-right font-weight-bold font-size-14"><span class="text-red">*</span>姓名：</div>
+                        <div class="col-4">
+                            <input type="text" required name="姓名" autocomplete="off" class="form-control rounded-0 p-1" >
+                        </div>
+                        <div class="col-2 text-right font-weight-bold font-size-14"><span class="text-red">*</span>职位：</div>
+                        <div class="col-4">
+                            <input type="text" autocomplete="off" autocomplete="off" name="职位" class="form-control rounded-0 p-1" >
+                        </div>
+                    </div>
+                    <div class="errormsg text-red"></div>
+                    <div class="form-group w-100 d-flex no-gutters align-items-center">
+                        <div class="col-2 text-right font-weight-bold font-size-14"><span class="text-red">*</span>意向城市：</div>
+                        <div class="col-4">
+                            <input type="text" name="意向城市" autocomplete="off" class="form-control rounded-0 p-1" required>
+                        </div>
+                        <div class="col-2 text-right font-weight-bold font-size-14"><span class="text-red">*</span>联系方式：</div>
+                        <div class="col-4">
+                            <input type="text" name="联系方式" autocomplete="off" class="form-control rounded-0 p-1" >
+                        </div>
+                    </div>
+                    <div class="errormsg text-red"></div>
+                    <div class="form-group w-100 d-flex no-gutters align-items-center">
+                        <div class="col-2 text-right font-weight-bold font-size-14"><span class="text-red">*</span>公司描述：</div>
+                        <div class="col-10">
+                            <textarea name="公司描述" autocomplete="off" style="resize: none" class="form-control rounded-0"></textarea >
+                        </div>
+                    </div>
+                    <div class="errormsg text-red"></div>
+                    <div class="form-group w-100 d-flex no-gutters align-items-center">
+                        <div class="col-2 text-right font-weight-bold font-size-14 font-size-14"><span class="text-red">*</span>自身优势：</div>
+                        <div class="col-10">
+                            <textarea name="自身优势"  autocomplete="off" style="resize: none" class="form-control rounded-0"></textarea>
+                        </div>
+                    </div>
+                    <div class="errormsg text-red"></div>
+                    <div class="d-flex justify-content-center w-100">
+                        <input type="submit" class="btn btn-secondary " value="立即加入">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="footer"}
+<script>
+    $(function () {
+        $("#xiangmu").addClass("active")
+    })
+    $(document).ready(function () {
+        $("#form").validate({
+            errorPlacement: function(error, element) {
+                $(element)
+                        .closest( ".form-group" ).next(".errormsg").append(error)
+
+            },
+            rules:{
+                company:{required:true},
+                name:{required:true},
+                job:{required:true},
+                city:{required:true},
+                phone:{required:true,maxlength:11,number:true},
+                company_d:{maxlength:200},
+                oneself:{maxlength:200},
+            },
+            messages:{
+                company:{required:"请填写公司名称"},
+                name:{required:"请填写姓名"},
+                job:{required:"请填写职位"},
+                city:{required:"请填写城市"},
+                phone:{required:"请填写电话号码",maxlength:"最大长度为11",number:"电话号码由数字组成"},
+                company_d:{maxlength:"超出可提交的最大长度"},
+                oneself:{maxlength:"超出可提交的最大长度"},
+            }
+
+        })
+    })
+</script>
+{/block}

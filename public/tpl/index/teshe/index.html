@@ -1,0 +1,164 @@
+{extend name="ts"}
+
+{block name="header"}
+<title>特色小镇</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseprojectX.css">
+{/block}
+
+{block name="content"}
+<div class="mainwrap">
+    <div id="main">
+        <div class="link">
+            {include file="../public/tpl/index/ts_nav.html" /}
+        </div>
+        <div id="ts-main">
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>头条新闻</h2>
+                </section>
+                <a href="{:url('index/teshe/news')}">more</a>
+            </div>
+            <div class="ts-project">
+                <div id="myCarousels">
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            {volist name="top" id="vo" key="k"}
+                            <div class="item {eq name="$k" value="1"}active{/eq}">
+                                <a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/40.jpg" width="390" height="272" alt="First slide"></a>
+                                <div class="carousel-caption">{$vo.title}</div>
+                            </div>
+                            {/volist}
+                        </div>
+                    </div>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span>推荐新闻</span><a href="{:url('index/teshe/news')}">更多</a></h3>
+                        {volist name="tuijian" id="vo"}
+                        <a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                    <section>
+                        <h3><span>热点新闻</span><a href="{:url('index/teshe/news')}">更多</a></h3>
+                        {volist name="tuijianhot" id="vo"}
+                        <a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span>最新新闻</span><a href="{:url('index/teshe/news')}">更多</a></h3>
+                        {volist name="new" id="vo"}
+                        <a href="{:url('index/teshe/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>精品小镇</h2>
+                </section>
+                <a href="{:url('index/chouhua/zhaoshang')}">more</a>
+            </div>
+            <div class="anli">
+                <div class="flex">
+                    {volist name="zhengpin" id="vo"}
+                    <a href="{:url('index/chouhua/zheng',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}" width="260" height="168" alt="">
+                        <h4>{$vo.title}</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>精品小镇</h2>
+                </section>
+            </div>
+            <div class="jianshe">
+                <a href="{:url('index/teshe/news',['sort'=>27])}">
+                    <div class="imgbox" style="background-color: #dd3232">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/43.png" alt="">
+                    </div>
+                    <div>
+                        <h4>小镇简介</h4>
+                        <p>关于小镇简介</p>
+                    </div>
+                </a>
+                <a href="{:url('index/teshe/news',['sort'=>28])}">
+                    <div class="imgbox" style="background-color: #62cf9f">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/44.png" alt="">
+                    </div>
+                    <div>
+                        <h4>政策解读</h4>
+                        <p>关于小镇简介</p>
+                    </div>
+                </a>
+                <a href="{:url('index/teshe/news',['sort'=>29])}">
+                    <div class="imgbox" style="background-color: #ebb541">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/45.png" alt="">
+                    </div>
+                    <div>
+                        <h4>小镇打造</h4>
+                        <p>关于小镇简介</p>
+                    </div>
+                </a>
+                <a href="{:url('index/teshe/news',['sort'=>30])}">
+                    <div class="imgbox" style="background-color: #7f46d5">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/46.png" alt="">
+                    </div>
+                    <div>
+                        <h4>小镇运营</h4>
+                        <p>关于小镇简介</p>
+                    </div>
+                </a>
+                <a href="{:url('index/teshe/news',['sort'=>31])}">
+                    <div class="imgbox" style="background-color: #458ef1">
+                        <img src="__IMAGES__/zhaoshang/img/shitizhaoshang/47.png" alt="">
+                    </div>
+                    <div>
+                        <h4>小镇运营</h4>
+                        <p>关于小镇简介</p>
+                    </div>
+                </a>
+            </div>
+            <div class="title">
+                <section>
+                    <span></span>
+                    <h2>成功案例</h2>
+                </section>
+                <a href="{:url('index/chouhua/zhaoshang')}">more</a>
+            </div>
+            <div class="anli">
+                <div class="flex">
+                    {volist name="zhenganli" id="vo"}
+                    <a href="{:url('index/chouhua/zheng',['id'=>$vo['id']])}">
+                        <img src="{$vo.pic}" width="260" height="168" alt="">
+                        <h4>{$vo.title}</h4>
+                    </a>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#tese").addClass("active");
+    $("#tslink4").addClass("active");
+</script>
+{/block}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>政策动态</title>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/reset.css">
+    <script src="__IMAGES__/zhaoshang/js/jquery-3.3.1.min.js"></script>
+    <script src="__IMAGES__/zhaoshang/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/public.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/shitizhaoshang.css">
+    <link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+    <style>
+        .ts-newlist>section>h3{border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;margin-bottom: 10px}
+        .ts-newlist h3>span{display: flex;align-items: center;color: #005196; }
+        .ts-newlist h3>span>strong{width: 5px;height: 15px;background-color: #005196;display: inline-block;margin-right: 10px}
+        .ts-project:first-child .ts-newlist:last-child>section>a:before{
+            width: 0px;
+            height: 0px;
+            background-color: #666666;}
+        .ts-newlist:last-child>section>a>span{background-color: #E71C19;color: white;margin-right: 10px;height: 20px;line-height: 20px;width: 40px;text-align: center;font-size: 14px}
+    </style>
+</head>
+<body>
+<input type="hidden" value="navzc" data-active="">
+<input type="hidden" value="zclink1" data-active="">
+{include file="../public/tpl/index/include_nav.html" /}
+<div class="biaoti">
+    <article>专业&nbsp;&nbsp;&nbsp;&nbsp;精准&nbsp;&nbsp;&nbsp;&nbsp;高效<br/></article>
+    <section>
+        <article>PROFESSIONAL</article>
+        <div>
+            <p>Professional, accurate, efficient and continuous</p>
+            <p>Professional people do professional things</p>
+        </div>
+    </section>
+    <div style="width: 1200px;margin: 0 auto;position: relative;top:-125px "><a href="/zhaoshang/xuqiu/type/lou.html" style="position: absolute;right: 0" class="btn btn-danger">免费发布资讯</a></div>
+</div>
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+
+        <div class="link">
+            <a href="{:url('index/zc/index')}" id="zclink1" >首页</a>
+            <a href="{:url('index/chouhua/index')}"  id="zclink2">总部经济</a>
+            <a href="{:url('index/chouhua/yuan')}"  id="zclink3">产业园</a>
+            <a href="{:url('index/chouhua/index')}"  id="zclink6">税务筹划</a>
+            <a href="{:url('index/xz/index')}"  id="zclink7">行政办公</a>
+            <a href="{:url('index/zhaoshang/tudi_index')}"  id="zclink8">土地</a>
+            <a href="{:url('index/zhaoshang/fang_index')}"  id="zclink9">厂房</a>
+            <a href="{:url('index/zhaoshang/lou_index')}"  id="zclink10">写字楼</a>
+            <a href="{:url('index/teshe/index')}"  id="zclink11">特色项目</a>
+        </div>
+        <div id="ts-main">
+            <div class="ts-project">
+                <div id="myCarousels">
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            {volist name="top" id="vo" key="k"}
+                                <div class="item {eq name="$k" value="1"}active{/eq}">
+                                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}"><img src="{$vo.pic}" width="390" height="272" alt="First slide"></a>
+                                <div class="carousel-caption" length="15">{$vo.title}</div>
+                            </div>
+                            {/volist}
+                        </div>
+                    </div>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span><strong></strong>最新资讯</span><a href="{:url('index/zc/news')}">更多</a></h3>
+                        {volist name="new" id="vo"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="15">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span><strong></strong>随机推荐</span><a href="{:url('index/zc/news')}">更多</a></h3>
+                        {volist name="ran" id="vo"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+            </div>
+            <a href="" id="guanggao"><img src="__IMAGES__/zhaoshang/img/shitizhaoshang/53.jpg" alt=""></a>
+            <div class="ts-project">
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span><strong></strong>政策速递</span><a href="{:url('index/zc/news')}">更多</a></h3>
+                        {volist name="t1" id="vo"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="15">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span><strong></strong>行业动态</span><a href="{:url('index/zc/news')}">更多</a></h3>
+                        {volist name="t2" id="vo"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="15">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+                <div class="ts-newlist">
+                    <section>
+                        <h3><span><strong></strong>服务资讯</span><a href="{:url('index/zc/news')}">更多</a></h3>
+                        {volist name="t3" id="vo"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" length="15">{$vo.title}</a>
+                        {/volist}
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{include file="../public/tpl/index/footer.html" /}
+
+
+<script language="javascript">
+    $("#zczc").addClass("active");
+    $("#zclink1").addClass("active");
+
+</script>
+<script src="__IMAGES__/zhaoshang/js/niti.js"></script>
+</body>
+</html>

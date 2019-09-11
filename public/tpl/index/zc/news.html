@@ -1,0 +1,84 @@
+{extend name="chouhua"}
+
+{block name="header"}
+<title>新闻列表</title>
+<link rel="stylesheet" href="__IMAGES__/zhaoshang/css/teseproject.css">
+<style>
+    .mainwrap {
+
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    .mainwrap>h6{width: 1200px;margin: 0px auto;padding: 15px 0;display: flex;align-items: center}
+    #main{padding: 0px 25px;padding-top: 20px}
+    #aside{margin: 20px 0px;height: 52px;border: 1px solid #dcdcdc;margin-top: 60px;margin-bottom: 40px;border-radius: 26px;display: flex;padding: 0px 80px;justify-content: space-between}
+    #aside>a{height: 100%;line-height: 100%;display: flex;align-items: center;}
+    #aside>a.active{border-bottom: 3px solid #e71c19}
+</style>
+{/block}
+
+{block name="content"}
+<div class="mainwrap mainbox-shadow">
+    <div id="main">
+        <div class="link">
+            <a href="{:url('index/zc/index')}" id="zclink1" >首页</a>
+            <a href="{:url('index/chouhua/index')}"  id="zclink2">总部经济</a>
+            <a href="{:url('index/chouhua/yuan')}"  id="zclink3">产业园</a>
+            <a href="{:url('index/chouhua/index')}"  id="zclink6">税务筹划</a>
+            <a href="{:url('index/xz/index')}"  id="zclink7">行政办公</a>
+            <a href="{:url('index/zhaoshang/tudi_index')}"  id="zclink8">土地</a>
+            <a href="{:url('index/zhaoshang/fang_index')}"  id="zclink9">厂房</a>
+            <a href="{:url('index/zhaoshang/lou_index')}"  id="zclink10">写字楼</a>
+            <a href="{:url('index/teshe/index')}"  id="zclink11">特色项目</a>
+        </div>
+        <aside id="aside">
+            <a href="{:url('index/zc/news',array('sort'=>'42'))}" id="id42"><span>政策速递</span></a>
+            <a href="{:url('index/zc/news',array('sort'=>'43'))}" id="id43">行业动态</a>
+            <a href="{:url('index/zc/news',array('sort'=>'44'))}" id="id44">服务资讯</a>
+        </aside>
+        <hr>
+        {volist name="list" id="vo"}
+        <div class="ts-list">
+            <div class="data">
+                <h2>{$vo.time2}</h2>
+                {$vo.time1}
+            </div>
+            <div class="content">
+                <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}">{$vo.title}</a>
+                <article length="60">{$vo.des}</article>
+            </div>
+        </div>
+        <hr>
+        {/volist}
+        <div class="pageoption">{$list->render()}</div>
+        <section class="main-tuijian">
+            <h3 class="active">相关推荐</h3>
+            <div>
+                <section>
+                    <h3 class="have"><span>新闻资讯</span></h3>
+                    {volist name="newszi" id="vo"}
+                    <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="have">{$vo.title}</a>
+                    {/volist}
+                </section>
+                <article>
+                    <h3 class="have"><span>图文资讯</span></h3>
+                    <div class="flex">
+                        {volist name="newstu" id="vo"}
+                        <a href="{:url('index/zc/newsinfo',['id'=>$vo['id']])}" class="dis-href"><img src="{$vo.pic}" width="140" height="106" alt=""><p class="abs-rgba">{$vo.title}</p></a>
+                        {/volist}
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+</div>
+{/block}
+
+{block name="footer"}
+<script language="javascript">
+    $("#zczc").addClass("active");
+    $("#zclink1").addClass("active");
+    $("#id{$sort}").addClass("active");
+</script>
+{/block}
